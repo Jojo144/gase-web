@@ -112,12 +112,15 @@ function EnregistrerInfoOutil($message){
 function SelectionListeMessages(){
 	$compteur = 0;
 	$result = requete("SELECT DATE, MESSAGE FROM ".DB_PREFIX."VIE_OUTIL ORDER BY DATE DESC");
-	while ( $row = $result->fetch()){
+	$listeMsg = null;
+	if ($result) {
+	    while ( $row = $result->fetch()){
 		$donnees['DATE'] = $row[0];
 		$donnees['MESSAGE'] = $row[1];
 		
 		$listeMsg[$compteur] = $donnees;
 		$compteur++;
+	    }
 	}
 	return $listeMsg;
 }

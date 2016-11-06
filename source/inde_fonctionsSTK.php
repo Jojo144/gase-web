@@ -128,10 +128,11 @@ function getReferencesWithStockAlert($all = false){
 	    AND r.ALERT_STOCK >= s1.STOCK";
 	if (!$all) $sql .= "	AND r.VISIBLE = 1";
 	$sql .= "	ORDER BY c.NOM, r.DESIGNATION";
-    $result = requete($sql);
+        $result = requete($sql);
 	$listeStocks = null;
-	while ( $row = $result->fetch())
-	{
+	if ($result){  
+	    while ( $row = $result->fetch())
+	    {
 		$donnees['STOCK'] = $row[0];
 		$donnees['DESIGNATION'] = $row[1];
 		$donnees['NOM'] = $row[2];
@@ -139,10 +140,9 @@ function getReferencesWithStockAlert($all = false){
 		$donnees['ID_REFERENCE'] = $row[4];
 		$donnees['ALERT_STOCK'] = $row[5];
 		$donnees['VISIBLE'] = $row[6] == 0 ? 'NON' : 'OUI';
-		
 		$listeStocks[] = $donnees;
+	    }
 	}
-	
 	return $listeStocks;
 }
 

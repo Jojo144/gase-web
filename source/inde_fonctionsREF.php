@@ -20,7 +20,7 @@
         requete($requete1);
 
         $result = requete("SELECT MAX(ID_REFERENCE) FROM ".DB_PREFIX."REFERENCES");
-        $resultat = $result->fetch_row();
+        $resultat = $result->fetch();
 
         $idRefMax = $resultat[0];
 
@@ -92,18 +92,19 @@
 
 		$compteur = 0;
 		$result = requete("SELECT p.NOM, r.DESIGNATION, r.PRIX_TTC, r.ID_REFERENCE, r.VRAC FROM ".DB_PREFIX."REFERENCES r, ".DB_PREFIX."FOURNISSEURS p WHERE r.ID_CATEGORIE = '$idCategorie' AND p.ID_FOURNISSEUR = r.ID_FOURNISSEUR AND r.VISIBLE = 1 ORDER BY r.DESIGNATION");
-		while ( $row = $result->fetch())
-		{		
+		$listeRef = null;
+		if ($result) {		
+		    while ( $row = $result->fetch())
+		    {		
 			$ligne['PRODUCTEUR'] = $row[0];
 			$ligne['REFERENCE'] = $row[1];
 			$ligne['PRIX'] = $row[2];
 			$ligne['ID_REFERENCE'] = $row[3];
 			$ligne['VRAC'] = $row[4];
-
 			$listeRef[$compteur] = $ligne;
 			$compteur++;
+		    }
 		}
-		
 		return $listeRef;
 	}
 		
