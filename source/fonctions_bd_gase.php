@@ -39,7 +39,7 @@ define("DB_PREFIX", $prefix);
 // AC 02-05-2016 une seule fonction utilisant la connexion globale pour les requêtes avec gestion d'erreur
 function requete($sql) {
 	global $mysql;
-	$result = false;
+	$result = null;
 	try {
 		$result = $mysql->query($sql);
 	}
