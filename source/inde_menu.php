@@ -41,13 +41,14 @@
 			</ul>
 		</li>
 		<li><a href="inde_1infoOutil.php">VIE OUTIL</a></li>
+		<!--PGA - gase de chips - menu Document et déconnexion inutile pour le moment.
 		<li><a href="#">DOCUMENTS</a>
 			<ul>
 				<li><a href="inde_1modifDocument.php">VOIR</a></li>
 				<li><a href="inde_1nouveauDocument.php">ARCHIVER</a></li>
-            </ul>
-        </li>
-        <li><a href=logouthttp.php>DECONNEXION</a></li>
+            		</ul>
+        	</li>
+        <li><a href=logouthttp.php>DECONNEXION</a></li> -->
 	</ul>
 </div>
 
