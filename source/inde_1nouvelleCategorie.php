@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="style_default.css" /> 
-        <title>NOUVELLE CATEGORIE</title>
+        <title>NOUVELLE CATÉGORIE</title>
     </head>
 
 	<?php include 'inde_menu.php'; ?>

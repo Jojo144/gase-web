@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
 		<link rel="stylesheet" href="style_default.css" />
-        <title>MODIF. CATEGORIE</title>
+        <title>MODIF. CATÉGORIE</title>
     </head>
 
 	<?php 

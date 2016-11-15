@@ -29,7 +29,7 @@
 			<tr>
 				<td width="10%" align="center"><strong>QUANTITE</strong></td>
 				<td width="10%" align="center"><strong>ALERTE</strong></td>
-				<td width="10%" align="center"><strong>CATEGORIE</strong></td>
+				<td width="10%" align="center"><strong>CATÉGORIE</strong></td>
 				<td width="50%" align="center"><strong>DESIGNATION</strong></td>
 				<td width="20%" align="center"><strong>FOURNISSEUR</strong></td>
 				<td width="5%" align="center"><strong>VISIBLE</strong></td>

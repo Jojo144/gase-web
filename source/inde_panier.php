@@ -19,8 +19,8 @@ if ( $nbRefPanier == 0){
 		<div id= "table_reference_list">
 			<table>
 				<tr>
-					<td width="80%" align="center"><strong>DESIGNATION</strong></td>
-					<td width="10%" align="center"><strong>QTE</strong></td>
+					<td width="80%" align="center"><strong>DÉSIGNATION</strong></td>
+					<td width="10%" align="center"><strong>QUANTITÉ</strong></td>
 					<td width="10%" align="center"><strong>PRIX</strong></td>
 				</tr>
 				<?php

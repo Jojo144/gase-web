@@ -38,21 +38,21 @@ if (isset ($_POST['payer']))
             //check stok for new alert and send email to person that subscribed to it
             check_for_new_stock_alert();
             
-			echo "Achats " . $numeroAchat . " enregistree.<br />";
+			echo "Achat " . $numeroAchat . " enregistré.<br />";
 			echo "<div style=\"text-align:center\">Le solde de votre compte est maintenant de " . round($nouveauSolde, 2) . " euros.</div>";
 			echo "Merci.<br />";
 			echo "
 			    <br />
-			    <li>Pour aller a la page d'accueil : <a href=\"index.php\">cliquez ici</a></li>
+			    <li>Pour aller à la page d'accueil : <a href=\"index.php\">cliquez ici</a></li>
 			";
 		}
 		else
 		{
-			echo "<div style=\"text-align:center; color: #FF0000\">Attention, le total de vos achats et superieur au solde de votre compte MoneyCoop.<br />Veuillez approvisionner votre MoneyCoop avant de re-enregistrer vos achats.</div>";  
+			echo "<div style=\"text-align:center; color: #FF0000\">Attention, le total de vos achats et supérieur au solde de votre compte MoneyCoop.<br />Veuillez approvisionner votre MoneyCoop avant de ré-enregistrer vos achats.</div>";  
 			echo "
 			    <br>
 			    <li>Pour modifier votre panier  <a href=\"javascript:window.history.back()\">cliquez ici</a></li>
-			    <li>Pour aller a la page d accueil : <a href=\"index.php\">cliquez ici</a></li>
+			    <li>Pour aller à la page d'accueil : <a href=\"index.php\">cliquez ici</a></li>
 			";
 		}
 	}

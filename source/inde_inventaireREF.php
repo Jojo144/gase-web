@@ -18,8 +18,8 @@
 				<tr>
 					<td><label class="colonne1"><strong>EN STOCK</strong></label></td>
 					<td><label class="colonne2"><strong>INVENTAIRE</strong></label></td>
-					<td><label class="colonne4"><strong>CATEGORIE</strong></label></td>
-					<td><label class="colonne3"><strong>DESIGNATION</strong></label></td>
+					<td><label class="colonne4"><strong>CATÉGORIE</strong></label></td>
+					<td><label class="colonne3"><strong>DÉSIGNATION</strong></label></td>
 					<td><label class="colonne3"><strong>FOURNISSEUR</strong></label></td>
 				</tr>	
 				<?php				

@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="style_default.css" /> 
-        <title>DETAIL ACHATS</title>
+        <title>DÉTAIL ACHAT</title>
     </head>
     <body>
 	<?php 
@@ -18,16 +18,16 @@
 			$idAchats = $_GET["idAch"];
 			$infosAchats = SelectionInfosAchats($idAchats);
 			//this wasn't workin before nayway, should fix it
-			echo "infosAchats " . $infosAchats;
+			echo  $infosAchats;
 			?>
 			<br />
 			<br />
 			<div>
 				<table style="margin-left:auto; margin-right:auto; max-width:1000px;">
 					<tr>
-					   <td><label class="colonne1"><strong>DESIGNATION</strong></label></td>
-					   <td><label class="colonne2"><strong>P.U.</strong></label></td>
-					   <td><label class="colonne3"><strong>QTE</strong></label></td>
+					   <td><label class="colonne1"><strong>DÉSIGNATION</strong></label></td>
+					   <td><label class="colonne2"><strong>PRIX UNITAIRE</strong></label></td>
+					   <td><label class="colonne3"><strong>QUANTITÉ</strong></label></td>
 					   <td><label class="colonne4"><strong>TOTAL</strong></label></td>
 					</tr>
 				
@@ -50,7 +50,7 @@
 		</div>
 		<br />
 		<center>
-		<li>Pour retourner a la liste des achats : <a href="inde_1achatsAdherent.php">cliquez ici</a></li>
+		<li>Pour retourner à la liste des achats : <a href="inde_1achatsAdherent.php">cliquez ici</a></li>
 		</center>
 	</body>
 </html>

@@ -17,14 +17,14 @@
     <body>
 		<?php include 'inde_menu.php'; ?>
 
-		<b><center><font color="red">L APPROVISIONNEMENT DES REFERENCS EN VRAC DOIT ETRE INDIQUE EN KILOGRAMME OU LITRE.</font></center></b>
+		<b><center><font color="red">L'approvisionnement des références en vrac doit être indiqué en kilogramme ou en litre.</font></center></b>
 		<br />
 		<form id="formulaire" method="post" action="inde_enregistrerApproSTK.php">
 			<div>
 				<label class="colonne1"><strong>CODE FR</strong></label>
 				<label class="colonne4"><strong>APPRO</strong></label>
-				<label class="colonne5"><strong>CATEGORIE</strong></label>
-				<label class="colonne2"><strong>DESIGNATION</strong></label>
+				<label class="colonne5"><strong>CATÉGORIE</strong></label>
+				<label class="colonne2"><strong>DÉSIGNATION</strong></label>
 				<label class="colonne3"><strong>EN STOCK</strong></label>
 				
 				<input type="hidden" name="idFournisseur" value="<?php echo $idFournisseur; ?>" />

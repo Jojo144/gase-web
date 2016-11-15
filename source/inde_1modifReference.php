@@ -19,7 +19,7 @@
 		<div class="liste" style="text-align:left">
 			<table style="margin-left:auto; margin-right:auto;">
 				<tr>
-					<td><label class="colonne3"><center><strong>CATEGORIE</strong></center></label></td>
+					<td><label class="colonne3"><center><strong>CATÉGORIE</strong></center></label></td>
 					<td><label class="colonne1"><center><strong>DESIGNATION</strong></center></label></td>
 					<td><label class="colonne2"><center><strong>FOURNISSEUR</strong></center></label></td>
 					<td><label class="colonne4"><center><strong>PRIX</strong></center></label></td>

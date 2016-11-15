@@ -10,14 +10,12 @@
 		<?php include 'inde_menu.php'; ?>
 
 		<div style="text-align:center">
-			Versement effectue.
-			</br>
-			</br>
+			Versement effectué. </br>
+			N'oubliez pas de déposer l'argent en caisse ! </br>
 			<?php
 			$solde = SelectionSoldeAdherentMC($idAdherent);
-			echo 'N oubliez pas de deposer l argent en caisse.<br />'; 
 			echo 'Le solde est maintenant de ' .$solde. ' euros.';
-			?>
+			   ?>
 		</div>
 	</body>
 </html>

@@ -77,7 +77,7 @@ function SelectionInfosAchats($idAchats){
 	$result = requete("SELECT DATE_ACHAT, TOTAL_TTC, NB_REFERENCES FROM ".DB_PREFIX."ACHATS WHERE ID_ACHAT = '$idAchats'");
 	$infosAchats = 0;
 	while ( $row = $result->fetch()){
-		$infosAchats = 'Detail des achats numero '. $idAchats . ' du ' . $row["DATE_ACHAT"] . ', d un montant de  ' . $row["TOTAL_TTC"] . ' euros ('.$row["NB_REFERENCES"].' references).';
+		$infosAchats = 'Détail de l\'achat numéro '. $idAchats . ' du ' . $row["DATE_ACHAT"] . ', d\'un montant de  ' . $row["TOTAL_TTC"] . ' euros ('.$row["NB_REFERENCES"].' références).';
 	}
 	return $infosAchats;
 }

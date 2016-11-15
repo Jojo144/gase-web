@@ -11,9 +11,9 @@ $listeReferences = SelectionListeReferencesMenu($idCategorie);
 		<div id= "table_reference_list">
 			<table>
 				<tr>
-				   <td><label width="3%" align="center" class="colonne1"><center><strong>QTE<br />(unite-kg)</strong></center></label></td>
-				   <td><label class="colonne2"><center><strong>REFERENCE</strong></center></label></td>
-				   <td><label class="colonne3"><center><strong>PRIX<br />(Qte 1)</strong></center></label></td>
+				   <td><label width="3%" align="center" class="colonne1"><center><strong>QUANTITÉ<br />(unité / kg)</strong></center></label></td>
+				   <td><label class="colonne2"><center><strong>RÉFÉRENCE</strong></center></label></td>
+				   <td><label class="colonne3"><center><strong>PRIX<br />(à l'unité)</strong></center></label></td>
 				   <td><label class="colonne4"><center><strong>PRODUCTEUR</strong></center></label></td>
 			   </tr>
 
