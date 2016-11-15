@@ -40,7 +40,7 @@
 				<li><a href="inde_1nouveauFournisseur.php">NOUVEAU</a></li>
 			</ul>
 		</li>
-		<li><a href="inde_1infoOutil.php">VIE OUTIL</a></li>
+		<li><a href="inde_1infoOutil.php">JOURNAL DE BORD</a></li>
 		<!--PGA - gase de chips - menu Document et déconnexion inutile pour le moment.
 		<li><a href="#">DOCUMENTS</a>
 			<ul>
