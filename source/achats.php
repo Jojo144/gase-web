@@ -10,7 +10,7 @@
 		
 		<?php require("inde_fonctionsAD.php"); ?>
 		<div style="text-align:center">
-			Choisissez le nom d un adherent.
+			Choisissez le nom d'un adhérent.
 			</br>
 			</br>
 			<form id="formulaire" method="post" action="inde_1achatsAdherent.php">

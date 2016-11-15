@@ -3,13 +3,13 @@
     <head>
         <meta charset="utf-8" />
 		<link rel="stylesheet" href="style_default.css" />
-		<title>MODIF. CATEGORIE</title>
+		<title>MODIF. CATÉGORIE</title>
     </head>
 	<?php include 'inde_menu.php'; ?>
 	<?php require("inde_fonctionsCAT.php"); ?>
     <body>
 		<div style="text-align:center">
-			Cliquez sur le nom de la categorie a modifier.
+			Cliquez sur le nom de la catégorie a modifier.
 		<div>
 		<br />
 		<div class="liste" style="text-align:left">
@@ -17,8 +17,8 @@
 				<tr>
 					<td><label class="colonne1"><center><strong>NOM</strong></center></label></td>
 					<td><label class="colonne2"><center><strong>VISIBLE</strong></center></label></td>
-					<td><label class="colonne3"><center><strong>SOUS-CATEGORIE</strong></center></label></td>
-					<td><label class="colonne4"><center><strong>CATEGORIE MERE</strong></center></label></td>
+					<td><label class="colonne3"><center><strong>SOUS-CATÉGORIE</strong></center></label></td>
+					<td><label class="colonne4"><center><strong>CATÉGORIE MÈRE</strong></center></label></td>
 				</tr>
 				<?php	
 				$listeCategories = SelectionListeCategories();

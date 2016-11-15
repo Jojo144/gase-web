@@ -26,9 +26,9 @@
 		</div>
 		<table style="margin-left:auto; margin-right:auto; max-width:1000px;">
 			<tr>
-				<td width="5%" align="center"><strong>QUANTITE</strong></td>
-				<td width="10%" align="center"><strong>CATEGORIE</strong></td>
-				<td width="30%" align="center"><strong>DESIGNATION</strong></td>
+				<td width="5%" align="center"><strong>QUANTITÉ</strong></td>
+				<td width="10%" align="center"><strong>CATÉGORIE</strong></td>
+				<td width="30%" align="center"><strong>DÉSIGNATION</strong></td>
 				<td width="20%" align="center"><strong>FOURNISSEUR</strong></td>
 				<td width="5%" align="center"><strong>VISIBLE</strong></td>
 				<td width="5%" align="center"><strong>STATS</strong></td>

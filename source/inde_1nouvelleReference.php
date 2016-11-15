@@ -14,7 +14,7 @@
 		require("inde_fonctionsCAT.php");
 		?>
 		<div style="text-align:center">
-			Les champs avec une etoile doivent etre obligatoirement renseignes.<br />
+			Les champs avec une étoile doivent obligatoirement être renseignés.<br />
 			Le prix TTC doit etre indique a l unite ou au kilo.<br />
 			Le nom du produit a ecrire en minuscule avec une majuscule au debut, en indiquant si possible le poids ou le volume.
 			<div>

@@ -4,7 +4,7 @@
 		<!-- En-tête de la page -->
         <meta charset="utf-8" />
         <link rel="stylesheet" href="style_default.css" /> 
-        <title>NOUVELLE CATEGORIE</title>
+        <title>NOUVELLE CATÉGORIE</title>
     </head>
 
 	<?php 
@@ -19,7 +19,7 @@
 	
     <body>
 		<div style="text-align:center">
-			Les champs avec une etoile doivent etre obligatoirement renseignes.
+			Les champs avec une étoile doivent obligatoirement être renseignés.
 			<div>
 				<form id="formulaire" method="post" action="inde_enregistrerNouvelleCategorie.php">
 					<div id= "table">
@@ -28,7 +28,7 @@
 						{
 							?>
 							<p class = "ligne">
-								<label class = "col1" for="sousCategorie">C est une sous-categorie : </label>
+								<label class = "col1" for="sousCategorie">C'est une sous-catégorie : </label>
 								<input type="text" value="NON" disabled="disabled" />
 								<input type="hidden" name="sousCategorie" value="<?php echo $sousCat; ?>" />
 							</p>
@@ -42,7 +42,7 @@
 						{
 							?>
 							<p class = "ligne">
-								<label class = "col1" for="sousCategorie">C est une sous-categorie : </label>
+								<label class = "col1" for="sousCategorie">C'est une sous-catégorie : </label>
 								<input type="text" value="OUI" disabled="disabled" />
 								<input type="hidden" name="sousCategorie" value="<?php echo $sousCat; ?>" />
 							</p>
@@ -51,7 +51,7 @@
 								<input type= "text" class= "col2" name="nom" id="nom" autofocus required />
 							</p>
 							<p class = "ligne">
-								<label class = "col1" for="catMere">Categorie mere* : </label>
+								<label class = "col1" for="catMere">Catégorie mère* : </label>
 								<select name="idCatSup" id="idCatSup" >
 									<option value="" selected="selected"></option>
 									<?php

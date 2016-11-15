@@ -13,22 +13,22 @@
 		</li>
 		<li><a href="#">STOCKS</a>
 			<ul>
-				<li><a href="inde_1stocksREF.php">ETAT</a></li>
+				<li><a href="inde_1stocksREF.php">ÉTAT</a></li>
 				<li><a href="inde_1approREF.php">APPROVISIONNER</a></li>
 				<li><a href="inde_inventaireREF.php">INVENTAIRE</a></li>
 				<li><a href="stock_alert_list.php">ALERTE STOCK</a></li>
-				<li><a href="inventaire_ecarts.php">ECARTS</a></li>
+				<li><a href="inventaire_ecarts.php">ÉCARTS</a></li>
 			</ul>
 		</li>
-		<li><a href="#">REFERENCES</a>
+		<li><a href="#">RÉFÉRENCES</a>
 			<ul>
 				<li><a href="inde_1modifReference.php">VOIR</a></li>
 				<li><a href="inde_1nouvelleReference.php">NOUVELLE</a></li>
-				<li><a href="inde_1modifCategorie.php">~ CATEGORIE</a></li>
-				<li><a href="inde_1nouvelleCategorie.php">+ CATEGORIE</a></li>
+				<li><a href="inde_1modifCategorie.php">~ CATÉGORIE</a></li>
+				<li><a href="inde_1nouvelleCategorie.php">+ CATÉGORIE</a></li>
 			</ul>
 		</li>
-		<li><a href="#">ADHERENTS</a>
+		<li><a href="#">ADHÉRENTS</a>
 			<ul>
 				<li><a href="inde_1modifAdherent.php">VOIR</a></li>
 				<li><a href="inde_1nouvelAdherent.php">NOUVEAU</a></li>

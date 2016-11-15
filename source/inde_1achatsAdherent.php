@@ -32,7 +32,7 @@
         <?php include 'inde_menuAchats.php'; ?>
 		Bonjour <strong><?php echo $identiteAdherent; ?></strong>
 		<br>
-		Choisissez une categorie de produits pour commencer vos achats.
+		Choisissez une catégorie de produits pour commencer vos achats.
 		<br>
 		<?php
 		    //si retard ou cotisation détecté, écrire en rouge !!
