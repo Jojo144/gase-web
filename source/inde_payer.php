@@ -48,7 +48,7 @@ if (isset ($_POST['payer']))
 		}
 		else
 		{
-			echo "<div style=\"text-align:center; color: #FF0000\">Attention, le total de vos achats et supérieur au solde de votre compte MoneyCoop.<br />Veuillez approvisionner votre MoneyCoop avant de ré-enregistrer vos achats.</div>";  
+			echo "<div style=\"text-align:center; color: #FF0000\">Attention, le total de vos achats et supérieur au solde de votre compte.<br />Veuillez l'approvisionner avant de ré-enregistrer vos achats.</div>";  
 			echo "
 			    <br>
 			    <li>Pour modifier votre panier  <a href=\"javascript:window.history.back()\">cliquez ici</a></li>
@@ -91,7 +91,7 @@ function generate_email($idAdherent, $totalTTC){
 	        "  [ " . round($_SESSION['inde_panier']['prixReference'][$i],2) . " euros ]\n"; 	 	
     }
     $message_txt .= "\nTOTAL TTC : " . round($totalTTC,2) . " euros.\n"; 
-    $message_txt .= "Le solde de votre compte MoneyCoop est maintenant de : " . round($nouveauSolde, 2) . " euros.\n";
+    $message_txt .= "Le solde de votre compte est maintenant de : " . round($nouveauSolde, 2) . " euros.\n";
     $message_txt .= "Merci.";
 
     //=====Définition du sujet (config.ini)

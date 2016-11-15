@@ -5,7 +5,7 @@
 	<ul>
 		<li><a href="index.php">Accueil</a></li>
 		<li><a href="achats.php">ACHATS</a></li>
-		<li><a href="#">MONEYCOOP</a>
+		<li><a href="#">COMPTE</a>
 			<ul>
 				<li><a href="inde_1soldeAdherentMC.php">SOLDE</a></li>
 				<li><a href="inde_1approMC.php">APPROVISIONNER</a></li>
