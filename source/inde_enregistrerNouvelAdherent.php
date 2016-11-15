@@ -5,7 +5,7 @@
 		<link rel="stylesheet" href="style_default.css" />
     </head>
     <body>
-        <title>NOUVEL ADHERENT</title>
+        <title>NOUVEL ADHÉRENT</title>
 	    <?php require("inde_fonctionsAD.php"); ?>
 		<?php include 'inde_menu.php'; ?>
 
@@ -20,12 +20,12 @@
 		    $nom = strtoupper($nom);
 		
 		    if(empty($nom)){
-			    print("<center>Le '<b>NOM</b>' de l adherent n est pas renseigne ! Creation a refaire.</center>");
+			    print("<center>Le '<b>NOM</b>' de l'adhérent n'est pas renseigné ! Création à refaire.</center>");
 		    }else{
 			    $ticket = $_POST['ticket'];
 			    $email = $_POST['email'];
 			    if(($ticket == 1) && (empty($email))){
-				    print("<center>Pour envoyer un ticket de caisse, il faut renseigner l '<b>EMAIL</b>' ! Creation a refaire.</center>");
+				    print("<center>Pour envoyer un ticket de caisse, il faut renseigner l'email ! Création à refaire.</center>");
 			    }else{
 				    $prenom = $_POST['prenom'];
 				    $prenom = trim($prenom);
@@ -45,7 +45,7 @@
 				    $visible = $_POST['visible'];
 
 				    EnregistrerNouvelAdherent($nom, $prenom, $email, $telephone_fixe, $telephone_portable, $adresse, $commentaire, $ticket, $visible);
-				    echo 'Nouvel adherent ' . $prenom . ' ' . $nom . ' enregistre.';
+				    echo 'Nouvel adhérent ' . $prenom . ' ' . $nom . ' enregistré.';
 			    }
 		    }
 	    }

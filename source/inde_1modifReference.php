@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="style_default.css" /> 
-		<title>REFERENCES</title>
+		<title>RÉFÉRENCES</title>
     </head>
 	<body>
         <?php include 'inde_menu.php'; ?>
@@ -13,19 +13,19 @@
             require("inde_fonctionsCAT.php"); 
         ?>
 		<div style="text-align:center">
-			Cliquez sur le nom de la reference a modifier.
+			Cliquez sur le nom de la référence à modifier.
 		<div>
 		<br />
 		<div class="liste" style="text-align:left">
 			<table style="margin-left:auto; margin-right:auto;">
 				<tr>
 					<td><label class="colonne3"><center><strong>CATÉGORIE</strong></center></label></td>
-					<td><label class="colonne1"><center><strong>DESIGNATION</strong></center></label></td>
+					<td><label class="colonne1"><center><strong>DÉSIGNATION</strong></center></label></td>
 					<td><label class="colonne2"><center><strong>FOURNISSEUR</strong></center></label></td>
 					<td><label class="colonne4"><center><strong>PRIX</strong></center></label></td>
 					<td><label class="colonne5"><center><strong>VRAC</strong></center></label></td>
 					<td><label class="colonne7"><center><strong>VISIBLE</strong></center></label></td>
-					<td><label class="colonne8"><center><strong>DATE DE REFERENCEMENT</strong></center></label></td>
+					<td><label class="colonne8"><center><strong>DATE DE RÉFÉRENCEMENT</strong></center></label></td>
 				</tr>
 				<?php	
 				$listeReferences = SelectionListeReferences();

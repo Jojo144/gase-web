@@ -9,7 +9,7 @@
         <?php include 'inde_menu.php'; ?>
 	    <?php require("fonctions_bd_fournisseurs.php"); ?>
 		<div style="text-align:center">
-			Cliquez sur le nom du fournisseur a modifier.
+			Cliquez sur le nom du fournisseur à modifier.
 		<div>
 		<br />
 		<?php
@@ -30,11 +30,11 @@
 					<td><label class="colonne1"><center><strong>NOM</strong></center></label></td>
 					<td><label class="colonne2"><center><strong>MAIL</strong></center></label></td>
 					<td><label class="colonne3"><center><strong>CONTACT</strong></center></label></td>
-					<td><label class="colonne4"><center><strong>TELEPHONE FIXE</strong></center></label></td>
-					<td><label class="colonne5"><center><strong>TELEPHONE PORTABLE</strong></center></label></td>
+					<td><label class="colonne4"><center><strong>TÉLÉPHONE FIXE</strong></center></label></td>
+					<td><label class="colonne5"><center><strong>TÉLÉPHONE PORTABLE</strong></center></label></td>
 					<td><label class="colonne6"><center><strong>FAX</strong></center></label></td>
 					<td><label class="colonne7"><center><strong>VISIBLE</strong></center></label></td>
-					<td><label class="colonne8"><center><strong>DATE DE REFERENCEMENT</strong></center></label></td>
+					<td><label class="colonne8"><center><strong>DATE DE RÉFÉRENCEMENT</strong></center></label></td>
 				</tr>
 				<?php	
 				$listeFournisseurs = SelectionListeFournisseurs($all);

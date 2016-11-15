@@ -14,18 +14,18 @@ if (isset ($_POST['modifierCategorie']))
 	//Le nom est obligatoire
 	if(empty($nom))
 	{
-		print("<center>Le '<b>NOM</b>' de la categorie n est pas renseigne !</center>");
+		print("<center>Le '<b>NOM</b>' de la catégorie n est pas renseigne !</center>");
 	}
 	else
 	{
-		//On ne teste pas si une categorie sous ce nom n'est pas déjà enregistré
+		//On ne teste pas si une catégorie sous ce nom n'est pas déjà enregistré
 		$visible = $_POST['visible'];
 		$nouvelleCatMere = $_POST['catMere'];
 
 		if($nouvelleCatMere == 0)
 		{
 			MajCategorie($idCategorie, $nom, $visible);
-			echo 'Les donnees de la categorie ' . $nom . ' ont ete mises a jour dans la base de donnees.';
+			echo 'Les données de la catégorie ' . $nom . ' ont ete mises a jour dans la base de données.';
 		}
 		else
 		{
@@ -33,12 +33,12 @@ if (isset ($_POST['modifierCategorie']))
 			if($ancienneCatMere == $nouvelleCatMere)
 			{
 				MajCategorie($idCategorie, $nom, $visible);
-				echo 'Les donnees de la sous-categorie ' . $nom . ' ont ete mises a jour dans la base de donnees.';
+				echo 'Les données de la sous-catégorie ' . $nom . ' ont ete mises a jour dans la base de données.';
 			}
 			else
 			{
 				MajSousCategorie($idCategorie, $nom, $visible, $nouvelleCatMere, $ancienneCatMere);
-				echo 'Les donnees de la sous-categorie ' . $nom . ' ont ete mises a jour dans la base de donnees.';
+				echo 'Les données de la sous-catégorie ' . $nom . ' ont ete mises a jour dans la base de données.';
 			}
 		}
 	}

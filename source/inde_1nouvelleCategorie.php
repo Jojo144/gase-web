@@ -12,7 +12,7 @@
 		<div style="text-align:center">
 			<form id="formulaire" method="post" action="inde_2nouvelleCategorie.php">
 				<p class = "ligne">
-					<label class = "col1" for="sousCategorie">Voulez-vous creer une nouvelle sous-categorie ? : </label>
+					<label class = "col1" for="sousCategorie">Voulez-vous creer une nouvelle sous-catégorie ? : </label>
 					<select name="sousCategorie" id="sousCategorie" onchange="this.form.submit()">
 						<option value="" selected="selected"></option>
 						<option value="0">NON</option>

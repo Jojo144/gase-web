@@ -31,7 +31,7 @@ include 'inde_menu.php';
 				else
 				{
 					EnregistrerNouvelleSousCategorie($nom, $idCatSup);
-					echo 'Nouvelle sous-categorie ' . $nom . ' enregistree.';
+					echo 'Nouvelle sous-catégorie ' . $nom . ' enregistrée.';
 				}
 			}
 		}

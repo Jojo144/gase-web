@@ -67,7 +67,7 @@ if (isset($_GET['type'])){
 			<tr>
 				<td width="5%" align="center"><strong>ECART** (unité/kg/l)</strong></td>
 				<td width="5%" align="center"><strong>ECART** (euro)</strong></td>
-				<td width="10%" align="center"><strong>CATÉGORIE</strong></td>
+				<td width="10%" align="center"><strong>CATEGORIE</strong></td>
 				<td width="20%" align="center"><strong>DESIGNATION</strong></td>
 				<td width="10%" align="center"><strong>FOURNISSEUR</strong></td>
 				<td width="5%" align="center"><strong>STATS</strong></td>

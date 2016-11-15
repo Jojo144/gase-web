@@ -41,7 +41,7 @@ if (isset ($_POST['modifierFournisseur']))
 		$visible = $_POST['visible'];
 		
 		MajFournisseur($idFournisseur, $nom, $mail, $adresse, $contact, $telephoneFixe, $telephonePortable, $fax, $commentaire, $visible);
-		echo 'Les donnees du fournisseur ' . $nom . ' ont été mises a jour dans la base de donnees.';
+		echo 'Les données du fournisseur ' . $nom . ' ont été mises à jour dans la base de données.';
 	}
 }
 ?>

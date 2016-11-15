@@ -10,17 +10,17 @@
 	    <?php require("inde_fonctionsAD.php"); ?>
     
 		<div style="text-align:center">
-			Cliquez sur le nom d un adherent pour modifier ses donnees.
+			Cliquez sur le nom d'un adhérent pour modifier ses données.
 		<div>
 		<br />
 		<div class="liste" style="text-align:left">
 			<table>
 				<tr>
 					<td><label class="colonne1"><center><strong>NOM</strong></center></label></td>
-					<td><label class="colonne2"><center><strong>PRENOM</strong></center></label></td>
+					<td><label class="colonne2"><center><strong>PRÉNOM</strong></center></label></td>
 					<td><label class="colonne3"><center><strong>EMAIL</strong></center></label></td>
-					<td><label class="colonne4"><center><strong>TELEPHONE PORTABLE</strong></center></label></td>
-					<td><label class="colonne5"><center><strong>TELEPHONE FIXE</strong></center></label></td>
+					<td><label class="colonne4"><center><strong>TÉLÉPHONE PORTABLE</strong></center></label></td>
+					<td><label class="colonne5"><center><strong>TÉLÉPHONE FIXE</strong></center></label></td>
 					<td><label class="colonne6"><center><strong>DATE INSCRIPTION</strong></center></label></td>
 				</tr>
 				<?php	

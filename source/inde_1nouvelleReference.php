@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8" />
@@ -15,13 +15,13 @@
 		?>
 		<div style="text-align:center">
 			Les champs avec une étoile doivent obligatoirement être renseignés.<br />
-			Le prix TTC doit etre indique a l unite ou au kilo.<br />
-			Le nom du produit a ecrire en minuscule avec une majuscule au debut, en indiquant si possible le poids ou le volume.
+			Le prix TTC doit être indiqué à l'unite ou au kilo.<br />
+			Le nom du produit est à écrire en minuscule avec une majuscule au debut, en indiquant si possible le poids ou le volume.
 			<div>
 				<form id="formulaire" method="post" action="inde_enregistrerNouvelleReference.php">
 					<div id= "table">
 						<p class = "ligne">
-							<label class = "col1" for="designation">Designation* :</label>
+							<label class = "col1" for="designation">Désignation* :</label>
 							<input type="text" class= "col2" name="designation" id="designation" autofocus required />
 						</p>
 						<p class = "ligne">
@@ -40,7 +40,7 @@
 							</select>
 						</p>
 						<p class = "ligne">
-							<label class = "col1" for="categorie">Categorie* :</label>
+							<label class = "col1" for="categorie">Catégorie* :</label>
 							<select class= "col2" name="categorie" id="categorie" required >
 								<option value="" selected="selected"></option>
 								<?php	

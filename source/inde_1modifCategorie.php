@@ -9,7 +9,7 @@
 	<?php require("inde_fonctionsCAT.php"); ?>
     <body>
 		<div style="text-align:center">
-			Cliquez sur le nom de la catégorie a modifier.
+			Cliquez sur le nom de la catégorie à modifier.
 		<div>
 		<br />
 		<div class="liste" style="text-align:left">

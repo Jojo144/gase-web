@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="style_default.css" /> 
-        <title>NOUVEL ADHERENT</title>
+        <title>NOUVEL ADHÉRENT</title>
     </head>
 
 	<?php include 'inde_menu.php'; ?>
@@ -19,19 +19,19 @@
 							<input type= "text" class= "col2" name="nom" id="nom" autofocus required/>
 						</p>
 						<p class = "ligne">
-							<label class = "col1" for="prenom">Prenom : </label>
+							<label class = "col1" for="prenom">Prénom : </label>
 							<input type= "text" class= "col2" name="prenom" id="prenom" />
 						</p>
 						<p class = "ligne">
-							<label class = "col1" for="email">Email*<i>si ticket de caisse :</i> </label>
+							<label class = "col1" for="email">Email* <i>(si ticket de caisse) :</i> </label>
 							<input type="email" class= "col2" name="email" id="email" />
 						</p>
 						<p class = "ligne">
-							<label class = "col1" for="telephone_fixe">Telephone fixe :</label>
+							<label class = "col1" for="telephone_fixe">Téléphone fixe :</label>
 							<input type="tel" class= "col2" name="telephone_fixe" id="telephone_fixe" />
 						</p>
 						<p class = "ligne">
-							<label class = "col1" for="telephone_portable">Telephone portable :</label>
+							<label class = "col1" for="telephone_portable">Téléphone portable :</label>
 							<input type="tel" class= "col2" name="telephone_portable" id="telephone_portable"/>
 						</p>
 						<p class = "ligne">

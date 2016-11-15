@@ -51,7 +51,7 @@
 						{
 							?>
 							<p class = "ligne">
-								<label class = "col1" for="catMere">Categorie mere :</label>
+								<label class = "col1" for="catMere">Catégorie mère :</label>
 								<select class= "col2" name="catMere" id="catMere" >
 									<?php
 									$listeCatMeres = SelectionListeCategoriesMeres();

@@ -31,11 +31,11 @@
 							<input type="text" class= "col2" name="contact" id="contact" />
 						</p>
 						<p class = "ligne">
-							<label class = "col1" for="telephoneFixe">Telephone fixe :</label>
+							<label class = "col1" for="telephoneFixe">Téléphone fixe :</label>
 							<input type="text" class= "col2" name="telephoneFixe" id="telephoneFixe" />
 						</p>
 						<p class = "ligne">
-							<label class = "col1" for="telephonePortable">Telephone portable :</label>
+							<label class = "col1" for="telephonePortable">Téléphone portable :</label>
 							<input type="text" class= "col2" name="telephonePortable" id="telephonePortable" />
 						</p>
 						<p class = "ligne">

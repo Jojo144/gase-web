@@ -12,7 +12,7 @@ include 'inde_menu.php';
 		//Le nom est obligatoire
 		if(empty($nom))
 		{
-			echo("<center>Le '<b>NOM</b>' du fournisseur n\'est pas renseigne !</center>");
+			echo("<center>Le nom du fournisseur n\'est pas renseigné ! Création à refaire.</center>");
 		}
 		else
 		{
@@ -39,7 +39,7 @@ include 'inde_menu.php';
 			$visible = $_POST['visible'];
 			
 			EnregistrerNouveauFournisseur($nom, $mail, $adresse, $contact, $telephoneFixe, $telephonePortable, $fax, $commentaire, $visible);
-			echo 'Nouveau fournisseur ' . $nom . ' enregistre.';
+			echo 'Nouveau fournisseur ' . $nom . ' enregistré.';
 		}
 	}
 
