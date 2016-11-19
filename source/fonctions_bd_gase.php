@@ -30,7 +30,7 @@ $name =  $config["DB"]["name"];
 $prefix =  $config["DB"]["prefix"];
 if ($prefix == '') $prefix = '_inde_';
 // construction chaîne de connexion
-$dsn = "mysql:host=$address;dbname=$name";
+$dsn = "mysql:host=$address;dbname=$name;charset=utf8";
 // variable globale 
 $mysql = new PDO($dsn, $user, $pass);
 // prefix de table global
