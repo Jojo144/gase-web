@@ -32,6 +32,7 @@
 	function SelectionListeReferences()
 	{
 		$result = requete("SELECT ID_REFERENCE, DESIGNATION FROM ".DB_PREFIX."REFERENCES ORDER BY DESIGNATION");
+		$listeAdherents = NULL;
 		while ( $row = $result->fetch())
 		{
 			$listeAdherents[$row["ID_REFERENCE"]] = $row["DESIGNATION"];

@@ -25,7 +25,7 @@ function SelectionListeSTK($all = false)
 	if (!$all) $sql .= "	AND r.VISIBLE=1";
 	
 	$sql .= "	ORDER BY c.NOM, r.DESIGNATION";
-	
+	$listeStocks = NULL;
 	$result = requete($sql);
 	while ( $row = $result->fetch())
 	{		

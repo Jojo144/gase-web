@@ -25,6 +25,7 @@
 				</tr>
 				<?php	
 				$listeADherents = SelectionListeAdherents();
+				if($listeADherents)
 				foreach($listeADherents as $cle => $element)
 				{
 					$donneesAd = SelectionDonneesAdherent($cle);

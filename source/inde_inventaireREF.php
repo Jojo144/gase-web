@@ -23,6 +23,7 @@
 					<td><label class="colonne3"><strong>FOURNISSEUR</strong></label></td>
 				</tr>	
 				<?php				
+				if($listeSTK)
 				foreach($listeSTK as $element)
 				{
 					?>

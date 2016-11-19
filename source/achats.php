@@ -18,6 +18,7 @@
 					<option value="" selected="selected"></option>
 					<?php	
 					$listeAD = SelectionListeActifsAD();
+					if ($listeAD)
 					foreach($listeAD as $adherent)
 					{
 						?>

@@ -18,6 +18,7 @@ function SelectionListeFournisseurs($all = false)
 	else
 		$sql = "SELECT ID_FOURNISSEUR, NOM FROM ".DB_PREFIX."FOURNISSEURS WHERE VISIBLE=1 ORDER BY NOM";
 	$result = requete($sql);
+	$listeAdherents = NULL;
 	while ( $row = $result->fetch())
 	{
 		$listeAdherents[$row["ID_FOURNISSEUR"]] = $row["NOM"];
@@ -34,6 +35,7 @@ function EnregistrerNouveauFournisseur($nom, $mail, $adresse, $contact, $telepho
 function SelectionDonneesFournisseur($idFournisseur)
 {
 	$result = requete("SELECT NOM, MAIL, CONTACT, ADRESSE, TELEPHONE_FIXE, TELEPHONE_PORTABLE, FAX, COMMENTAIRE, VISIBLE, DATE_REFERENCEMENT FROM ".DB_PREFIX."FOURNISSEURS WHERE ID_FOURNISSEUR= '$idFournisseur'");
+	$donnees = NULL;
 	while ( $row = $result->fetch())
 	{		
 		$donnees['NOM'] = $row[0];
@@ -61,6 +63,7 @@ function MajFournisseur($idFournisseur, $nom, $mail, $adresse, $contact, $teleph
 function SelectionListeVisiblesFR()
 {
 	$result = requete("SELECT ID_FOURNISSEUR, NOM FROM ".DB_PREFIX."FOURNISSEURS WHERE VISIBLE = 1 ORDER BY NOM");
+	$listeAdherents = NULL;
 	while ( $row = $result->fetch())
 	{
 		$listeAdherents[$row["ID_FOURNISSEUR"]] = $row["NOM"];
@@ -71,6 +74,7 @@ function SelectionListeVisiblesFR()
 function SelectionNomFournisseur($idFournisseur)
 {
 	$result = requete("SELECT NOM FROM ".DB_PREFIX."FOURNISSEURS WHERE ID_FOURNISSEUR = '$idFournisseur'");
+	$nom = NULL;
 	while ( $row = $result->fetch())
 	{
 		$nom = $row["NOM"];

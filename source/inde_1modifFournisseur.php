@@ -38,6 +38,7 @@
 				</tr>
 				<?php	
 				$listeFournisseurs = SelectionListeFournisseurs($all);
+				if($listeFournisseurs)
 				foreach($listeFournisseurs as $cle => $element)
 				{
 					$donneesFournisseur = SelectionDonneesFournisseur($cle);

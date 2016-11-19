@@ -18,6 +18,7 @@
 					<option value="" selected="selected"></option>
 					<?php	
 					$listeAD = SelectionListeAD();
+					if ($listeAD)
 					foreach($listeAD as $donnees)
 					{
 						?>

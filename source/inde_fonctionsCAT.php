@@ -25,6 +25,7 @@
 	function SelectionListeCategoriesMeres()
 	{
 		$result = requete("SELECT ID_CATEGORIE, NOM FROM ".DB_PREFIX."CATEGORIES WHERE ID_CAT_SUP is NULL ORDER BY NOM");
+		$listeCategories = NULL;
 		while ( $row = $result->fetch())
 		{
 			$listeCategories[$row["ID_CATEGORIE"]] = $row["NOM"];
@@ -36,6 +37,7 @@
 	function SelectionListeCategories()
 	{
 		$result = requete("SELECT ID_CATEGORIE, NOM FROM ".DB_PREFIX."CATEGORIES ORDER BY NOM");
+		$listeCategories = NULL;
 		while ( $row = $result->fetch())
 		{
 			$listeCategories[$row["ID_CATEGORIE"]] = $row["NOM"];
@@ -47,6 +49,7 @@
 	function SelectionDonneesCategorie($idCategorie)
 	{
 		$result = requete("SELECT NOM, ID_CAT_SUP, SOUS_CATEGORIES, VISIBLE FROM ".DB_PREFIX."CATEGORIES WHERE ID_CATEGORIE = '$idCategorie'");
+		$donnees = NULL;
 		while ( $row = $result->fetch())
 		{		
 			$donnees['NOM'] = $row[0];
@@ -81,6 +84,7 @@
 	function SelectionIdCategorieMere($idCategorie)
 	{
 		$result = requete("SELECT ID_CAT_SUP FROM ".DB_PREFIX."CATEGORIES WHERE ID_CATEGORIE = '$idCategorie'");
+		$id = NULL;
 		while ( $row = $result->fetch())
 		{		
 			$id = $row['ID_CAT_SUP'];
@@ -114,6 +118,7 @@
 	function SelectionListeCategoriesFilles()
 	{
 		$result = requete("SELECT ID_CATEGORIE, NOM FROM ".DB_PREFIX."CATEGORIES WHERE SOUS_CATEGORIES = 0 ORDER BY NOM");
+		$listeCategories = NULL;
 		while ( $row = $result->fetch())
 		{
 			$listeCategories[$row["ID_CATEGORIE"]] = $row["NOM"];
@@ -125,6 +130,7 @@
 	function SelectionNomCategorie($idCategorie)
 	{
 		$result = requete("SELECT NOM FROM ".DB_PREFIX."CATEGORIES WHERE ID_CATEGORIE = '$idCategorie'");
+		$nom = NULL;
 		while ( $row = $result->fetch())
 		{
 			$nom = $row["NOM"];
@@ -138,6 +144,7 @@
 
 		$compteur = 0;
 		$visible = 1;
+		$listeCategories = NULL;
 		$result = requete("SELECT ID_CATEGORIE, NOM, ID_CAT_SUP, SOUS_CATEGORIES FROM ".DB_PREFIX."CATEGORIES WHERE VISIBLE = '$visible' ORDER BY NOM");
 		while ( $row = $result->fetch())
 		{		
@@ -158,6 +165,7 @@
 
 		$compteur = 0;
 		$visible = 1;
+		$listeCategories = NULL;
 		$result = requete("SELECT ID_CATEGORIE, NOM FROM ".DB_PREFIX."CATEGORIES WHERE ID_CAT_SUP = '$idCategorie' AND VISIBLE = '$visible' ORDER BY NOM");
 		while ( $row = $result->fetch())
 		{		

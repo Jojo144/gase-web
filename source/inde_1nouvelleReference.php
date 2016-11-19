@@ -30,6 +30,7 @@
 								<option value="" selected="selected"></option>
 								<?php	
 								$listeFR = SelectionListeVisiblesFR();
+								if ($listeFR)
 								foreach($listeFR as $cle => $element)
 								{
 									?>
@@ -45,6 +46,7 @@
 								<option value="" selected="selected"></option>
 								<?php	
 								$listeCategories = SelectionListeCategoriesFilles();
+								if($listeCategories)
 								foreach($listeCategories as $cle => $element)
 								{
 									?>

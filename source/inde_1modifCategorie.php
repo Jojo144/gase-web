@@ -22,6 +22,7 @@
 				</tr>
 				<?php	
 				$listeCategories = SelectionListeCategories();
+				if($listeCategories)
 				foreach($listeCategories as $cle => $element)
 				{
 					$donneesCategorie = SelectionDonneesCategorie($cle);

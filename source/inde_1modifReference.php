@@ -29,6 +29,7 @@
 				</tr>
 				<?php	
 				$listeReferences = SelectionListeReferences();
+				if ($listeReferences)
 				foreach($listeReferences as $cle => $element)
 				{
 					$donneesReference = SelectionDonneesReference($cle);

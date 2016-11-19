@@ -18,6 +18,7 @@
 					<option value="" selected="selected"></option>
 					<?php	
 					$listeFR = SelectionListeFournisseurs();
+					if ($listeFR)
 					foreach($listeFR as $cle => $element)
 					{
 						?>

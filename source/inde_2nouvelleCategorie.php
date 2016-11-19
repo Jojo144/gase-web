@@ -56,7 +56,7 @@
 									<option value="" selected="selected"></option>
 									<?php
 									$listeCategoriesMeres = SelectionListeCategoriesMeres();
-
+									if($listeCategoriesMeres)
 									foreach($listeCategoriesMeres as $cle => $element)
 									{
 										?>

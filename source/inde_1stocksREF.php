@@ -34,6 +34,7 @@
 				<td width="5%" align="center"><strong>STATS</strong></td>
 			</tr>
 			<?php
+			if ($listeSTK)
 			foreach($listeSTK as $ref)
 			{
 				?>

@@ -25,6 +25,7 @@
 	{
 
 		$result = requete("SELECT ID_ADHERENT, NOM FROM ".DB_PREFIX."ADHERENTS ORDER BY NOM");
+		$listeAdherents = NULL;
 		while ( $row = $result->fetch())
 		{
 			$listeAdherents[$row["ID_ADHERENT"]] = $row["NOM"];
@@ -36,6 +37,7 @@
 	function SelectionDonneesAdherent($idAdherent)
 	{
 		$result = requete("SELECT NOM, PRENOM, MAIL, TELEPHONE_FIXE, TELEPHONE_PORTABLE, ADRESSE, COMMENTAIRE, TICKET_CAISSE, DATE_INSCRIPTION, VISIBLE, RECEIVE_ALERT_STOCK FROM ".DB_PREFIX."ADHERENTS WHERE ID_ADHERENT = '$idAdherent'");
+		$donnees = NULL;
 		while ( $row = $result->fetch())
 		{		
 			$donnees['NOM'] = $row[0];
@@ -63,6 +65,7 @@
 	function SelectionListeAD()
 	{
 		$compteur = 0;
+		$listeAdherents = NULL;
 		$result = requete("SELECT ID_ADHERENT, NOM, PRENOM FROM ".DB_PREFIX."ADHERENTS ORDER BY NOM");
 		while ( $row = $result->fetch())
 		{		
@@ -79,6 +82,7 @@
 	function SelectionListeActifsAD()
 	{
 		$compteur = 0;
+		$listeAdherents = NULL;
 		$result = requete("SELECT ID_ADHERENT, NOM, PRENOM FROM ".DB_PREFIX."ADHERENTS WHERE VISIBLE = 1 ORDER BY NOM");
 		while ( $row = $result->fetch())
 		{		
