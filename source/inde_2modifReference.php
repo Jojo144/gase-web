@@ -78,19 +78,19 @@
 									?>
 									<option value="0" selected="selected">0</option>
 									<option value="5.5">5.5</option>
-									<option value="19.6">19.6</option>
+									<option value="20">20</option>
 									<?php
 								}else if($donnees['TVA'] == '5.5'){
 									?>
 									<option value="0" >0</option>
 									<option value="5.5" selected="selected">5.5</option>
-									<option value="19.6">19.6</option>
+									<option value="20">20</option>
 									<?php
-								}else if($donnees['TVA'] == '19.6'){
+								}else if($donnees['TVA'] == '20'){
 									?>
 									<option value="0" >0</option>
 									<option value="5.5" >5.5</option>
-									<option value="19.6" selected="selected">19.6</option>
+									<option value="20" selected="selected">20</option>
 									<?php
 								}?>
 							</select>

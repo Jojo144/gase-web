@@ -65,7 +65,7 @@
 							<select class= "col2" name="tva" id="tva">
 								<option value="0" selected="selected">0</option>
 								<option value="5.5">5.5</option>
-								<option value="19.6">19.6</option>
+								<option value="20">20</option>
 							</select>
 						</p>
 						<p class = "ligne">
