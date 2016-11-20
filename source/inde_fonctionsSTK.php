@@ -27,6 +27,7 @@ function SelectionListeSTK($all = false)
 	$sql .= "	ORDER BY c.NOM, r.DESIGNATION";
 	$listeStocks = NULL;
 	$result = requete($sql);
+	if ($result)
 	while ( $row = $result->fetch())
 	{		
 		$donnees['STOCK'] = $row[0];
@@ -49,6 +50,7 @@ function SelectionStocks($idFournisseur)
 	
 	$compteur = 0;
 	$listeStocks = array();
+	if ($result)
 	while ( $row = $result->fetch())
 	{		
 		$donnees['CODE_FOURNISSEUR'] = $row[0];
@@ -156,6 +158,7 @@ function check_for_new_stock_alert(){
 	$result = requete("SELECT * FROM ".DB_PREFIX."ALERTS_STOCK_RAISED");
 	
 	$alert_raised_array = array();
+	if ($result)
 	while ( $row = $result->fetch()){
 		$alert_raised_array[] = $row[1];
 	}
@@ -247,6 +250,7 @@ function get_inventaires_dates(){
                             group by DATE_FORMAT(DATE,'%Y-%m-%e')
                             ORDER BY DATE DESC;");
     $ret = array();
+    if ($result)
     while ( $row = $result->fetch()){
         if (0 != $row[0]){
             $ret[] = $row[0];
@@ -265,6 +269,7 @@ function get_ecarts_list_for_date($date){
                             AND r.ID_CATEGORIE = c.ID_CATEGORIE
                             AND r.ID_FOURNISSEUR = f.ID_FOURNISSEUR;");
     $ret = array();
+    if ($result)
     while ( $row = $result->fetch()){
         $a = array();
         $a["ecart"] = $row[0];
