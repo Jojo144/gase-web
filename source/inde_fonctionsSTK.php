@@ -247,8 +247,7 @@ function get_inventaires_dates(){
     $result = requete("SELECT distinct DATE_FORMAT(DATE,'%Y-%m-%e')
                             FROM ".DB_PREFIX."STOCKS
                             WHERE OPERATION = 'INVENTAIRE'
-                            group by DATE_FORMAT(DATE,'%Y-%m-%e')
-                            ORDER BY DATE DESC;");
+                            group by DATE_FORMAT(DATE,'%Y-%m-%e');");
     $ret = array();
     if ($result)
     while ( $row = $result->fetch()){
