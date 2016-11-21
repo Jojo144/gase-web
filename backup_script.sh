@@ -32,7 +32,7 @@ echo $db_backup_directory
 echo $backup_date
 
 #backup
-mysqldump -u $db_user -p$db_pass $db_name > $db_backup_directory/gase_db_backup_$backup_date.sql
+mysqldump -u $db_user -p$db_pass $db_name > $db_backup_directory/gase_db_backup_$backup_date.sql 2> $db_backup_directory/error.log
 
 #delete old backup files
 num_of_backup=$(ls $db_backup_directory | grep -c gase_db_backup)
