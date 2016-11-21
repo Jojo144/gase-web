@@ -22,7 +22,8 @@
 		    if(empty($nom)){
 			    print("<center>Le '<b>NOM</b>' de l'adhérent n'est pas renseigné ! Création à refaire.</center>");
 		    }else{
-			    $ticket = $_POST['ticket'];
+			    //$ticket = $_POST['ticket'];
+			    $ticket = 0;
 			    $email = $_POST['email'];
 			    if(($ticket == 1) && (empty($email))){
 				    print("<center>Pour envoyer un ticket de caisse, il faut renseigner l'email ! Création à refaire.</center>");

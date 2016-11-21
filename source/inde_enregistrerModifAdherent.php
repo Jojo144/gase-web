@@ -24,7 +24,8 @@
 	        if(empty($nom)){
 		        print("<center>Le '<b>NOM</b>' de l adherent n est pas renseigne ! Creation a refaire.</center>");
 	        }else{
-		        $ticket = $_POST['ticket'];
+	                //$ticket = $_POST['ticket'];
+                	$ticket = 0;
 		        $email = $_POST['email'];
 		        if(empty($email) && $ticket == 1){
 				    print("<center>Pour envoyer un ticket de caisse, il faut renseigner l '<b>EMAIL</b>' ! Modifications non effectuée</center>");
@@ -46,7 +47,8 @@
 			        $commentaire = str_replace("'", "_", $commentaire);
 			
 			        $visible = $_POST['visible'];
-			        $receive_alert_stock = $_POST['receive_alert_stock'];
+			        //$receive_alert_stock = $_POST['receive_alert_stock'];
+			        $receive_alert_stock = 0;
 			
 			        MajAdherent($idAdherent, $nom, $prenom, $email, $telephone_fixe, $telephone_portable, $adresse, $commentaire, $ticket, $visible, $receive_alert_stock);
 			        echo '<p style="text-align:center">Mise a jour des donnees de ' . $prenom . ' ' . $nom . ' enregistree.</p>';

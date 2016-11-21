@@ -31,7 +31,7 @@
 							<input type= "text" class= "col2" name="prenom" id="prenom" value="<?php echo $donnees['PRENOM']; ?>" />
 						</p>
 						<p class = "ligne">
-							<label class = "col1" for="email">Email* : </label>
+							<label class = "col1" for="email">Email : </label>
 							<input type= "text" class= "col2" name="email" id="email" value="<?php echo $donnees['MAIL']; ?>" />
 						</p>
 						<p class = "ligne">
@@ -46,6 +46,7 @@
 							<label class = "col1" for="adresse">Adresse : </label>
 							<input type= "text" class= "col2" name="adresse" id="adresse" value="<?php echo $donnees['ADRESSE']; ?>" />
 						</p>
+						<?php /*
 						<p class = "ligne">
 							<label class = "col1" for="ticket">Envoi ticket de caisse : </label>
 							<select class= "col2" name="ticket" id="ticket" >
@@ -64,6 +65,7 @@
 								?>
 							</select>
 						</p>
+						*/ ?>
 						<p class = "ligne">
 							<label class = "col1" for="commentaire">Commentaire :</label>
 							<textarea name="commentaire" id="commentaire" cols="35" rows = "2"><?php echo $donnees['COMMENTAIRE']; ?></textarea>
@@ -91,6 +93,7 @@
 								?>
 							</select>
 						</p>
+						<?php /*
 						<p class = "ligne">
 							<label class = "col1" for="receive_alert_stock">Recevoir les alertes stock : </label>
 							<select class= "col2" name="receive_alert_stock" id="receive_alert_stock" >
@@ -114,6 +117,7 @@
 								?>
 							</select>
 						</p>
+						*/ ?>
 					</div>
 					<br />
 					<div id="bouton">

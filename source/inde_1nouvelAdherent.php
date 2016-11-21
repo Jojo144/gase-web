@@ -23,7 +23,8 @@
 							<input type= "text" class= "col2" name="prenom" id="prenom" />
 						</p>
 						<p class = "ligne">
-							<label class = "col1" for="email">Email* <i>(si ticket de caisse) :</i> </label>
+							<!-- <label class = "col1" for="email">Email* <i>(si ticket de caisse) :</i> </label> -->
+							<label class = "col1" for="email">Email : </label>
 							<input type="email" class= "col2" name="email" id="email" />
 						</p>
 						<p class = "ligne">
@@ -38,13 +39,13 @@
 							<label class = "col1" for="adresse">Adresse :</label>
 							<input type="text" class= "col2" name="adresse" id="adresse" />
 						</p>
-						<p class = "ligne">
-							<label class = "col1" for="ticket">Envoi ticket de caisse : </label>
-							<select class= "col2" name="ticket" id="ticket" >
-								<option value="1" selected="selected">OUI</option>
-								<option value="0">NON</option>
-							</select>
-						</p>
+						<!-- <p class = "ligne"> -->
+						<!-- 	<label class = "col1" for="ticket">Envoi ticket de caisse : </label> -->
+						<!-- 	<select class= "col2" name="ticket" id="ticket" > -->
+						<!-- 		<option value="1" selected="selected">OUI</option> -->
+						<!-- 		<option value="0">NON</option> -->
+						<!-- 	</select> -->
+						<!-- </p> -->
 						<p class = "ligne">
 							<label class = "col1" for="commentaire">Commentaire :</label>
 							<textarea name="commentaire" id="commentaire" cols="35" rows = "2"></textarea>
