@@ -1,23 +1,22 @@
-* export csv des trucs -> Christophe
 
-* import des adhérents / références / catégories depuis csv
 
-* corriger toutes les fautes -> Simon
-
-* nouvel adh : synchroniser avec tableau des adh
-
-* virer document / deconnexion -> Philippe
-
-* virer la TVA
 
 * renommer MoneyCoop en ??
 
 * rendre le truc plus beau !
 
-* vérifier les parcours de listes vides -> Christophe
 
 
 
 
 Long terme :
 * script qui récupère les infos de versement à la Nef et met à jour les comptes des adh en conséquence
+* nouvel adh : synchroniser avec tableau des adh
+
+
+DONE :
+* export csv des trucs -> Christophe
+* import des adhérents / références / catégories depuis csv
+* corriger toutes les fautes -> Simon
+* vérifier les parcours de listes vides -> Christophe
+* virer document / deconnexion -> Philippe
