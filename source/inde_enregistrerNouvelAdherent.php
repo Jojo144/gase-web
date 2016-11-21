@@ -43,7 +43,7 @@
 				    $commentaire = trim($commentaire);
 				    $commentaire = str_replace("'", "_", $commentaire);
 
-				    $visible = $_POST['visible'];
+				    $visible = 1;
 
 				    EnregistrerNouvelAdherent($nom, $prenom, $email, $telephone_fixe, $telephone_portable, $adresse, $commentaire, $ticket, $visible);
 				    echo 'Nouvel adhérent ' . $prenom . ' ' . $nom . ' enregistré.';

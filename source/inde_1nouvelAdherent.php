@@ -50,13 +50,6 @@
 							<label class = "col1" for="commentaire">Commentaire :</label>
 							<textarea name="commentaire" id="commentaire" cols="35" rows = "2"></textarea>
 						</p>
-						<p class = "ligne">
-							<label class = "col1" for="visible">Visible : </label>
-							<select class= "col2" name="visible" id="visible" >
-								<option value="1" selected="selected">OUI</option>
-								<option value="0">NON</option>
-							</select>
-						</p>
 					</div>
 					<br />
 					<div id="bouton">
