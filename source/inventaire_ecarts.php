@@ -41,7 +41,7 @@ if (isset($_GET['type'])){
     <head>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="style_default.css" />
-		<title>Inventaire : Ecarts</title>
+		<title>ÉCARTS</title>
     </head>
 
     <body>

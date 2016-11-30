@@ -1,3 +1,9 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="style_default.css" />
+		<title>ACHATS</title>
+    </head>
 <?php
 
 session_start();

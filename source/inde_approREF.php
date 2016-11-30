@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
 		<link rel="stylesheet" href="inde_stocksApproREF.css" /> 
-		<title>Appro stocks</title>
+		<title>APPROVISIONNEMENT</title>
     </head>
 
 	<?php
