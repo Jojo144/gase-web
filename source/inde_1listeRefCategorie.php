@@ -31,12 +31,19 @@ session_start();
 		<div class="name_and_balance">
 		    <?php echo $prenom_nom, " - <strong>Solde : ", round($soldeAdherent, 2), " euros</strong>" ?>
 		</div>
+		<br>
 		<div class="references">
 			<?php include 'inde_listeReferences.php';?>
 		</div>
-
 		<div class="panier">
 			<?php include 'inde_panier.php';?>
 		</div>
-	</body>
+		<div>
+		<br>
+		<br>
+		<br>
+		<br>
+ 		Rappel : pour laisser un fond de roulement à la commission commande, merci de toujours laisser au moins 30€ sur votre compte.
+		</div>
+		</body>
 </html>

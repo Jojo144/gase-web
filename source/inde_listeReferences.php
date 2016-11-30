@@ -4,10 +4,6 @@ $idCategorie = $_SESSION['inde_idCategorie'];
 $listeReferences = SelectionListeReferencesMenu($idCategorie);
 ?>
 	<form id="formulaire" method="post" action="inde_versPanier.php">
-		<div><font color="red">Validez vos choix avec le boutton "Dans panier"</font>
-		    <input type="submit" value="Dans panier" name="acheterRef" id="acheterRef">
-		</div>
-
 		<div id= "table_reference_list">
 			<table>
 				<tr>
@@ -66,5 +62,11 @@ $listeReferences = SelectionListeReferencesMenu($idCategorie);
 				?>
 			</table>	
 		</div>
+		<br>
+		<br>
+		<div><font color="red">Validez vos choix avec le boutton "Dans panier"</font>
+		    <input type="submit" value="Dans panier" name="acheterRef" id="acheterRef">
+		</div>
+
 	</form>
 
