@@ -1,13 +1,17 @@
+<?php
+session_start();
+?>
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8" />
-        <link rel="stylesheet" href="style_default.css" />
+		<link rel="stylesheet" href="style_default.css" />
+		<link rel="stylesheet" href="style_form.css" />
 		<title>ACHATS</title>
     </head>
+
+
 <?php
-
-session_start();
-
 require("inde_fonctionsSTK.php");
 require("inde_fonctionsMC.php");
 require("inde_fonctionsAD.php");
