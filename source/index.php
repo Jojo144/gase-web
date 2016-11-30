@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="style_default.css" /> 
-    <title>Bienvenue au Gase de Chips</title>
+    <title>Compteur du Gase</title>
   </head>
 
   <body>
@@ -19,9 +19,15 @@
       ?>
     </div>
     <div style="text-align:center">
-      <h3>JOURNAL DE BORD DU GASE DE CHIPS</h3>
+      <h3>BIENVENUE SUR LE COMPTEUR DU GASE</h3>
+    </div>
       <br/>
+      <br/>
+      <br/>
+      <br/>
+    <div style="margin-left:30px">
       Pour laisser un message, cliquer sur "JOURNAL DE BORD" dans le menu.
+    </div>
       <br/>
       <br/>
       <br/>
@@ -31,7 +37,7 @@
       {
       ?>
       <table style="margin-left:30px;">
-	<tr>
+      	<tr>
 	  <td><label class="colonne1"><center><strong>DATE</strong></center></label></td>
 	  <td><label class="colonne2"><center><strong>MESSAGE</strong></center></label></td>
 	</tr>
@@ -50,6 +56,5 @@
       <?php
 	 }
 	 ?>
-    </div>		
   </body>
 </html>
