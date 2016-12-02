@@ -45,7 +45,10 @@
 		    }
 		?>
 		<br>
+		<br>
 		Historique de vos achats :
+		<br>
+		<br>
 	
 	<?php
 	$listeAchats = SelectionListeAchatsAdherent($_SESSION['inde_adherent']);
