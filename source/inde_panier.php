@@ -7,15 +7,6 @@ if ( $nbRefPanier == 0){
 	$prixTotal=$_SESSION['inde_montantPanier'];
 ?>
 	<form id="formulaire" method="post" action="inde_payer.php">
-		<div 
-		<?php if($prixTotal > $soldeAdherent){ ?>
-			style="color: #FF0000" >**ATTENTION** Total TTC panier: <?php echo round($prixTotal,2) ?> euros
-		<?php }else{ ?>
-			>Total TTC panier: <?php echo round($prixTotal,2) ?> euros
-		<?php } ?>
-		    <input type="submit" value="Payer" name="payer" id="payer">
-		</div>
-
 		<div id= "table_reference_list">
 			<table>
 				<tr>
@@ -40,6 +31,17 @@ if ( $nbRefPanier == 0){
 				?>			
 			</table>
 		</div>
+		<br>
+		<br>
+		<div 
+		<?php if($prixTotal > $soldeAdherent){ ?>
+			style="color: #FF0000" >**ATTENTION** Total TTC panier: <?php echo round($prixTotal,2) ?> euros
+		<?php }else{ ?>
+			>Total TTC panier: <?php echo round($prixTotal,2) ?> euros
+		<?php } ?>
+		    <input type="submit" value="Payer" name="payer" id="payer">
+		</div>
+
 	</form>
 	<?php
 }
