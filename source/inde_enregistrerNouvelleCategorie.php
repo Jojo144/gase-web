@@ -11,7 +11,7 @@ include 'inde_menu.php';
 		$nom = strtoupper($nom);
 		if(empty($nom))
 		{
-			print("<center>Le '<b>NOM</b>' de la categorie n est pas renseigne !</center>");
+			print("<center>Le '<b>NOM</b>' de la categorie n'est pas renseigné !</center>");
 		}
 		else
 		{
@@ -19,14 +19,14 @@ include 'inde_menu.php';
 			if($sousCategorie == 0) // creation d'une catégorie mère
 			{
 				EnregistrerNouvelleCategorie($nom);
-				echo 'Nouvelle categorie ' . $nom . ' enregistree.';
+				echo 'Nouvelle categorie ' . $nom . ' enregistrée.';
 			}
 			else // création d'une sous-catégorie
 			{
 				$idCatSup = $_POST['idCatSup'];
 				if(empty($idCatSup))
 				{
-					print("<center>Le nom de la '<b>CATEGORIE MERE</b>' n est pas renseigne !</center>");
+					print("<center>Le nom de la '<b>CATEGORIE MERE</b>' n'est pas renseigné !</center>");
 				}
 				else
 				{
