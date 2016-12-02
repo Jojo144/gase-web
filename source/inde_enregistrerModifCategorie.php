@@ -10,7 +10,7 @@ if (isset ($_POST['modifierCategorie']))
 	
 	$nom = $_POST['nom'];
 	$nom = stripslashes(str_replace("'", "_", $nom));
-	$nom = strtoupper($nom);
+	$nom = mb_strtoupper($nom);
 	//Le nom est obligatoire
 	if(empty($nom))
 	{

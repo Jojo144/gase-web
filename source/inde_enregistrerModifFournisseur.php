@@ -10,7 +10,7 @@ if (isset ($_POST['modifierFournisseur']))
 	
 	$nom = $_POST['nom'];
 	$nom = str_replace("'", "_", $nom);
-	$nom = strtoupper($nom);
+	//$nom = mb_strtoupper($nom);
 	//Le nom est obligatoire
 	if(empty($nom))
 	{

@@ -17,7 +17,7 @@
 		    $nom = $_POST['nom'];
 		    $nom = trim($nom);
 		    $nom = str_replace("'", " ", $nom);
-		    $nom = strtoupper($nom);
+		    //$nom = mb_strtoupper($nom);
 		
 		    if(empty($nom)){
 			    print("<center>Le '<b>NOM</b>' de l'adhérent n'est pas renseigné ! Création à refaire.</center>");

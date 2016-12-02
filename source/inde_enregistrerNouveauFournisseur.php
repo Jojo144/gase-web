@@ -8,7 +8,7 @@ include 'inde_menu.php';
 	{
 		$nom = $_POST['nom'];
 		$nom = str_replace("'", " ", $nom);
-		//$nom = strtoupper($nom);
+		//$nom = mbstrtoupper($nom);
 		//Le nom est obligatoire
 		if(empty($nom))
 		{

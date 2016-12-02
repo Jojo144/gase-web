@@ -19,7 +19,7 @@
 	        $nom = $_POST['nom'];
 	        $nom = trim($nom);
 	        $nom = str_replace("'", "_", $nom);
-	        $nom = strtoupper($nom);
+	        //$nom = mb_strtoupper($nom);
 	
 	        if(empty($nom)){
 		        print("<center>Le '<b>NOM</b>' de l adherent n est pas renseigne ! Creation a refaire.</center>");

@@ -11,7 +11,7 @@ if (isset ($_POST['modifierReference']))
 	$designation = $_POST['designation'];
 	$designation = trim($designation);
 	$designation = str_replace("'", "_", $designation);
-	$designation = strtoupper($designation);
+	//$designation = mb_strtoupper($designation);
 	//La designation est obligatoire
 	if(empty($designation)){
 		print("<center>La '<b>DESIGNATION/b>' de la reference n\'est pas renseigne ! Creation a refaire.</center>");

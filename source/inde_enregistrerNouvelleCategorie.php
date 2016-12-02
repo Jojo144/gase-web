@@ -8,7 +8,7 @@ include 'inde_menu.php';
 	{
 		$nom = $_POST['nom'];
 		$nom = stripslashes(str_replace("'", "_", $nom));
-		$nom = strtoupper($nom);
+		$nom = mb_strtoupper($nom);
 		if(empty($nom))
 		{
 			print("<center>Le '<b>NOM</b>' de la categorie n'est pas renseigné !</center>");
