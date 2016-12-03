@@ -9,6 +9,7 @@
 	function SelectionSoldeAdherentMC($idAdherent)
 	{
 		$result = requete("SELECT SOLDE FROM ".DB_PREFIX."COMPTES WHERE ID_ADHERENT='$idAdherent' AND DATE = (SELECT MAX(DATE) FROM ".DB_PREFIX."COMPTES WHERE ID_ADHERENT= '$idAdherent')");
+		$solde = 0;
 		while ( $row = $result->fetch())
 		{
 			$solde = $row["SOLDE"];
