@@ -50,7 +50,7 @@
 		</div>
 		<br />
 		<center>
-		<li>Pour retourner à la liste des achats : <a href="inde_1achatsAdherent.php">cliquez ici</a></li>
+		<li>Pour retourner à la liste des achats : <a href="achats2.php">cliquez ici</a></li>
 		</center>
 	</body>
 </html>

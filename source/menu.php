@@ -4,7 +4,7 @@
 <div id="menu">
 	<ul>
 		<li><a href="index.php">Accueil</a></li>
-		<li><a href="achats.php">ACHATS</a></li>
+		<li><a href="achats1.php">ACHATS</a></li>
 		<li><a href="#">COMPTE</a>
 			<ul>
 				<li><a href="soldeCompte1.php">SOLDE</a></li>

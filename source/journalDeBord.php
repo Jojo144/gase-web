@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8" />
-		<link rel="stylesheet" href="inde_1infoOutil.css" />
+		<link rel="stylesheet" href="journalDeBord.css" />
 		<link rel="stylesheet" href="style_default.css" />
 		<title>JOURNAL DE BORD</title>
     </head>

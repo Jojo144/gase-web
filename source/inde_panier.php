@@ -6,7 +6,7 @@ if ( $nbRefPanier == 0){
 }else{
 	$prixTotal=$_SESSION['inde_montantPanier'];
 ?>
-	<form id="formulaire" method="post" action="inde_payer.php">
+	<form id="formulaire" method="post" action="payer.php">
 		<div id= "table_reference_list">
 			<table>
 				<tr>

@@ -74,7 +74,7 @@
 					<td><?php echo "&nbsp;".$tableau['MONTANT']."&nbsp;"; ?></td>
 					<td><?php echo "&nbsp;".$tableau['NB_ARTICLES']."&nbsp;"; ?></td>
 					<td><?php echo "&nbsp;".$tableau['DATE_ACHATS']."&nbsp;"; ?></td>
-					<td><a href="inde_detailAchatsAdherent.php?idAch=<?php echo $tableau['ID_ACHATS']; ?>" class="bouton" >Voir le detail</a></td>
+					<td><a href="detailAchat.php?idAch=<?php echo $tableau['ID_ACHATS']; ?>" class="bouton" >Voir le detail</a></td>
 				</tr>
 				<?php
 			}
