@@ -12,7 +12,7 @@
             $listeSTK = SelectionListeSTK();
         ?>
 
-		<form id="formulaire" method="post" action="inde_enregistrerInventaireSTK.php">
+		<form id="formulaire" method="post" action="inventaireE.php">
 			<div>
 			<table style="margin-left:auto; margin-right:auto;">
 				<tr>

@@ -14,8 +14,8 @@
 		<li><a href="#">STOCKS</a>
 			<ul>
 				<li><a href="etatStock.php">ÉTAT</a></li>
-				<li><a href="inde_1approREF.php">APPROVISIONNER</a></li>
-				<li><a href="inde_inventaireREF.php">INVENTAIRE</a></li>
+				<li><a href="approStock1.php">APPROVISIONNER</a></li>
+				<li><a href="inventaire.php">INVENTAIRE</a></li>
 				<li><a href="stock_alert_list.php">ALERTE STOCK</a></li>
 				<li><a href="inventaire_ecarts.php">ÉCARTS</a></li>
 			</ul>

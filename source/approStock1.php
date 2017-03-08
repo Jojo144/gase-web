@@ -13,7 +13,7 @@
 			Choisissez un fournisseur.
 			<br>
 			<br>
-			<form id="formulaire" method="post" action="inde_approREF.php">
+			<form id="formulaire" method="post" action="approStock.php">
 				<select name="fournisseur" id="fournisseur" onchange="this.form.submit()">
 					<option value="" selected="selected"></option>
 					<?php	

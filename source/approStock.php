@@ -19,7 +19,7 @@
 
 		<b><center><font color="red">L'approvisionnement des références en vrac doit être indiqué en kilogramme ou en litre.</font></center></b>
 		<br />
-		<form id="formulaire" method="post" action="inde_enregistrerApproSTK.php">
+		<form id="formulaire" method="post" action="approStockE.php">
 			<div>
 				<label class="colonne1"><strong>CODE FR</strong></label>
 				<label class="colonne4"><strong>APPRO</strong></label>
