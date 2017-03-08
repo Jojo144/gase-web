@@ -4,7 +4,9 @@
     http://www.ubuntu.com/download/desktop
 
 2. Install LAMP
-    sudo apt-get install LAMP^
+   For instance, on 16.04:
+      sudo apt install apache2 php mysql-server libapache2-mod-php php-mysql
+   https://doc.ubuntu-fr.org/lamp
 
 3. Copy Apache and PHP config file
     TODO

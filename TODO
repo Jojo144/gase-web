@@ -1,13 +1,12 @@
 
-
-
-* renommer MoneyCoop en ??
-
 * rendre le truc plus beau !
 
 * faire des backups réguliers !
 
 * possibilité d'éditer les messages du journal de bord
+
+
+* lire ini dans reset_tables.sh
 
 
 
@@ -23,3 +22,8 @@ DONE :
 * corriger toutes les fautes -> Simon
 * vérifier les parcours de listes vides -> Christophe
 * virer document / deconnexion -> Philippe
+
+
+QUESTIONS
+- ça sert à quoi le péfixe dans la DB ?
+- où placer les sources ? symlink ?
