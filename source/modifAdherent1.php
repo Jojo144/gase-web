@@ -31,7 +31,7 @@
 					$donneesAd = SelectionDonneesAdherent($cle);
 					?>
 					<tr>
-					   <td><a href="inde_2modifAdherent.php?idAdherent=<?php echo  $cle; ?>" title="<?php echo $element; ?>" class="bouton"><?php echo  "&nbsp;".$element."&nbsp;"; ?></a></td>
+					   <td><a href="modifAdherent.php?idAdherent=<?php echo  $cle; ?>" title="<?php echo $element; ?>" class="bouton"><?php echo  "&nbsp;".$element."&nbsp;"; ?></a></td>
 					   <td><label class="colonne2"></label><?php echo  "&nbsp;".$donneesAd['PRENOM']."&nbsp;"; ?></td>
 					   <td><label class="colonne3"></label><?php echo  "&nbsp;".$donneesAd['MAIL']."&nbsp;"; ?></td>
 					   <td><label class="colonne4"></label><?php echo  "&nbsp;".$donneesAd['TELEPHONE_PORTABLE']."&nbsp;"; ?></td>

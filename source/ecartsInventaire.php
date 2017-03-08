@@ -48,7 +48,7 @@ if (isset($_GET['type'])){
 		<?php include 'inde_menu.php'; ?>
 		
         <div style="text-align:center;position:relative;z-index:0;">
-            <form action="inventaire_ecarts.php" method="GET">
+            <form action="ecartsInventaire.php" method="GET">
             <strong>Inventaire du : </strong>
             <select name="inventaire_date" onchange="this.form.submit()">
                 <?php foreach($inventaire_date_list as $i){
@@ -90,7 +90,7 @@ if (isset($_GET['type'])){
 		</table>
 		<br>
 		<div style="text-align:center;">
-		    <a href="inventaire_ecarts.php?inventaire_date=<?php echo $inventaire_date_selected ?>&type=csv" 
+		    <a href="ecartsInventaire.php?inventaire_date=<?php echo $inventaire_date_selected ?>&type=csv" 
 		        download="ecarts_<?php echo $inventaire_date_selected ?>.csv">
 		        <button type="button">export CSV</button>
 		    </a>

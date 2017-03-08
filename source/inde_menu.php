@@ -16,8 +16,8 @@
 				<li><a href="etatStock.php">ÉTAT</a></li>
 				<li><a href="approStock1.php">APPROVISIONNER</a></li>
 				<li><a href="inventaire.php">INVENTAIRE</a></li>
-				<li><a href="stock_alert_list.php">ALERTE STOCK</a></li>
-				<li><a href="inventaire_ecarts.php">ÉCARTS</a></li>
+				<li><a href="alertesStock.php">ALERTE STOCK</a></li>
+				<li><a href="ecartsInventaire.php">ÉCARTS</a></li>
 			</ul>
 		</li>
 		<li><a href="#">RÉFÉRENCES</a>
@@ -30,7 +30,7 @@
 		</li>
 		<li><a href="#">ADHÉRENTS</a>
 			<ul>
-				<li><a href="inde_1modifAdherent.php">VOIR</a></li>
+				<li><a href="modifAdherent1.php">VOIR</a></li>
 				<li><a href="inde_1nouvelAdherent.php">NOUVEAU</a></li>
 			</ul>
 		</li>
