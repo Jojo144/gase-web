@@ -5,7 +5,7 @@
 		<link rel="stylesheet" href="style_default.css" />
 		<title>CATÉGORIES</title>
     </head>
-	<?php include 'inde_menu.php'; ?>
+	<?php include 'menu.php'; ?>
 	<?php require("inde_fonctionsCAT.php"); ?>
     <body>
 		<div style="text-align:center">

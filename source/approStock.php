@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8" />
-		<link rel="stylesheet" href="inde_stocksApproREF.css" /> 
+		<link rel="stylesheet" href="approStock.css" /> 
 		<title>APPROVISIONNEMENT</title>
     </head>
 
@@ -15,7 +15,7 @@
 	?>
 	
     <body>
-		<?php include 'inde_menu.php'; ?>
+		<?php include 'menu.php'; ?>
 
 		<b><center><font color="red">L'approvisionnement des références en vrac doit être indiqué en kilogramme ou en litre.</font></center></b>
 		<br />

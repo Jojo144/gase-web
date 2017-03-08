@@ -6,7 +6,7 @@
 		<title>RÉFÉRENCES</title>
     </head>
 	<body>
-        <?php include 'inde_menu.php'; ?>
+        <?php include 'menu.php'; ?>
         <?php 
             require("inde_fonctionsREF.php"); 
             require("fonctions_bd_fournisseurs.php"); 

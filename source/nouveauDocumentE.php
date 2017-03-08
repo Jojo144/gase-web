@@ -1,7 +1,7 @@
 <?php
 require("inde_fonctionsDOCU.php");
 
-	include 'inde_menu.php';
+	include 'menu.php';
  
 $dossier = './archives/';
 $nomFichier = basename($_FILES['le_fichier']['name']);

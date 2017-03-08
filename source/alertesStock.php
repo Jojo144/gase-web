@@ -7,7 +7,7 @@
     </head>
 
     <body>
-		<?php include 'inde_menu.php'; ?>
+		<?php include 'menu.php'; ?>
 
         <h2 style="text-align:center;">Alertes Stock</h2>
 		<?php	

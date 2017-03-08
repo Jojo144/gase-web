@@ -1,7 +1,7 @@
 <?php
 require("inde_fonctionsREF.php"); 
 
-include 'inde_menu.php';
+include 'menu.php';
  
 // Si le formulaire a été envoyé
 if (isset ($_POST['modifierReference']))

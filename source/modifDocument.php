@@ -6,7 +6,7 @@
 		<title>ARCHIVES</title>
     </head>
     <body>
-        <?php include 'inde_menu.php'; ?>
+        <?php include 'menu.php'; ?>
 	    <?php 
 	    require("inde_fonctionsDOCU.php");
 	    require("fonctions_bd_fournisseurs.php");

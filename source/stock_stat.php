@@ -7,7 +7,7 @@
     </head>
 
     <body>
-		<?php include 'inde_menu.php';
+		<?php include 'menu.php';
 		require("fonctions_bd_gase.php");
 		require("inde_fonctionsSTK.php");
 		require("inde_fonctionsREF.php");

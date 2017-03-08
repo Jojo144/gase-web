@@ -11,7 +11,7 @@
 	require("inde_fonctionsCAT.php"); 
 	?>
 	
-	<?php include 'inde_menu.php'; ?>
+	<?php include 'menu.php'; ?>
 	
 	<?php 
 	$sousCat = $_POST['sousCategorie'];

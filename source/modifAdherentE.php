@@ -8,7 +8,7 @@
     <body>
         <title>MODIF. ADHERENT</title>
 	    <?php require("inde_fonctionsAD.php"); ?>
-		<?php include 'inde_menu.php'; ?>
+		<?php include 'menu.php'; ?>
 
         <?php
         // Si le formulaire a été envoyé

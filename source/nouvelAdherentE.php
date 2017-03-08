@@ -7,7 +7,7 @@
     <body>
         <title>NOUVEL ADHÉRENT</title>
 	    <?php require("inde_fonctionsAD.php"); ?>
-		<?php include 'inde_menu.php'; ?>
+		<?php include 'menu.php'; ?>
 
 
         <?php

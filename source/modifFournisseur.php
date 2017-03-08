@@ -12,7 +12,7 @@
 	$donnees = SelectionDonneesFournisseur($idFournisseur);
 	?>
 	
-	<?php include 'inde_menu.php'; ?>
+	<?php include 'menu.php'; ?>
 	
 	<body>
 		<div style="text-align:center">

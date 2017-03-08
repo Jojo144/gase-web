@@ -16,7 +16,7 @@
 	?>
 	
     <body>
-		<?php include 'inde_menu.php'; ?>
+		<?php include 'menu.php'; ?>
 		
 		<div style="text-align:center">
 			<form id="formulaire" method="post" action="soldeCompte.php">

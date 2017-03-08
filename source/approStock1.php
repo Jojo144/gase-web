@@ -6,7 +6,7 @@
     </head>
 
     <body>
-		<?php include 'inde_menu.php'; ?>
+		<?php include 'menu.php'; ?>
 		
 		<?php require("fonctions_bd_fournisseurs.php"); ?>
 		<div style="text-align:center">

@@ -6,7 +6,7 @@
     </head>
 
     <body>
-		<?php include 'inde_menu.php'; ?>
+		<?php include 'menu.php'; ?>
 		
 		<div style="text-align:center">
 			Les stocks ont été mis à jour dans la base de données.

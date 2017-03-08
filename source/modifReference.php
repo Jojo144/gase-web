@@ -18,7 +18,7 @@
 	?>
 	
 	<body>
-	    <?php include 'inde_menu.php'; ?>
+	    <?php include 'menu.php'; ?>
 
 		<div style="text-align:center">
 			Les champs avec une étoile doivent obligatoirement être renseignés.

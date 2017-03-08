@@ -1,5 +1,5 @@
     
-<link rel="stylesheet" type="text/css" href="inde_menu.css" />
+<link rel="stylesheet" type="text/css" href="menu.css" />
 
 <div id="menu">
 	<ul>

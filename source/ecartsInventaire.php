@@ -45,7 +45,7 @@ if (isset($_GET['type'])){
     </head>
 
     <body>
-		<?php include 'inde_menu.php'; ?>
+		<?php include 'menu.php'; ?>
 		
         <div style="text-align:center;position:relative;z-index:0;">
             <form action="ecartsInventaire.php" method="GET">
