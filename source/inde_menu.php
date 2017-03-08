@@ -25,13 +25,13 @@
 				<li><a href="modifReference1.php">VOIR</a></li>
 				<li><a href="inde_1nouvelleReference.php">NOUVELLE</a></li>
 				<li><a href="modifCategorie1.php">VOIR CATÉGORIES</a></li>
-				<li><a href="inde_1nouvelleCategorie.php">AJOUTER CATÉGORIE</a></li>
+				<li><a href="nouvelleCategorie1.php">AJOUTER CATÉGORIE</a></li>
 			</ul>
 		</li>
 		<li><a href="#">ADHÉRENTS</a>
 			<ul>
 				<li><a href="modifAdherent1.php">VOIR</a></li>
-				<li><a href="inde_1nouvelAdherent.php">NOUVEAU</a></li>
+				<li><a href="nouvelAdherent.php">NOUVEAU</a></li>
 			</ul>
 		</li>
 		<li><a href="#">FOURNISSEURS</a>

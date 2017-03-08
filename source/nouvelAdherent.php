@@ -12,7 +12,7 @@
 		<div style="text-align:center">
 			Les champs avec une étoile doivent obligatoirement être renseignés.
 			<div>
-				<form id="formulaire" method="post" action="inde_enregistrerNouvelAdherent.php">
+				<form id="formulaire" method="post" action="nouvelAdherentE.php">
 					<div id= "table">
 						<p class = "ligne">
 							<label class = "col1" for="nom">Nom* : </label>
