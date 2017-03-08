@@ -34,7 +34,7 @@ if (isset ($_POST['enregistrerStocks'])){
 					ModifierSTK($reference['ID_REFERENCE'], $quantite);
 				}
 			}
-			include ('inde_infoModifierSTK.php');
+			include ('inde_approStockE2.php');
 		}else{
 			echo 'La quantite indiquee pour ' . $testElement . ' n\'est pas une valeur numerique.';
 		}

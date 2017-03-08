@@ -12,7 +12,7 @@
 
 		<div style="text-align:center">
 			<div>
-				<form id="formulaire" method="post" action="inde_enregistrerInfoOutil.php">
+				<form id="formulaire" method="post" action="journalDeBordE.php">
 					<div id= "table">
 					    <legend>Nouvelle information :</legend>
 						<p class = "ligne">
@@ -50,7 +50,7 @@
 						<td><label class="colonne1"><center><strong><?php echo $message['DATE']; ?></strong></center></label></td>
 						<td><label class="colonne2"><?php echo stripslashes($message['MESSAGE']); ?></label></td>
 						<td><label class="colonne3">
-						    <a href="inde_1infoOutil.php?remove_date=<?php echo $message['DATE']; ?>"><img src="../static/img_trash.png" title="suprimer entrée" alt="X" /></a>
+						    <a href="journalDeBord.php?remove_date=<?php echo $message['DATE']; ?>"><img src="../static/img_trash.png" title="suprimer entrée" alt="X" /></a>
 						</label></td>
 					</tr>
 					<?php

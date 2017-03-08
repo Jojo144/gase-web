@@ -39,9 +39,9 @@ if (isset ($_POST['enregistrerInventaire']))
                     }
 				}
 			}
-			include ('inde_infoModifierSTK.php');
+			include ('inventaireE2.php');
 		}else{
-			echo 'La quantite indiquee pour ' . $testElement . ' n\'est pas une valeur numerique.';
+			echo 'La quantite indiquée pour ' . $testElement . ' n\'est pas une valeur numérique.';
 		}
 	}else{
 			echo 'Aucune quantite n\'est renseignee.';	

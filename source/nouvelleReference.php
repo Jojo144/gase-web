@@ -18,7 +18,7 @@
 			Le prix TTC doit être indiqué à l'unite ou au kilo.<br />
 			Le nom du produit est à écrire en minuscule avec une majuscule au debut, en indiquant si possible le poids ou le volume.
 			<div>
-				<form id="formulaire" method="post" action="inde_enregistrerNouvelleReference.php">
+				<form id="formulaire" method="post" action="nouvelleReferenceE.php">
 					<div id= "table">
 						<p class = "ligne">
 							<label class = "col1" for="designation">Désignation* :</label>

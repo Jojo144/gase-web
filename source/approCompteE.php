@@ -15,16 +15,16 @@ if (isset ($_POST['enregistrerAppro']))
 		if($versement > 0)
 		{
 			ApprovisionnementMC($idAdherent, $versement);
-			include ('inde_infoApproMC.php');	
+			include ('approCompteE2.php');	
 		}
 		else
 		{
-			echo 'la somme indiquee n est pas une valeur positive.';
+			echo 'La somme indiquee n\'est pas une valeur positive.';
 		}
 	}
 	else
 	{
-		echo 'la somme indiquee n est pas une valeur numerique.';
+		echo 'La somme indiquee n\'est pas une valeur numérique.';
 	}
 }
 

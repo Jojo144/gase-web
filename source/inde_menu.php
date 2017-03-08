@@ -23,7 +23,7 @@
 		<li><a href="#">RÉFÉRENCES</a>
 			<ul>
 				<li><a href="modifReference1.php">VOIR</a></li>
-				<li><a href="inde_1nouvelleReference.php">NOUVELLE</a></li>
+				<li><a href="nouvelleReference.php">NOUVELLE</a></li>
 				<li><a href="modifCategorie1.php">VOIR CATÉGORIES</a></li>
 				<li><a href="nouvelleCategorie1.php">AJOUTER CATÉGORIE</a></li>
 			</ul>
@@ -40,7 +40,7 @@
 				<li><a href="nouveauFournisseur.php">NOUVEAU</a></li>
 			</ul>
 		</li>
-		<li><a href="inde_1infoOutil.php">JOURNAL DE BORD</a></li>
+		<li><a href="journalDeBord.php">JOURNAL DE BORD</a></li>
 		<!--PGA - gase de chips - menu Document et déconnexion inutile pour le moment.
 		<li><a href="#">DOCUMENTS</a>
 			<ul>

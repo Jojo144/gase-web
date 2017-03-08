@@ -6,10 +6,10 @@
     </head>
 
     <body>
-		<?php include 'menu.php'; ?>
+		<?php include 'inde_menu.php'; ?>
 		
 		<div style="text-align:center">
-			Les stocks ont ete mis a jour dans la base de donnees.
+			Les stocks ont été mis à jour dans la base de données.
 		</div>
 	</body>
 </html>

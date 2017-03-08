@@ -11,7 +11,7 @@ if (isset ($_POST['enregistrerInfoOutil']))
 
 	EnregistrerInfoOutil($info);
 
-    header('location:inde_1infoOutil.php');
+    header('location:journalDeBord.php');
 }
 
 
