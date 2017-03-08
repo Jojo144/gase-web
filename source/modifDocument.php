@@ -44,7 +44,7 @@
 						<td><label class="colonne4"><center><strong><?php echo $document['NET_A_PAYER']; ?></strong></center></label></td>
 						
 						<td>
-						<form method="post" action="inde_telechargerDocument.php" enctype="multipart/form-data">
+						<form method="post" action="telechargerDocument.php" enctype="multipart/form-data">
 							<input type="hidden" name="nomDocument" value="<?php echo './archives/-'.$document['ID_DOCUMENT'].'-'.$document['NOM']; ?>" />
 							<input type="submit" name="submit" value="Telecharger" />
 						</form>
@@ -82,7 +82,7 @@
 						<td><label class="colonne2"><center><strong><?php echo $document['DATE']; ?></strong></center></label></td>
 						<td><label class="colonne3"><center><strong><?php echo $nomFournisseur; ?></strong></center></label></td>
 						<td><label class="colonne4"><center><strong><?php echo $document['NET_A_PAYER']; ?></strong></center></label></td>
-						<form method="post" action="inde_telechargerDocument.php" enctype="multipart/form-data">
+						<form method="post" action="telechargerDocument.php" enctype="multipart/form-data">
 						<td>
 							<input type="hidden" name="nomDocument" value="<?php echo './archives/-'.$document['ID_DOCUMENT'].'-'.$document['NOM']; ?>" />
 							<input type="submit" name="submit" value="Telecharger" />
@@ -115,7 +115,7 @@
 					<tr>
 						<td><label class="colonne1"><center><strong><?php echo $document['NOM']; ?></strong></center></label></td>
 						<td><label class="colonne2"><center><strong><?php echo $document['DATE']; ?></strong></center></label></td>
-						<form method="post" action="inde_telechargerDocument.php" enctype="multipart/form-data">
+						<form method="post" action="telechargerDocument.php" enctype="multipart/form-data">
 						<td>
 							<input type="hidden" name="nomDocument" value="<?php echo './archives/-'.$document['ID_DOCUMENT'].'-'.$document['NOM']; ?>" />
 							<input type="submit" name="submit" value="Telecharger" />
