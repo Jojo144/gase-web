@@ -1,62 +1,52 @@
-#menu_achats
-{
-    display:table; /* IE8 et les autres */
-    margin:auto; /* centrage */
-    text-align:center; /* preparation au centrage IE7 et inf */
-
-    position:relative;
-    top:-20px;
-    z-index: 99;
+#menu_achats {
+	display: table; /* IE8 et les autres */
+	margin: auto; /* centrage */
+	text-align: center; /* preparation au centrage IE7 et inf */
+	position: relative;
+	top: -20px;
+	z-index: 99;
 }
 
-#menu_achats ul 
-{
-	margin:0;
-	padding:0;
-	list-style-type:none;
-	text-align:center;
+#menu_achats ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	text-align: center;
 }
 
-#menu_achats li 
-{
-	float:left;
-	margin:auto;
-	padding:0;
-	background-color:#AF3C7D;
+#menu_achats li {
+	float: left;
+	margin: auto;
+	padding: 0;
+	background-color: #AF3C7D;
 }
 
-#menu_achats li a 
-{
-	display:block;
-	width:140px;
-	color:white;
-	font-weight:bold;
-	text-decoration:none;
-	padding:15px;
+#menu_achats li a {
+	display: block;
+	width: 140px;
+	color: white;
+	font-weight: bold;
+	text-decoration: none;
+	padding: 15px;
 }
 
-#menu_achats li a:hover
-{
-	color:black;
-	font-weight:bold;
-}
- 
-#menu_achats ul li ul
-{
-	display:none;
+#menu_achats li a:hover {
+	color: black;
+	font-weight: bold;
 }
 
-#menu_achats ul li:hover ul 
-{
-	display:block;
+#menu_achats ul li ul {
+	display: none;
 }
 
-#menu_achats li:hover ul li 
-{
-	float:none;
-}
-#menu_achats li ul 
-{
-	position:absolute;
+#menu_achats ul li:hover ul {
+	display: block;
 }
 
+#menu_achats li:hover ul li {
+	float: none;
+}
+
+#menu_achats li ul {
+	position: absolute;
+}

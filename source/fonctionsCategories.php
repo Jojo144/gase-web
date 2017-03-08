@@ -1,181 +1,138 @@
 <?php
-    require("fonctionsBD.php");
+require ("fonctionsBD.php");
 
-	/*
-	 * AC 15-04-2016 nouvelle connexion mysql
-	 * AC 02-05-2016 fonction globale requete() + DB_PREFIX
-	 */	
-    
-    function EnregistrerNouvelleCategorie($nom)
-	{
-		$requete = "INSERT INTO ".DB_PREFIX."CATEGORIES (NOM) values('$nom')";
-		requete($requete);
-		
-	}	
-	
-	function EnregistrerNouvelleSousCategorie($nom, $idCatSup)
-	{
-		$requete = "INSERT INTO ".DB_PREFIX."CATEGORIES (NOM, ID_CAT_SUP) values('$nom','$idCatSup')";
-		requete($requete);
-		$requete = "UPDATE ".DB_PREFIX."CATEGORIES SET SOUS_CATEGORIES = 1 WHERE ID_CATEGORIE = '$idCatSup'";
-		requete($requete);
-		
+/*
+ * AC 15-04-2016 nouvelle connexion mysql
+ * AC 02-05-2016 fonction globale requete() + DB_PREFIX
+ */
+function EnregistrerNouvelleCategorie($nom) {
+	$requete = "INSERT INTO " . DB_PREFIX . "CATEGORIES (NOM) values('$nom')";
+	requete ( $requete );
+}
+function EnregistrerNouvelleSousCategorie($nom, $idCatSup) {
+	$requete = "INSERT INTO " . DB_PREFIX . "CATEGORIES (NOM, ID_CAT_SUP) values('$nom','$idCatSup')";
+	requete ( $requete );
+	$requete = "UPDATE " . DB_PREFIX . "CATEGORIES SET SOUS_CATEGORIES = 1 WHERE ID_CATEGORIE = '$idCatSup'";
+	requete ( $requete );
+}
+function SelectionListeCategoriesMeres() {
+	$result = requete ( "SELECT ID_CATEGORIE, NOM FROM " . DB_PREFIX . "CATEGORIES WHERE ID_CAT_SUP is NULL ORDER BY NOM" );
+	$listeCategories = NULL;
+	while ( $row = $result->fetch () ) {
+		$listeCategories [$row ["ID_CATEGORIE"]] = $row ["NOM"];
 	}
 	
-	function SelectionListeCategoriesMeres()
-	{
-		$result = requete("SELECT ID_CATEGORIE, NOM FROM ".DB_PREFIX."CATEGORIES WHERE ID_CAT_SUP is NULL ORDER BY NOM");
-		$listeCategories = NULL;
-		while ( $row = $result->fetch())
-		{
-			$listeCategories[$row["ID_CATEGORIE"]] = $row["NOM"];
-		}
-		
-		return $listeCategories;
+	return $listeCategories;
+}
+function SelectionListeCategories() {
+	$result = requete ( "SELECT ID_CATEGORIE, NOM FROM " . DB_PREFIX . "CATEGORIES ORDER BY NOM" );
+	$listeCategories = NULL;
+	while ( $row = $result->fetch () ) {
+		$listeCategories [$row ["ID_CATEGORIE"]] = $row ["NOM"];
 	}
 	
-	function SelectionListeCategories()
-	{
-		$result = requete("SELECT ID_CATEGORIE, NOM FROM ".DB_PREFIX."CATEGORIES ORDER BY NOM");
-		$listeCategories = NULL;
-		while ( $row = $result->fetch())
-		{
-			$listeCategories[$row["ID_CATEGORIE"]] = $row["NOM"];
-		}
-		
-		return $listeCategories;
+	return $listeCategories;
+}
+function SelectionDonneesCategorie($idCategorie) {
+	$result = requete ( "SELECT NOM, ID_CAT_SUP, SOUS_CATEGORIES, VISIBLE FROM " . DB_PREFIX . "CATEGORIES WHERE ID_CATEGORIE = '$idCategorie'" );
+	$donnees = NULL;
+	while ( $row = $result->fetch () ) {
+		$donnees ['NOM'] = $row [0];
+		$donnees ['ID_CAT_SUP'] = $row [1];
+		$donnees ['SOUS_CATEGORIES'] = $row [2];
+		$donnees ['VISIBLE'] = $row [3];
 	}
 	
-	function SelectionDonneesCategorie($idCategorie)
-	{
-		$result = requete("SELECT NOM, ID_CAT_SUP, SOUS_CATEGORIES, VISIBLE FROM ".DB_PREFIX."CATEGORIES WHERE ID_CATEGORIE = '$idCategorie'");
-		$donnees = NULL;
-		while ( $row = $result->fetch())
-		{		
-			$donnees['NOM'] = $row[0];
-			$donnees['ID_CAT_SUP'] = $row[1];
-			$donnees['SOUS_CATEGORIES'] = $row[2];
-			$donnees['VISIBLE'] = $row[3];
-		}
-		
-		return $donnees;
+	return $donnees;
+}
+function SelectionNomCategorieMere($idCategorie) {
+	$result = requete ( "SELECT c2.NOM FROM " . DB_PREFIX . "CATEGORIES c1, " . DB_PREFIX . "CATEGORIES c2 WHERE c1.ID_CATEGORIE = '$idCategorie' AND c2.ID_CATEGORIE = c1.ID_CAT_SUP" );
+	
+	$nom = "";
+	while ( $row = $result->fetch () ) {
+		$nom = $row ['NOM'];
 	}
 	
-	function SelectionNomCategorieMere($idCategorie)
-	{
-		$result = requete("SELECT c2.NOM FROM ".DB_PREFIX."CATEGORIES c1, ".DB_PREFIX."CATEGORIES c2 WHERE c1.ID_CATEGORIE = '$idCategorie' AND c2.ID_CATEGORIE = c1.ID_CAT_SUP");
-		
-		$nom = "";
-		while ( $row = $result->fetch())
-		{		
-			$nom = $row['NOM'];
-		}
-		
-		return $nom;		
+	return $nom;
+}
+function MajCategorie($idCategorie, $nom, $visible) {
+	$requete = "UPDATE " . DB_PREFIX . "CATEGORIES SET NOM = '$nom', VISIBLE = '$visible' WHERE ID_CATEGORIE = '$idCategorie'";
+	requete ( $requete );
+}
+function SelectionIdCategorieMere($idCategorie) {
+	$result = requete ( "SELECT ID_CAT_SUP FROM " . DB_PREFIX . "CATEGORIES WHERE ID_CATEGORIE = '$idCategorie'" );
+	$id = NULL;
+	while ( $row = $result->fetch () ) {
+		$id = $row ['ID_CAT_SUP'];
 	}
 	
-	function MajCategorie($idCategorie, $nom, $visible)
-	{
-		$requete = "UPDATE ".DB_PREFIX."CATEGORIES SET NOM = '$nom', VISIBLE = '$visible' WHERE ID_CATEGORIE = '$idCategorie'";
-		requete($requete);
-		
+	return $id;
+}
+function MajSousCategorie($idCategorie, $nom, $visible, $NouvelleCatMere, $ancienneCatMere) {
+	$requete = "UPDATE " . DB_PREFIX . "CATEGORIES SET NOM = '$nom', VISIBLE = '$visible', ID_CAT_SUP = '$NouvelleCatMere' WHERE ID_CATEGORIE = '$idCategorie'";
+	requete ( $requete );
+	
+	$requete = "UPDATE " . DB_PREFIX . "CATEGORIES SET SOUS_CATEGORIES = '1' WHERE ID_CATEGORIE = '$NouvelleCatMere'";
+	requete ( $requete );
+	
+	$result = requete ( "SELECT COUNT(*) FROM " . DB_PREFIX . "CATEGORIES c WHERE c.ID_CAT_SUP = '$ancienneCatMere'" );
+	while ( $row = $result->fetch () ) {
+		$nbre = $row [0];
 	}
 	
-	function SelectionIdCategorieMere($idCategorie)
-	{
-		$result = requete("SELECT ID_CAT_SUP FROM ".DB_PREFIX."CATEGORIES WHERE ID_CATEGORIE = '$idCategorie'");
-		$id = NULL;
-		while ( $row = $result->fetch())
-		{		
-			$id = $row['ID_CAT_SUP'];
-		}
-		
-		return $id;		
+	if ($nbre == 0) {
+		$requete = "UPDATE " . DB_PREFIX . "CATEGORIES SET SOUS_CATEGORIES = '0' WHERE ID_CATEGORIE = '$ancienneCatMere'";
+		requete ( $requete );
+	}
+}
+function SelectionListeCategoriesFilles() {
+	$result = requete ( "SELECT ID_CATEGORIE, NOM FROM " . DB_PREFIX . "CATEGORIES WHERE SOUS_CATEGORIES = 0 ORDER BY NOM" );
+	$listeCategories = NULL;
+	while ( $row = $result->fetch () ) {
+		$listeCategories [$row ["ID_CATEGORIE"]] = $row ["NOM"];
 	}
 	
-	function MajSousCategorie($idCategorie, $nom, $visible, $NouvelleCatMere, $ancienneCatMere)
-	{
-		$requete = "UPDATE ".DB_PREFIX."CATEGORIES SET NOM = '$nom', VISIBLE = '$visible', ID_CAT_SUP = '$NouvelleCatMere' WHERE ID_CATEGORIE = '$idCategorie'";
-		requete($requete);
-		
-		$requete = "UPDATE ".DB_PREFIX."CATEGORIES SET SOUS_CATEGORIES = '1' WHERE ID_CATEGORIE = '$NouvelleCatMere'";
-		requete($requete);
-
-		$result = requete("SELECT COUNT(*) FROM ".DB_PREFIX."CATEGORIES c WHERE c.ID_CAT_SUP = '$ancienneCatMere'");
-		while ( $row = $result->fetch())
-		{		
-			$nbre = $row[0];
-		}
-		
-		if($nbre == 0)
-		{
-			$requete = "UPDATE ".DB_PREFIX."CATEGORIES SET SOUS_CATEGORIES = '0' WHERE ID_CATEGORIE = '$ancienneCatMere'";
-			requete($requete);
-		}
-		
+	return $listeCategories;
+}
+function SelectionNomCategorie($idCategorie) {
+	$result = requete ( "SELECT NOM FROM " . DB_PREFIX . "CATEGORIES WHERE ID_CATEGORIE = '$idCategorie'" );
+	$nom = NULL;
+	while ( $row = $result->fetch () ) {
+		$nom = $row ["NOM"];
 	}
 	
-	function SelectionListeCategoriesFilles()
-	{
-		$result = requete("SELECT ID_CATEGORIE, NOM FROM ".DB_PREFIX."CATEGORIES WHERE SOUS_CATEGORIES = 0 ORDER BY NOM");
-		$listeCategories = NULL;
-		while ( $row = $result->fetch())
-		{
-			$listeCategories[$row["ID_CATEGORIE"]] = $row["NOM"];
-		}
+	return $nom;
+}
+function SelectionListeCategoriesMenu() {
+	$compteur = 0;
+	$visible = 1;
+	$listeCategories = NULL;
+	$result = requete ( "SELECT ID_CATEGORIE, NOM, ID_CAT_SUP, SOUS_CATEGORIES FROM " . DB_PREFIX . "CATEGORIES WHERE VISIBLE = '$visible' ORDER BY NOM" );
+	while ( $row = $result->fetch () ) {
+		$ligne ['ID_CATEGORIE'] = $row [0];
+		$ligne ['NOM'] = $row [1];
+		$ligne ['ID_CAT_SUP'] = $row [2];
+		$ligne ['SOUS_CATEGORIES'] = $row [3];
 		
-		return $listeCategories;
+		$listeCategories [$compteur] = $ligne;
+		$compteur ++;
 	}
 	
-	function SelectionNomCategorie($idCategorie)
-	{
-		$result = requete("SELECT NOM FROM ".DB_PREFIX."CATEGORIES WHERE ID_CATEGORIE = '$idCategorie'");
-		$nom = NULL;
-		while ( $row = $result->fetch())
-		{
-			$nom = $row["NOM"];
-		}
+	return $listeCategories;
+}
+function SelectionListeSousCategories($idCategorie) {
+	$compteur = 0;
+	$visible = 1;
+	$listeCategories = NULL;
+	$result = requete ( "SELECT ID_CATEGORIE, NOM FROM " . DB_PREFIX . "CATEGORIES WHERE ID_CAT_SUP = '$idCategorie' AND VISIBLE = '$visible' ORDER BY NOM" );
+	while ( $row = $result->fetch () ) {
+		$ligne ['ID_CATEGORIE'] = $row [0];
+		$ligne ['NOM'] = $row [1];
 		
-		return $nom;
+		$listeCategories [$compteur] = $ligne;
+		$compteur ++;
 	}
 	
-	function SelectionListeCategoriesMenu()
-	{
-
-		$compteur = 0;
-		$visible = 1;
-		$listeCategories = NULL;
-		$result = requete("SELECT ID_CATEGORIE, NOM, ID_CAT_SUP, SOUS_CATEGORIES FROM ".DB_PREFIX."CATEGORIES WHERE VISIBLE = '$visible' ORDER BY NOM");
-		while ( $row = $result->fetch())
-		{		
-			$ligne['ID_CATEGORIE'] = $row[0];
-			$ligne['NOM'] = $row[1];
-			$ligne['ID_CAT_SUP'] = $row[2];
-			$ligne['SOUS_CATEGORIES'] = $row[3];
-			
-			$listeCategories[$compteur] = $ligne;
-			$compteur++;
-		}
-		
-		return $listeCategories;
-	}
-	
-	function SelectionListeSousCategories($idCategorie)
-	{
-
-		$compteur = 0;
-		$visible = 1;
-		$listeCategories = NULL;
-		$result = requete("SELECT ID_CATEGORIE, NOM FROM ".DB_PREFIX."CATEGORIES WHERE ID_CAT_SUP = '$idCategorie' AND VISIBLE = '$visible' ORDER BY NOM");
-		while ( $row = $result->fetch())
-		{		
-			$ligne['ID_CATEGORIE'] = $row[0];
-			$ligne['NOM'] = $row[1];
-			
-			$listeCategories[$compteur] = $ligne;
-			$compteur++;
-		}
-		
-		return $listeCategories;
-	}
+	return $listeCategories;
+}
 ?>

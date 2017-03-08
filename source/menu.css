@@ -1,61 +1,52 @@
-﻿#menu
-{
-    display:table; /* IE8 et les autres */
-    margin:auto; /* centrage */
-    text-align:center; /* preparation au centrage IE7 et inf */
-    height:50px;
-    position:relative;
-    z-index:99;
+﻿#menu {
+	display: table; /* IE8 et les autres */
+	margin: auto; /* centrage */
+	text-align: center; /* preparation au centrage IE7 et inf */
+	height: 50px;
+	position: relative;
+	z-index: 99;
 }
 
-#menu ul 
-{
-	margin:auto;
-	padding:0;
-	list-style-type:none;
-	text-align:center;
+#menu ul {
+	margin: auto;
+	padding: 0;
+	list-style-type: none;
+	text-align: center;
 }
 
-#menu li 
-{
-	float:left;
-	margin:auto;
-	padding:0;
-	background-color:#3CB371;
+#menu li {
+	float: left;
+	margin: auto;
+	padding: 0;
+	background-color: #3CB371;
 }
 
-#menu li a 
-{
-	display:block;
+#menu li a {
+	display: block;
 	/*width:100px;*/
-	color:white;
-	font-weight:bold;
-	text-decoration:none;
-	padding:15px;
+	color: white;
+	font-weight: bold;
+	text-decoration: none;
+	padding: 15px;
 }
 
-#menu li a:hover
-{
-	color:black;
-	font-weight:bold;
-}
- 
-#menu ul li ul
-{
-	display:none;
+#menu li a:hover {
+	color: black;
+	font-weight: bold;
 }
 
-#menu ul li:hover ul 
-{
-	display:block;
+#menu ul li ul {
+	display: none;
 }
 
-#menu li:hover ul li 
-{
-	float:none;
-}
-#menu li ul 
-{
-	position:absolute;
+#menu ul li:hover ul {
+	display: block;
 }
 
+#menu li:hover ul li {
+	float: none;
+}
+
+#menu li ul {
+	position: absolute;
+}

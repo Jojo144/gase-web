@@ -1,28 +1,23 @@
-
-#table_reference_list table
-{
-     border: 3px solid black;
-     width: 100%;
+#table_reference_list table {
+	border: 3px solid black;
+	width: 100%;
 }
 
-#table_achats_list table
-{
-    border: 3px solid black;
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
+#table_achats_list table {
+	border: 3px solid black;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
 }
 
-#formulaire input[type="submit"]:hover
-{
+#formulaire input[type="submit"]:hover {
 	background-color: #93DB70;
 	cursor: pointer;
 	border-radius: 6px;
 }
 
 /* button "dans panier" */
-#acheterRef
-{
+#acheterRef {
 	float: right;
 	position: relative;
 	top: -10px;
@@ -30,8 +25,7 @@
 	z-index: 0;
 }
 /* button "payer" */
-#payer
-{
+#payer {
 	float: right;
 	position: relative;
 	top: -10px;
@@ -40,21 +34,18 @@
 }
 
 /* list de references disponibles dans catalogue, moitiée gauche de l'écran */
-.references
-{
-    display: inline-block;
-    vertical-align: top;
-    width:50%;
+.references {
+	display: inline-block;
+	vertical-align: top;
+	width: 50%;
 }
 /* list de references dans panier, moitié droite de l'écran */
-.panier
-{
-    display: inline-block;
-    vertical-align: top;
-    width: 49%;
+.panier {
+	display: inline-block;
+	vertical-align: top;
+	width: 49%;
 }
 
-.modifierReference{
-    text-align: center;
+.modifierReference {
+	text-align: center;
 }
-

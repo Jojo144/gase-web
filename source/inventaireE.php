@@ -1,65 +1,59 @@
 <?php
-require("fonctionsStock.php");
- 
+require ("fonctionsStock.php");
+
 // Si le formulaire a été envoyé
-if (isset ($_POST['enregistrerInventaire']))
-{
+if (isset ( $_POST ['enregistrerInventaire'] )) {
 	
-	$listeSTK = SelectionListeSTK();
+	$listeSTK = SelectionListeSTK ();
 	
 	$test_numeric = 1;
 	$test_presence = 0;
 	
-	foreach($listeSTK as $element){
-		$quantite = securite_bdd($_POST[$element['ID_REFERENCE']]);
-		$quantite = str_replace(",", ".", $quantite);
-		$quantite = trim($quantite);
+	foreach ( $listeSTK as $element ) {
+		$quantite = securite_bdd ( $_POST [$element ['ID_REFERENCE']] );
+		$quantite = str_replace ( ",", ".", $quantite );
+		$quantite = trim ( $quantite );
 		
-		if($quantite != ''){
-			if(is_numeric($quantite) == FALSE){
-				$test_numeric=0;
+		if ($quantite != '') {
+			if (is_numeric ( $quantite ) == FALSE) {
+				$test_numeric = 0;
 				$testElement = $element;
 			}
 			$test_presence = 1;
 		}
 	}
-
-	if($test_presence == 1){
-		if($test_numeric == 1){
-			foreach($listeSTK as $element){
-				$quantite = securite_bdd($_POST[$element['ID_REFERENCE']]);
-				$quantite = str_replace(",", ".", $quantite);
-				$quantite = trim($quantite);
+	
+	if ($test_presence == 1) {
+		if ($test_numeric == 1) {
+			foreach ( $listeSTK as $element ) {
+				$quantite = securite_bdd ( $_POST [$element ['ID_REFERENCE']] );
+				$quantite = str_replace ( ",", ".", $quantite );
+				$quantite = trim ( $quantite );
 				
-				if($quantite != ''){
-                    //$qte = $quantite - $listeSTK[$element['ID_REFERENCE']];
-                    $qte = $quantite - $element['STOCK'];
-                    if($qte != 0){
-                        ModifierInventaireSTK($element['ID_REFERENCE'], $qte);
-                    }
+				if ($quantite != '') {
+					// $qte = $quantite - $listeSTK[$element['ID_REFERENCE']];
+					$qte = $quantite - $element ['STOCK'];
+					if ($qte != 0) {
+						ModifierInventaireSTK ( $element ['ID_REFERENCE'], $qte );
+					}
 				}
 			}
 			include ('inventaireE2.php');
-		}else{
+		} else {
 			echo 'La qauntité indiquée pour ' . $testElement . ' n\'est pas une valeur numérique.';
 		}
-	}else{
-			echo 'Aucune qauntité n\'est renseignée.';	
+	} else {
+		echo 'Aucune qauntité n\'est renseignée.';
 	}
 }
-
-function securite_bdd($string)
-{
+function securite_bdd($string) {
 	// On regarde si le type de string est un nombre entier (int)
-	if(ctype_digit($string))
-	{
-		$string = intval($string);
-	}
-	// Pour tous les autres types
-	else
-	{
-//		$string = mysql_real_escape_string($string);
-		$string = addcslashes($string, '%_');
+	if (ctype_digit ( $string )) {
+		$string = intval ( $string );
+	} 	// Pour tous les autres types
+	else {
+		// $string = mysql_real_escape_string($string);
+		$string = addcslashes ( $string, '%_' );
 	}
 	
 	return $string;

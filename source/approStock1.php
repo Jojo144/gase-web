@@ -1,33 +1,31 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-		<title>STOCKS</title>
-    </head>
+<head>
+<meta charset="utf-8" />
+<title>STOCKS</title>
+</head>
 
-    <body>
+<body>
 		<?php include 'menu.php'; ?>
 		
 		<?php require("fonctionsFournisseurs.php"); ?>
-		<div style="text-align:center">
-			Choisissez un fournisseur.
-			<br>
-			<br>
-			<form id="formulaire" method="post" action="approStock.php">
-				<select name="fournisseur" id="fournisseur" onchange="this.form.submit()">
-					<option value="" selected="selected"></option>
-					<?php	
-					$listeFR = SelectionListeFournisseurs();
+		<div style="text-align: center">
+		Choisissez un fournisseur. <br> <br>
+		<form id="formulaire" method="post" action="approStock.php">
+			<select name="fournisseur" id="fournisseur"
+				onchange="this.form.submit()">
+				<option value="" selected="selected"></option>
+					<?php
+					$listeFR = SelectionListeFournisseurs ();
 					if ($listeFR)
-					foreach($listeFR as $cle => $element)
-					{
-						?>
+						foreach ( $listeFR as $cle => $element ) {
+							?>
 						<option value="<?php echo $cle; ?>"><?php echo $element; ?></option>
 						<?php
-					}
+						}
 					?>
 				</select>
-			</form>
-		</div>
-	</body>
+		</form>
+	</div>
+</body>
 </html>
