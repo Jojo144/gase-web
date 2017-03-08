@@ -22,7 +22,7 @@
 		</li>
 		<li><a href="#">RÉFÉRENCES</a>
 			<ul>
-				<li><a href="inde_1modifReference.php">VOIR</a></li>
+				<li><a href="modifReference1.php">VOIR</a></li>
 				<li><a href="inde_1nouvelleReference.php">NOUVELLE</a></li>
 				<li><a href="modifCategorie1.php">VOIR CATÉGORIES</a></li>
 				<li><a href="inde_1nouvelleCategorie.php">AJOUTER CATÉGORIE</a></li>

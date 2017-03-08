@@ -38,7 +38,7 @@
 					?>
 					<tr>
 					   <td><label class="colonne3"></label><?php echo  "&nbsp;".$nomCategorie."&nbsp;"; ?></td>
-					   <td><a href="inde_2modifReference.php?idReference=<?php echo  $cle; ?>" title="<?php echo $element; ?>" class="bouton"><?php echo  "&nbsp;".$element."&nbsp;"; ?></a></td>
+					   <td><a href="modifReference.php?idReference=<?php echo  $cle; ?>" title="<?php echo $element; ?>" class="bouton"><?php echo  "&nbsp;".$element."&nbsp;"; ?></a></td>
 					   <td><label class="colonne2"></label><?php echo  "&nbsp;".$nomFournisseur."&nbsp;"; ?></td>
 					   <td><label class="colonne4"></label><?php echo  "&nbsp;".$donneesReference['PRIX_TTC']."&nbsp;"; ?></td>
 					   

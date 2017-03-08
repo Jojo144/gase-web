@@ -23,7 +23,7 @@
 		<div style="text-align:center">
 			Les champs avec une étoile doivent obligatoirement être renseignés.
 			<div>
-				<form id="formulaire" method="post" action="inde_enregistrerModifReference.php">
+				<form id="formulaire" method="post" action="modifReferenceE.php">
 					<input type="hidden" name="idReference" value="<?php echo $idReference; ?>" />
 					<div id= "table">
 						<p class = "ligne">
