@@ -1,6 +1,6 @@
 <?php
 //	$idCategorie = $_GET['idCategorie'];
-$idCategorie = $_SESSION['inde_idCategorie'];
+$idCategorie = $_SESSION['idCategorie'];
 $listeReferences = SelectionListeReferencesMenu($idCategorie);
 ?>
 	<form id="formulaire" method="post" action="versPanier.php">
@@ -16,10 +16,10 @@ $listeReferences = SelectionListeReferencesMenu($idCategorie);
 				<?php
 				if(count($listeReferences) > 0)
 				{
-					$_SESSION['inde_listeRef'] = array();
+					$_SESSION['listeRef'] = array();
 					foreach( $listeReferences as $tableau ) 
 					{
-						array_push( $_SESSION['inde_listeRef'],$tableau['ID_REFERENCE']);
+						array_push( $_SESSION['listeRef'],$tableau['ID_REFERENCE']);
 						?>
 						<tr>
 							<?php

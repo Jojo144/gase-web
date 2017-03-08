@@ -15,7 +15,7 @@ session_start();
 	if (isset($_GET['idCategorie']))
 	{
 		$idCategorie = $_GET['idCategorie'];
-		$_SESSION['inde_idCategorie'] = $idCategorie;
+		$_SESSION['idCategorie'] = $idCategorie;
 	}
 	?>
 
@@ -25,8 +25,8 @@ session_start();
 		    require("fonctionsCompte.php");
 		    require("fonctionsAdherents.php");
 		    require("fonctionsReferences.php");
-            $soldeAdherent = SelectionSoldeAdherentMC($_SESSION['inde_adherent']);
-            $prenom_nom = SelectionPrenomNomAdherent($_SESSION['inde_adherent']);
+            $soldeAdherent = SelectionSoldeAdherentMC($_SESSION['adherent']);
+            $prenom_nom = SelectionPrenomNomAdherent($_SESSION['adherent']);
 		?>
 		<div class="name_and_balance">
 		    <?php echo $prenom_nom, " - <strong>Solde : ", round($soldeAdherent, 2), " euros</strong>" ?>

@@ -7,7 +7,7 @@
     </head>
     <body>
 	<?php 
-	//require("inde_fonctionsACH.php"); 
+	//require("fonctionsACH.php"); 
 	require("fonctionsBD.php"); 
 	?>
 	<?php include 'menu.php'; ?>

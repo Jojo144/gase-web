@@ -28,7 +28,7 @@ $user = $config["DB"]["user"];
 $pass = $config["DB"]["password"];
 $name =  $config["DB"]["name"];
 $prefix =  $config["DB"]["prefix"];
-if ($prefix == '') $prefix = '_inde_';
+if ($prefix == '') $prefix = '_';
 // construction chaîne de connexion
 $dsn = "mysql:host=$address;dbname=$name;charset=utf8";
 // variable globale 
@@ -61,7 +61,7 @@ function lastInsertId() {
 	return $id;
 }
 
-//this is imported from inde_fonctionsACH.php
+//this is imported from fonctionsACH.php
 function EnregistrerAchatAdherent($idAdherent, $montantTTC, $nbArticles){
 
 	requete("INSERT INTO ".DB_PREFIX."ACHATS (DATE_ACHAT,ID_ADHERENT,TOTAL_TTC,NB_REFERENCES) values(NOW(),'$idAdherent','$montantTTC','$nbArticles')");
@@ -71,7 +71,7 @@ function EnregistrerAchatAdherent($idAdherent, $montantTTC, $nbArticles){
 }
 
 
-//this is imported from inde_fonctionsACH.php
+//this is imported from fonctionsACH.php
 function SelectionInfosAchats($idAchats){
 
 	$result = requete("SELECT DATE_ACHAT, TOTAL_TTC, NB_REFERENCES FROM ".DB_PREFIX."ACHATS WHERE ID_ACHAT = '$idAchats'");
@@ -83,7 +83,7 @@ function SelectionInfosAchats($idAchats){
 }
 	
 	
-//this is imported from inde_fonctionsACH.php
+//this is imported from fonctionsACH.php
 function SelectionDetailsAchats($idAchats){
 	$compteur = 0;
 	$result = requete("SELECT r.DESIGNATION, r.PRIX_TTC, c.QUANTITE, r.PRIX_TTC*c.QUANTITE, c.ID_REFERENCE FROM ".DB_PREFIX."STOCKS c, ".DB_PREFIX."REFERENCES r WHERE c.ID_ACHAT = '$idAchats' AND r.ID_REFERENCE = c.ID_REFERENCE");

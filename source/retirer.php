@@ -9,19 +9,19 @@ session_start();
 	while ($trouve == 0)
 	{
 	
-		if($_SESSION['inde_panier']['idRef'][$compteur] == $idRef)
+		if($_SESSION['panier']['idRef'][$compteur] == $idRef)
 		{
 			$trouve = 1;
-			$_SESSION['inde_montantPanier'] = $_SESSION['inde_montantPanier'] - $_SESSION['inde_panier']['prixReference'][$compteur];
-			$_SESSION['inde_nbRefPanier']--;
-			unset($_SESSION['inde_panier']['idRef'][$compteur]);
-			$_SESSION['inde_panier']['idRef'] = array_values($_SESSION['inde_panier']['idRef']);
-			unset($_SESSION['inde_panier']['nomReference'][$compteur]);
-			$_SESSION['inde_panier']['nomReference'] = array_values($_SESSION['inde_panier']['nomReference']);
-			unset($_SESSION['inde_panier']['qteReference'][$compteur]);
-			$_SESSION['inde_panier']['qteReference'] = array_values($_SESSION['inde_panier']['qteReference']);
-			unset($_SESSION['inde_panier']['prixReference'][$compteur]);
-			$_SESSION['inde_panier']['prixReference'] = array_values($_SESSION['inde_panier']['prixReference']);
+			$_SESSION['montantPanier'] = $_SESSION['montantPanier'] - $_SESSION['panier']['prixReference'][$compteur];
+			$_SESSION['nbRefPanier']--;
+			unset($_SESSION['panier']['idRef'][$compteur]);
+			$_SESSION['panier']['idRef'] = array_values($_SESSION['panier']['idRef']);
+			unset($_SESSION['panier']['nomReference'][$compteur]);
+			$_SESSION['panier']['nomReference'] = array_values($_SESSION['panier']['nomReference']);
+			unset($_SESSION['panier']['qteReference'][$compteur]);
+			$_SESSION['panier']['qteReference'] = array_values($_SESSION['panier']['qteReference']);
+			unset($_SESSION['panier']['prixReference'][$compteur]);
+			$_SESSION['panier']['prixReference'] = array_values($_SESSION['panier']['prixReference']);
 		}
 		$compteur++;
 	}

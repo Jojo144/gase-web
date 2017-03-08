@@ -21,23 +21,23 @@ $config = parse_ini_file(GASE_CONFIG_FILE_PATH, true);
 $PHPMailer_path = $config["libs"]["PHPMailer_path"];
 require($PHPMailer_path."/PHPMailerAutoload.php");
 
-$soldeAdherent = SelectionSoldeAdherentMC($_SESSION['inde_adherent']);
+$soldeAdherent = SelectionSoldeAdherentMC($_SESSION['adherent']);
 if (isset ($_POST['payer']))
 {
 	//Vérifie si le montant de la commande est supérieur à 0.
-	$totalTTC = $_SESSION['inde_montantPanier'];
+	$totalTTC = $_SESSION['montantPanier'];
 	if($totalTTC > 0)
 	{
 	    //la maison fait crédit de 20Euro max !!
 		if($totalTTC <= $soldeAdherent+20)
 		{
-			$nbRef = $_SESSION['inde_nbRefPanier'];
-			$idAdherent = $_SESSION['inde_adherent'];
+			$nbRef = $_SESSION['nbRefPanier'];
+			$idAdherent = $_SESSION['adherent'];
 			DepenseMC($idAdherent,$totalTTC);
 			$nouveauSolde = SelectionSoldeAdherentMC($idAdherent);
 			$numeroAchat = EnregistrerAchatAdherent($idAdherent, $totalTTC, $nbRef);
 			for ($compteur = 0; $compteur < $nbRef; $compteur++){
-				AchatSTK($numeroAchat, $_SESSION['inde_panier']['idRef'][$compteur], $_SESSION['inde_panier']['qteReference'][$compteur]);
+				AchatSTK($numeroAchat, $_SESSION['panier']['idRef'][$compteur], $_SESSION['panier']['qteReference'][$compteur]);
 			}
 			
 			//only send if user subscribed for it
@@ -90,15 +90,15 @@ function generate_email($idAdherent, $totalTTC){
     }
     /* Message texte */
     $message_txt = "Vos achats du " . $date . "\n";
-    for($i = 0; $i < count($_SESSION['inde_panier']['nomReference']); $i++){
+    for($i = 0; $i < count($_SESSION['panier']['nomReference']); $i++){
 	    $message_txt .= "  - " . 
 	        //name product
-	        stripslashes($_SESSION['inde_panier']['nomReference'][$i]) . 
+	        stripslashes($_SESSION['panier']['nomReference'][$i]) . 
 	        //quantity bought
-	        " ".$_SESSION['inde_panier']['qteReference'][$i]." x " . 
-	            round($_SESSION['inde_panier']['prixReference'][$i] / $_SESSION['inde_panier']['qteReference'][$i], 2) . "euro" .
+	        " ".$_SESSION['panier']['qteReference'][$i]." x " . 
+	            round($_SESSION['panier']['prixReference'][$i] / $_SESSION['panier']['qteReference'][$i], 2) . "euro" .
 	        //total price for this product
-	        "  [ " . round($_SESSION['inde_panier']['prixReference'][$i],2) . " euros ]\n"; 	 	
+	        "  [ " . round($_SESSION['panier']['prixReference'][$i],2) . " euros ]\n"; 	 	
     }
     $message_txt .= "\nTOTAL TTC : " . round($totalTTC,2) . " euros.\n"; 
     $message_txt .= "Le solde de votre compte est maintenant de : " . round($nouveauSolde, 2) . " euros.\n";

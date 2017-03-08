@@ -1,12 +1,12 @@
 <?php
 session_start();
 
-//	$nbArticles=count($_SESSION['inde_panier']['libelleProduit']);
+//	$nbArticles=count($_SESSION['panier']['libelleProduit']);
 //	$compteur = $nbArticles;
 
 	if (isset ($_POST['acheterRef']))
 	{
-		$listeRef = $_SESSION['inde_listeRef'];
+		$listeRef = $_SESSION['listeRef'];
 
 		foreach($listeRef as $idReference)
 		{
@@ -16,16 +16,16 @@ session_start();
 			$qteProduit = $qteProduitValide;
 			if($qteProduit > 0)
 			{
-//				if(in_array($idReference, $_SESSION['inde_panier']['idRef'],true))
-				$pos=array_search($idReference,$_SESSION['inde_panier']['idRef']);
+//				if(in_array($idReference, $_SESSION['panier']['idRef'],true))
+				$pos=array_search($idReference,$_SESSION['panier']['idRef']);
 				if ($pos !== false) 
 				{
 					
-					$_SESSION['inde_panier']['qteReference'][$pos] = $_SESSION['inde_panier']['qteReference'][$pos] + $qteProduit;
+					$_SESSION['panier']['qteReference'][$pos] = $_SESSION['panier']['qteReference'][$pos] + $qteProduit;
 					$prixReference = $_POST['prix_'.$idReference];
-					$_SESSION['inde_panier']['prixReference'][$pos] = $prixReference * $_SESSION['inde_panier']['qteReference'][$pos];
+					$_SESSION['panier']['prixReference'][$pos] = $prixReference * $_SESSION['panier']['qteReference'][$pos];
 					
-					$_SESSION['inde_montantPanier'] = $_SESSION['inde_montantPanier'] + $prixReference * $qteProduit;
+					$_SESSION['montantPanier'] = $_SESSION['montantPanier'] + $prixReference * $qteProduit;
 				}
 				else
 				{
@@ -33,14 +33,14 @@ session_start();
 					$prixReference = $_POST['prix_'.$idReference];
 //$idFournisseur = $_POST['fournisseur_'.$idReference];					
 					
-					array_push( $_SESSION['inde_panier']['idRef'],$idReference);
-					array_push( $_SESSION['inde_panier']['nomReference'],$nomReference);
-					array_push( $_SESSION['inde_panier']['qteReference'],$qteProduit);
-					array_push( $_SESSION['inde_panier']['prixReference'],$prixReference*$qteProduit);
-//array_push( $_SESSION['inde_panier']['idFournisseur'],$idFournisseur);					
+					array_push( $_SESSION['panier']['idRef'],$idReference);
+					array_push( $_SESSION['panier']['nomReference'],$nomReference);
+					array_push( $_SESSION['panier']['qteReference'],$qteProduit);
+					array_push( $_SESSION['panier']['prixReference'],$prixReference*$qteProduit);
+//array_push( $_SESSION['panier']['idFournisseur'],$idFournisseur);					
 					
-					$_SESSION['inde_nbRefPanier']++;
-					$_SESSION['inde_montantPanier'] = $_SESSION['inde_montantPanier'] + ($prixReference*$qteProduit);
+					$_SESSION['nbRefPanier']++;
+					$_SESSION['montantPanier'] = $_SESSION['montantPanier'] + ($prixReference*$qteProduit);
 				}
 			}
 		}

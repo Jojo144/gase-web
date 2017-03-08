@@ -13,18 +13,18 @@
 	
 	if (isset($_POST['adherent'])) 
 	{
-		$_SESSION['inde_adherent'] = $_POST['adherent'];
+		$_SESSION['adherent'] = $_POST['adherent'];
 	}
 	
-	$identiteAdherent = SelectionPrenomNomAdherent($_SESSION['inde_adherent']);
-	$data =  SelectionDonneesAdherent($_SESSION['inde_adherent']);
+	$identiteAdherent = SelectionPrenomNomAdherent($_SESSION['adherent']);
+	$data =  SelectionDonneesAdherent($_SESSION['adherent']);
 	
-	$_SESSION['inde_montantPanier'] = 0;
-	$_SESSION['inde_nbRefPanier'] = 0;
-	$_SESSION['inde_panier']['idRef'] = array();
-	$_SESSION['inde_panier']['nomReference'] = array();
-	$_SESSION['inde_panier']['qteReference'] = array();
-	$_SESSION['inde_panier']['prixReference'] = array();
+	$_SESSION['montantPanier'] = 0;
+	$_SESSION['nbRefPanier'] = 0;
+	$_SESSION['panier']['idRef'] = array();
+	$_SESSION['panier']['nomReference'] = array();
+	$_SESSION['panier']['qteReference'] = array();
+	$_SESSION['panier']['prixReference'] = array();
 
 	?>
 	
@@ -51,7 +51,7 @@
 		<br>
 	
 	<?php
-	$listeAchats = SelectionListeAchatsAdherent($_SESSION['inde_adherent']);
+	$listeAchats = SelectionListeAchatsAdherent($_SESSION['adherent']);
 	if(count($listeAchats) != 0)
 	{
 	?>

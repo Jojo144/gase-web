@@ -1,6 +1,6 @@
 <?php
 //to remove
-//require("inde_fonctionsOutil.php");
+//require("fonctionsOutil.php");
 require("fonctionsBD.php");
  
 // Si le formulaire a été envoyé

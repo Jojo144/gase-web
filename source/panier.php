@@ -1,10 +1,10 @@
 <?php
-$soldeAdherent = SelectionSoldeAdherentMC($_SESSION['inde_adherent']);
-$nbRefPanier = $_SESSION['inde_nbRefPanier'];
+$soldeAdherent = SelectionSoldeAdherentMC($_SESSION['adherent']);
+$nbRefPanier = $_SESSION['nbRefPanier'];
 if ( $nbRefPanier == 0){
 	echo "<div>Votre panier est vide.</div>";
 }else{
-	$prixTotal=$_SESSION['inde_montantPanier'];
+	$prixTotal=$_SESSION['montantPanier'];
 ?>
 	<form id="formulaire" method="post" action="payer.php">
 		<div id= "table_reference_list">
@@ -19,11 +19,11 @@ if ( $nbRefPanier == 0){
 				{
 					?>
 					<tr>
-						<td width="78%"><?php echo $_SESSION['inde_panier']['nomReference'][$i];?></td>
-						<td width="9%"><?php echo $_SESSION['inde_panier']['qteReference'][$i];?></td>
-						<td width="9%"><?php echo round($_SESSION['inde_panier']['prixReference'][$i],2);?></td>
+						<td width="78%"><?php echo $_SESSION['panier']['nomReference'][$i];?></td>
+						<td width="9%"><?php echo $_SESSION['panier']['qteReference'][$i];?></td>
+						<td width="9%"><?php echo round($_SESSION['panier']['prixReference'][$i],2);?></td>
 						<td width="4%">
-							<a href="retirer.php?idRef=<?php echo $_SESSION['inde_panier']['idRef'][$i]; ?>"><img src="../static/img_trash.png" title="Retirer du panier" alt="X" /></a>
+							<a href="retirer.php?idRef=<?php echo $_SESSION['panier']['idRef'][$i]; ?>"><img src="../static/img_trash.png" title="Retirer du panier" alt="X" /></a>
 						</td>
 					</tr>
 					<?php
