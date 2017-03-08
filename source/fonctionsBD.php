@@ -103,6 +103,14 @@ if (! defined ( "FONCTION_BD_GASE_PHP" )) {
 		$requete = "INSERT INTO " . DB_PREFIX . "VIE_OUTIL (DATE, MESSAGE) values(NOW(),$message)";
 		requete ( $requete );
 	}
+	function EditerInfoOutil($message, $date) {
+		global $mysql;
+		$message = $mysql->quote ( $message );
+		$date = $mysql->quote ( $date );
+		$requete = "UPDATE " . DB_PREFIX . "VIE_OUTIL SET MESSAGE=$message WHERE DATE=$date";
+		echo $requete;
+		requete ( $requete );
+	}
 	function SelectionListeMessages() {
 		$compteur = 0;
 		$result = requete ( "SELECT DATE, MESSAGE FROM " . DB_PREFIX . "VIE_OUTIL ORDER BY DATE DESC" );
@@ -111,12 +119,19 @@ if (! defined ( "FONCTION_BD_GASE_PHP" )) {
 			while ( $row = $result->fetch () ) {
 				$donnees ['DATE'] = $row [0];
 				$donnees ['MESSAGE'] = $row [1];
-				
 				$listeMsg [$compteur] = $donnees;
 				$compteur ++;
 			}
 		}
 		return $listeMsg;
+	}
+	function SelectionMessage($date) {
+		$result = requete ( "SELECT MESSAGE FROM " . DB_PREFIX . "VIE_OUTIL WHERE DATE='$date'" );
+		$message = null;
+		while ( $row = $result->fetch () ) {
+			$message = $row[0];
+		}
+		return $message;
 	}
 	function RemoveMessage($date) {
 		requete ( "DELETE FROM " . DB_PREFIX . "VIE_OUTIL WHERE DATE='$date'" );

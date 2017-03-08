@@ -53,10 +53,14 @@
 			<td><label class="colonne1"><center>
 						<strong><?php echo $message['DATE']; ?></strong>
 					</center></label></td>
-			<td><label class="colonne2"><?php echo stripslashes($message['MESSAGE']); ?></label></td>
+			<td><label class="colonne2"><?php echo nl2br(htmlspecialchars($message['MESSAGE'])); ?></label></td>
 			<td><label class="colonne3"> <a
 					href="journalDeBord.php?remove_date=<?php echo $message['DATE']; ?>"><img
-						src="../static/img_trash.png" title="suprimer entrée" alt="X" /></a>
+						src="../static/img_trash.png" title="Suprimer l'entrée" alt="X" /></a>
+			</label></td>
+			<td><label class="colonne4"> <a
+					href="journalDeBordEdit.php?edit_date=<?php echo $message['DATE']; ?>"><img
+						src="../static/img_edit.png" title="Éditer l'entrée" alt="Éditer" /></a>
 			</label></td>
 		</tr>
 					<?php

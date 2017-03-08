@@ -52,7 +52,7 @@ $alert_list = getReferencesWithStockAlert ();
 			<td><label class="colonne1"><center>
 						<strong><?php echo $message['DATE']; ?></strong>
 					</center></label></td>
-			<td><label class="colonne2"><?php echo stripslashes($message['MESSAGE']); ?></label></td>
+			<td><label class="colonne2"><?php echo nl2br(htmlspecialchars($message['MESSAGE'])); ?></label></td>
 		</tr>
 	<?php
 							}
