@@ -44,7 +44,7 @@
 					$donneesFournisseur = SelectionDonneesFournisseur($cle);
 					?>
 					<tr <?= $donneesFournisseur['VISIBLE'] == 0 ? 'class="inactive"' : '' ?>>
-					   <td><a href="inde_2modifFournisseur.php?idFournisseur=<?php echo  $cle; ?>" title="<?php echo $element; ?>" class="bouton"><?php echo  "&nbsp;".$element."&nbsp;"; ?></a></td>
+					   <td><a href="modifFournisseur.php?idFournisseur=<?php echo  $cle; ?>" title="<?php echo $element; ?>" class="bouton"><?php echo  "&nbsp;".$element."&nbsp;"; ?></a></td>
 					   <td><label class="colonne2"></label><?php echo  "&nbsp;".$donneesFournisseur['MAIL']."&nbsp;"; ?></td>
 					   <td><label class="colonne3"></label><?php echo  "&nbsp;".$donneesFournisseur['CONTACT']."&nbsp;"; ?></td>
 					   <td><label class="colonne4"></label><?php echo  "&nbsp;".$donneesFournisseur['TELEPHONE_FIXE']."&nbsp;"; ?></td>

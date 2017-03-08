@@ -18,7 +18,7 @@
 		<div style="text-align:center">
 			Les champs avec une étoile doivent obligatoirement être renseignés.
 			<div>
-				<form id="formulaire" method="post" action="inde_enregistrerModifCategorie.php">
+				<form id="formulaire" method="post" action="modifCategorieE.php">
 					<input type="hidden" name="idCategorie" value="<?php echo $idCategorie; ?>" />
 					<div id= "table">
 						<p class = "ligne">

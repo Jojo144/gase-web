@@ -24,7 +24,7 @@
 			<ul>
 				<li><a href="inde_1modifReference.php">VOIR</a></li>
 				<li><a href="inde_1nouvelleReference.php">NOUVELLE</a></li>
-				<li><a href="inde_1modifCategorie.php">VOIR CATÉGORIES</a></li>
+				<li><a href="modifCategorie1.php">VOIR CATÉGORIES</a></li>
 				<li><a href="inde_1nouvelleCategorie.php">AJOUTER CATÉGORIE</a></li>
 			</ul>
 		</li>
@@ -36,7 +36,7 @@
 		</li>
 		<li><a href="#">FOURNISSEURS</a>
 			<ul>
-				<li><a href="inde_1modifFournisseur.php">VOIR</a></li>
+				<li><a href="modifFournisseur1.php">VOIR</a></li>
 				<li><a href="inde_1nouveauFournisseur.php">NOUVEAU</a></li>
 			</ul>
 		</li>
@@ -44,7 +44,7 @@
 		<!--PGA - gase de chips - menu Document et déconnexion inutile pour le moment.
 		<li><a href="#">DOCUMENTS</a>
 			<ul>
-				<li><a href="inde_1modifDocument.php">VOIR</a></li>
+				<li><a href="modifDocument.php">VOIR</a></li>
 				<li><a href="inde_1nouveauDocument.php">ARCHIVER</a></li>
             		</ul>
         	</li>

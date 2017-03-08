@@ -28,7 +28,7 @@
 					$donneesCategorie = SelectionDonneesCategorie($cle);
 					?>
 					<tr>
-						<td><a href="inde_2modifCategorie.php?idCategorie=<?php echo  $cle; ?>" title="<?php echo $element; ?>" class="bouton"><?php echo  "&nbsp;".$element."&nbsp;"; ?></a></td>
+						<td><a href="modifCategorie.php?idCategorie=<?php echo  $cle; ?>" title="<?php echo $element; ?>" class="bouton"><?php echo  "&nbsp;".$element."&nbsp;"; ?></a></td>
 						<?php
 						if($donneesCategorie['VISIBLE'] == 1)
 						{
