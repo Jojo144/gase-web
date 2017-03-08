@@ -7,13 +7,13 @@
 		<li><a href="achats.php">ACHATS</a></li>
 		<li><a href="#">COMPTE</a>
 			<ul>
-				<li><a href="inde_1soldeAdherentMC.php">SOLDE</a></li>
-				<li><a href="inde_1approMC.php">APPROVISIONNER</a></li>
+				<li><a href="soldeCompte1.php">SOLDE</a></li>
+				<li><a href="approCompte1.php">APPROVISIONNER</a></li>
 			</ul>
 		</li>
 		<li><a href="#">STOCKS</a>
 			<ul>
-				<li><a href="inde_1stocksREF.php">ÉTAT</a></li>
+				<li><a href="etatStock.php">ÉTAT</a></li>
 				<li><a href="inde_1approREF.php">APPROVISIONNER</a></li>
 				<li><a href="inde_inventaireREF.php">INVENTAIRE</a></li>
 				<li><a href="stock_alert_list.php">ALERTE STOCK</a></li>

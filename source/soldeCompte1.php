@@ -13,7 +13,7 @@
 			Choisissez le nom d'un adhérent.
 			</br>
 			</br>
-			<form id="formulaire" method="post" action="inde_soldeAdherentMC.php">
+			<form id="formulaire" method="post" action="soldeCompte.php">
 				<select name="adherent" id="adherent" onchange="this.form.submit()">
 					<option value="" selected="selected"></option>
 					<?php	

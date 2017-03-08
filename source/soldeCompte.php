@@ -19,7 +19,7 @@
 		<?php include 'inde_menu.php'; ?>
 		
 		<div style="text-align:center">
-			<form id="formulaire" method="post" action="inde_soldeAdherentMC.php">
+			<form id="formulaire" method="post" action="soldeCompte.php">
 				<select name="adherent" id="adherent" onchange="this.form.submit()">
 					<?php	
 					$listeAD = SelectionListeAD();
