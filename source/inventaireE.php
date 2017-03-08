@@ -41,10 +41,10 @@ if (isset ($_POST['enregistrerInventaire']))
 			}
 			include ('inventaireE2.php');
 		}else{
-			echo 'La quantite indiquée pour ' . $testElement . ' n\'est pas une valeur numérique.';
+			echo 'La qauntité indiquée pour ' . $testElement . ' n\'est pas une valeur numérique.';
 		}
 	}else{
-			echo 'Aucune quantite n\'est renseignee.';	
+			echo 'Aucune qauntité n\'est renseignée.';	
 	}
 }
 

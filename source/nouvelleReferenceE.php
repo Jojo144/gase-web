@@ -29,12 +29,12 @@ include 'menu.php';
 					    
 					    
 					    if(! is_numeric($prix)){
-				            echo 'ATTENTION la référence n\'est PAS enregistrée car le prix n\'est pas une valeur numerique ! Refaire la creation.';
+				            echo 'ATTENTION la référence n\'est PAS enregistrée car le prix n\'est pas une valeur numérique ! Refaire la creation.';
 				        }else{
 				            $alert_stock = $_POST['alert_stock'];
 				            $alert_stock = str_replace(",", ".", $alert_stock);
 				            if($alert_stock != "" && ! is_numeric($alert_stock)){
-				                echo 'ATTENTION la référence n\'est PAS enregistrée car le niveau d\'alerte stock n est pas une valeur numerique ! Refaire la creation.';
+				                echo 'ATTENTION la référence n\'est PAS enregistrée car le niveau d\'alerte stock n\'est pas une valeur numérique ! Refaire la creation.';
 				            }else{
 						        $tva = $_POST['tva'];
 						        $vrac = $_POST['vrac'];

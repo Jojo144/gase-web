@@ -14,28 +14,28 @@ if (isset ($_POST['modifierReference']))
 	//$designation = mb_strtoupper($designation);
 	//La designation est obligatoire
 	if(empty($designation)){
-		print("<center>La '<b>DESIGNATION/b>' de la reference n\'est pas renseigne ! Creation a refaire.</center>");
+		print("<center>La '<b>DESIGNATION/b>' de la référence n\'est pas renseigné ! Création à refaire.</center>");
 	}else{
 		$fournisseur = $_POST['fournisseur'];
 		if(empty($fournisseur)){
-			print("<center>Le '<b>FOURNISSEUR/b>' de la reference n\'est pas renseigne ! Creation a refaire.</center>");
+			print("<center>Le '<b>FOURNISSEUR/b>' de la référence n\'est pas renseigné ! Création à refaire.</center>");
 		}else{
 			$categorie = $_POST['categorie'];
 			if(empty($categorie)){
-				print("<center>La '<b>CATEGORIE/b>' de la reference n\'est pas renseignee ! Creation a refaire.</center>");
+				print("<center>La '<b>CATEGORIE/b>' de la référence n\'est pas renseignée ! Création à refaire.</center>");
 			}else{
 				$prix = $_POST['prix'];
 				$prix = str_replace(",", ".", $prix);
 				if(empty($prix)){
-					print("<center>Le '<b>PRIX/b>' de la reference n\'est pas renseigne ! Creation a refaire.</center>");
+					print("<center>Le '<b>PRIX/b>' de la référence n\'est pas renseigné ! Création à refaire.</center>");
 				}else{
 				    if(! is_numeric($prix)){
-				        echo 'ATTENTION la reference N\'est PAS enregistree car le prix n\'est pas une valeur numerique ! Refaire la creation.';
+				        echo 'ATTENTION la référence N\'est PAS enregistrée car le prix n\'est pas une valeur numérique ! Refaire la creation.';
 				    }else{
 				        $alert_stock = $_POST['alert_stock'];
 				        $alert_stock = str_replace(",", ".", $alert_stock);
 				        if($alert_stock != "" && ! is_numeric($alert_stock)){
-				            echo 'ATTENTION la reference N\'est PAS enregistree car le niveau d\'alerte stock n est pas une valeur numerique ! Refaire la creation.';
+				            echo 'ATTENTION la référence N\'est PAS enregistrée car le niveau d\'alerte stock n\'est pas une valeur numérique ! Refaire la creation.';
 				        }else{
 						    $tva = $_POST['tva'];
 						    $vrac = $_POST['vrac'];

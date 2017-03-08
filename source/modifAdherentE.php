@@ -22,7 +22,7 @@
 	        //$nom = mb_strtoupper($nom);
 	
 	        if(empty($nom)){
-		        print("<center>Le '<b>NOM</b>' de l adherent n est pas renseigne ! Creation a refaire.</center>");
+		        print("<center>Le '<b>NOM</b>' de l\'adherent n\'est pas renseigné ! Création à refaire.</center>");
 	        }else{
 	                //$ticket = $_POST['ticket'];
                 	$ticket = 0;
@@ -51,7 +51,7 @@
 			        $receive_alert_stock = 0;
 			
 			        MajAdherent($idAdherent, $nom, $prenom, $email, $telephone_fixe, $telephone_portable, $adresse, $commentaire, $ticket, $visible, $receive_alert_stock);
-			        echo '<p style="text-align:center">Mise a jour des donnees de ' . $prenom . ' ' . $nom . ' enregistree.</p>';
+			        echo '<p style="text-align:center">Mise a jour des donnees de ' . $prenom . ' ' . $nom . ' enregistrée.</p>';
 		        }
 	        }
         }

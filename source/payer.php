@@ -69,7 +69,7 @@ if (isset ($_POST['payer']))
 	else
 	{
 		include '1listeRefCategorie.php'; 
-		echo 'Le panier est vide. Pas de commande enregistree';
+		echo 'Le panier est vide. Pas de commande enregistrée';
 	}
 }
 

@@ -14,7 +14,7 @@ if (isset ($_POST['modifierCategorie']))
 	//Le nom est obligatoire
 	if(empty($nom))
 	{
-		print("<center>Le '<b>NOM</b>' de la catégorie n est pas renseigne !</center>");
+		print("<center>Le '<b>NOM</b>' de la catégorie n\'est pas renseigné !</center>");
 	}
 	else
 	{
