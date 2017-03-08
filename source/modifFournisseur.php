@@ -7,7 +7,7 @@
     </head>
 
 	<?php 
-	require("fonctions_bd_fournisseurs.php"); 
+	require("fonctionsFournisseurs.php"); 
 	$idFournisseur= $_GET["idFournisseur"];
 	$donnees = SelectionDonneesFournisseur($idFournisseur);
 	?>

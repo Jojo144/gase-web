@@ -12,9 +12,9 @@ session_start();
 
 
 <?php
-require("inde_fonctionsSTK.php");
-require("inde_fonctionsMC.php");
-require("inde_fonctionsAD.php");
+require("fonctionsStock.php");
+require("fonctionsCompte.php");
+require("fonctionsAdherents.php");
 
 //get path to PHPMailer
 $config = parse_ini_file(GASE_CONFIG_FILE_PATH, true);

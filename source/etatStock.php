@@ -10,7 +10,7 @@
 		<?php include 'menu.php'; ?>
 
 		<?php
-			require("inde_fonctionsSTK.php");
+			require("fonctionsStock.php");
 			/*
 			 * AC 29-01-2016
 			 * Ajout d'un bouton pour afficher/masquer les références visibles

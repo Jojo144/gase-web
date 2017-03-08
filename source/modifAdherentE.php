@@ -7,7 +7,7 @@
     </head>
     <body>
         <title>MODIF. ADHERENT</title>
-	    <?php require("inde_fonctionsAD.php"); ?>
+	    <?php require("fonctionsAdherents.php"); ?>
 		<?php include 'menu.php'; ?>
 
         <?php

@@ -11,7 +11,7 @@ session_start();
     </head>
 
 	<?php
-//	require("inde_fonctionsCAT.php"); 
+//	require("fonctionsCategories.php"); 
 	if (isset($_GET['idCategorie']))
 	{
 		$idCategorie = $_GET['idCategorie'];
@@ -22,9 +22,9 @@ session_start();
 	<body>
 		<?php include 'menuAchats.php'; ?>
 		<?php
-		    require("inde_fonctionsMC.php");
-		    require("inde_fonctionsAD.php");
-		    require("inde_fonctionsREF.php");
+		    require("fonctionsCompte.php");
+		    require("fonctionsAdherents.php");
+		    require("fonctionsReferences.php");
             $soldeAdherent = SelectionSoldeAdherentMC($_SESSION['inde_adherent']);
             $prenom_nom = SelectionPrenomNomAdherent($_SESSION['inde_adherent']);
 		?>

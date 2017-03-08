@@ -8,7 +8,7 @@
     <body>
 		<?php include 'menu.php'; ?>
 		
-		<?php require("inde_fonctionsAD.php"); ?>
+		<?php require("fonctionsAdherents.php"); ?>
 		<div style="text-align:center">
 			Choisissez le nom d'un adhérent.
 			</br>

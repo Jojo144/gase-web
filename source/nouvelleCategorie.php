@@ -8,7 +8,7 @@
     </head>
 
 	<?php 
-	require("inde_fonctionsCAT.php"); 
+	require("fonctionsCategories.php"); 
 	?>
 	
 	<?php include 'menu.php'; ?>

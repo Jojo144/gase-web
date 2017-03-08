@@ -7,7 +7,7 @@
     </head>
 
 	<?php 
-	require("inde_fonctionsAD.php"); 
+	require("fonctionsAdherents.php"); 
 	
 	$idAdherent= $_GET["idAdherent"];
 	$donnees = SelectionDonneesAdherent($idAdherent);

@@ -9,8 +9,8 @@
   <body>
     <?php include 'menu.php'; ?>
 
-    <?php require("fonctions_bd_gase.php"); ?>
-    <?php require("inde_fonctionsSTK.php"); ?>
+    <?php require("fonctionsBD.php"); ?>
+    <?php require("fonctionsStock.php"); ?>
     <div class="notification_alert_stock">
       <?php $alert_list = getReferencesWithStockAlert();
 	    if (count($alert_list) > 0){

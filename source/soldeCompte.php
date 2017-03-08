@@ -6,8 +6,8 @@
     </head>
 
 	<?php
-	require("inde_fonctionsMC.php");
-	require("inde_fonctionsAD.php");
+	require("fonctionsCompte.php");
+	require("fonctionsAdherents.php");
 	
 	$idAdherent = $_POST['adherent'];
 

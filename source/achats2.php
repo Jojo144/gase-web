@@ -9,7 +9,7 @@
     </head>
 
 	<?php
-	require("inde_fonctionsAD.php");
+	require("fonctionsAdherents.php");
 	
 	if (isset($_POST['adherent'])) 
 	{

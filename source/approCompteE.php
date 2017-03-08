@@ -1,5 +1,5 @@
 <?php
-require("inde_fonctionsMC.php");
+require("fonctionsCompte.php");
  
 // Si le formulaire a été envoyé
 if (isset ($_POST['enregistrerAppro']))

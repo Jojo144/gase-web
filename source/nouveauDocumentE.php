@@ -1,5 +1,5 @@
 <?php
-require("inde_fonctionsDOCU.php");
+require("fonctionsDocuments.php");
 
 	include 'menu.php';
  

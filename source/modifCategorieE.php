@@ -1,5 +1,5 @@
 <?php
-require("inde_fonctionsCAT.php"); 
+require("fonctionsCategories.php"); 
 
 include 'menu.php';
  

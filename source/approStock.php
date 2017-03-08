@@ -8,7 +8,7 @@
 
 	<?php
 //	require("fonctionsREF.php");
-	require("inde_fonctionsSTK.php");
+	require("fonctionsStock.php");
 	$idFournisseur = $_POST['fournisseur'];	
 	$listeSTK = SelectionStocks($idFournisseur);
 //	$listeCodeREF = SelectionListeCodeFournisseurREF($fournisseur);

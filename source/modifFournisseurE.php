@@ -1,5 +1,5 @@
 <?php
-require("fonctions_bd_fournisseurs.php"); 
+require("fonctionsFournisseurs.php"); 
 
 include 'menu.php';
  

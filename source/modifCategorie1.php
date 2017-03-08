@@ -6,7 +6,7 @@
 		<title>CATÉGORIES</title>
     </head>
 	<?php include 'menu.php'; ?>
-	<?php require("inde_fonctionsCAT.php"); ?>
+	<?php require("fonctionsCategories.php"); ?>
     <body>
 		<div style="text-align:center">
 			Cliquez sur le nom de la catégorie à modifier.

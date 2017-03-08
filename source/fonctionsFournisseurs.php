@@ -1,5 +1,5 @@
 <?php
-require("fonctions_bd_gase.php");
+require("fonctionsBD.php");
 
 /*
  * AC 15-04-2016 nouvelle connexion mysql

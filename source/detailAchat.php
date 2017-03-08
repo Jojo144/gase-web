@@ -8,7 +8,7 @@
     <body>
 	<?php 
 	//require("inde_fonctionsACH.php"); 
-	require("fonctions_bd_gase.php"); 
+	require("fonctionsBD.php"); 
 	?>
 	<?php include 'menu.php'; ?>
 	

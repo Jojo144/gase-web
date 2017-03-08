@@ -18,7 +18,7 @@
 			<br />
 			VEUILLEZ INDIQUER LE TYPE DE DOCUMENT A ARCHIVER.
 			<?php
-			require("inde_fonctionsDOCU.php");
+			require("fonctionsDocuments.php");
 			$listeTypesDoc = SelectionListeTypesDoc();
 			?>
 			

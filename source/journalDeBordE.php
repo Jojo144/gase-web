@@ -1,7 +1,7 @@
 <?php
 //to remove
 //require("inde_fonctionsOutil.php");
-require("fonctions_bd_gase.php");
+require("fonctionsBD.php");
  
 // Si le formulaire a été envoyé
 if (isset ($_POST['enregistrerInfoOutil']))

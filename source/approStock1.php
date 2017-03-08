@@ -8,7 +8,7 @@
     <body>
 		<?php include 'menu.php'; ?>
 		
-		<?php require("fonctions_bd_fournisseurs.php"); ?>
+		<?php require("fonctionsFournisseurs.php"); ?>
 		<div style="text-align:center">
 			Choisissez un fournisseur.
 			<br>

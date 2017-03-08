@@ -8,8 +8,8 @@
     <body>
         <?php include 'menu.php'; ?>
 	    <?php 
-	    require("inde_fonctionsDOCU.php");
-	    require("fonctions_bd_fournisseurs.php");
+	    require("fonctionsDocuments.php");
+	    require("fonctionsFournisseurs.php");
 	    ?>
 		<div style="text-align:center">
 			Ensemble des documents archives.

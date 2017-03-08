@@ -7,7 +7,7 @@
     </head>
 	<body>
 	    <?php include 'menu.php'; ?>
-	    <?php require("inde_fonctionsAD.php"); ?>
+	    <?php require("fonctionsAdherents.php"); ?>
     
 		<div style="text-align:center">
 			Cliquez sur le nom d'un adhérent pour modifier ses données.

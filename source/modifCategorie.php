@@ -7,7 +7,7 @@
     </head>
 
 	<?php 
-	require("inde_fonctionsCAT.php"); 
+	require("fonctionsCategories.php"); 
 	$idCategorie= $_GET[idCategorie];
 	$donneesCategorie = SelectionDonneesCategorie($idCategorie);
 	?>

@@ -10,8 +10,8 @@
 		<?php include 'menu.php'; ?>
 
 		<?php
-		require("inde_fonctionsAD.php");
-		require("inde_fonctionsMC.php");
+		require("fonctionsAdherents.php");
+		require("fonctionsCompte.php");
 		$idAdherent = $_POST['adherent'];
 		$solde = SelectionSoldeAdherentMC($idAdherent);
 		$donneesAD = SelectionDonneesAdherent($idAdherent);

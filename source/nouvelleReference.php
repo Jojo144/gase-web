@@ -10,8 +10,8 @@
 		<?php include 'menu.php'; ?>
 
 		<?php 
-		require("fonctions_bd_fournisseurs.php"); 
-		require("inde_fonctionsCAT.php");
+		require("fonctionsFournisseurs.php"); 
+		require("fonctionsCategories.php");
 		?>
 		<div style="text-align:center">
 			Les champs avec une étoile doivent obligatoirement être renseignés.<br />

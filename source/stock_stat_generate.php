@@ -1,7 +1,7 @@
 <?php
-//if fonctions_bd_gase.php is included, the chart is not generated...
+//if fonctionsBD.php is included, the chart is not generated...
 //... so need to use only base php here
-//require_once("fonctions_bd_gase.php");
+//require_once("fonctionsBD.php");
 
 // AC 02-05-2016 DB_PREFIX
 

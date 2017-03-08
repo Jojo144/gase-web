@@ -8,7 +8,7 @@
     <body>
         <?php include 'menu.php'; ?>
         <?php
-            require("inde_fonctionsSTK.php");
+            require("fonctionsStock.php");
             $listeSTK = SelectionListeSTK();
         ?>
 

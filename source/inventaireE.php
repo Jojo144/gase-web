@@ -1,5 +1,5 @@
 <?php
-require("inde_fonctionsSTK.php");
+require("fonctionsStock.php");
  
 // Si le formulaire a été envoyé
 if (isset ($_POST['enregistrerInventaire']))

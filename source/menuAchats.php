@@ -2,7 +2,7 @@
 	<link rel="stylesheet" type="text/css" href="menuAchats.css" />
 
 	<?php
-	require("inde_fonctionsCAT.php");
+	require("fonctionsCategories.php");
 	$listeCategories = SelectionListeCategoriesMenu();
 	?>
 		<div id="menu_achats">

@@ -1,5 +1,5 @@
 <?php
-require("inde_fonctionsSTK.php");
+require("fonctionsStock.php");
 $inventaire_date_list = get_inventaires_dates();
 //display last inventaire available by default
 $inventaire_date_selected = max($inventaire_date_list);

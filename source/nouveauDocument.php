@@ -7,7 +7,7 @@
     </head>
 
 	<?php
-	require("inde_fonctionsDOCU.php");
+	require("fonctionsDocuments.php");
 	$idType = $_POST['idType'];
 	$nomType = SelectionNomTypeDoc($idType);
 	?>

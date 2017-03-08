@@ -8,9 +8,9 @@
 	<body>
         <?php include 'menu.php'; ?>
         <?php 
-            require("inde_fonctionsREF.php"); 
-            require("fonctions_bd_fournisseurs.php"); 
-            require("inde_fonctionsCAT.php"); 
+            require("fonctionsReferences.php"); 
+            require("fonctionsFournisseurs.php"); 
+            require("fonctionsCategories.php"); 
         ?>
 		<div style="text-align:center">
 			Cliquez sur le nom de la référence à modifier.

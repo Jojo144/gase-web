@@ -28,7 +28,7 @@
 		</div>
 		
 		<?php
-		    require("fonctions_bd_gase.php");
+		    require("fonctionsBD.php");
 			if (isset($_GET['remove_date'])){
 			    //delete an entry
 			    RemoveMessage($_GET['remove_date']);

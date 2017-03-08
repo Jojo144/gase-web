@@ -8,9 +8,9 @@
 
     <body>
 		<?php include 'menu.php';
-		require("fonctions_bd_gase.php");
-		require("inde_fonctionsSTK.php");
-		require("inde_fonctionsREF.php");
+		require("fonctionsBD.php");
+		require("fonctionsStock.php");
+		require("fonctionsReferences.php");
 		$ref_id = $_GET['id'];
 		//get details of a reference, to display name and fournisseur name
 		$ref_details = SelectionDonneesReference($ref_id);
