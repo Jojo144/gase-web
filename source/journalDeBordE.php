@@ -7,8 +7,9 @@ require("fonctionsBD.php");
 if (isset ($_POST['enregistrerInfoOutil']))
 {
 	$info = $_POST['info'];
-	$info = str_replace("'", "_", $info);
-
+	$info = htmlspecialchars($info);
+	$info = nl2br($info);
+	
 	EnregistrerInfoOutil($info);
 
     header('location:journalDeBord.php');

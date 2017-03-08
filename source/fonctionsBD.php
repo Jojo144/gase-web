@@ -28,7 +28,7 @@ $user = $config["DB"]["user"];
 $pass = $config["DB"]["password"];
 $name =  $config["DB"]["name"];
 $prefix =  $config["DB"]["prefix"];
-if ($prefix == '') $prefix = '_';
+if ($prefix == '') $prefix = '_inde_';
 // construction chaîne de connexion
 $dsn = "mysql:host=$address;dbname=$name;charset=utf8";
 // variable globale 
@@ -105,7 +105,9 @@ function SelectionDetailsAchats($idAchats){
 
 ////////////*** JOURNAL DE BORD OUTIL ***////////////////
 function EnregistrerInfoOutil($message){
-	$requete = "INSERT INTO ".DB_PREFIX."VIE_OUTIL (DATE, MESSAGE) values(NOW(),'$message')";
+	global $mysql;
+	$message = $mysql->quote($message);
+	$requete = "INSERT INTO ".DB_PREFIX."VIE_OUTIL (DATE, MESSAGE) values(NOW(),$message)";
 	requete($requete);
 }
 
