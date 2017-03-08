@@ -20,7 +20,7 @@ session_start();
 	?>
 
 	<body>
-		<?php include 'inde_menuAchats.php'; ?>
+		<?php include 'menuAchats.php'; ?>
 		<?php
 		    require("inde_fonctionsMC.php");
 		    require("inde_fonctionsAD.php");
@@ -33,10 +33,10 @@ session_start();
 		</div>
 		<br>
 		<div class="references">
-			<?php include 'inde_listeReferences.php';?>
+			<?php include 'listeReferences.php';?>
 		</div>
 		<div class="panier">
-			<?php include 'inde_panier.php';?>
+			<?php include 'panier.php';?>
 		</div>
 		<div>
 		<br>

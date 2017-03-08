@@ -29,7 +29,7 @@
 	?>
 	
     <body>
-        <?php include 'inde_menuAchats.php'; ?>
+        <?php include 'menuAchats.php'; ?>
 		Bonjour <strong><?php echo $identiteAdherent; ?></strong>
 		<br>
 		Choisissez une catégorie de produits pour commencer vos achats.

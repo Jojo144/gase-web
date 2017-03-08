@@ -3,7 +3,7 @@
 $idCategorie = $_SESSION['inde_idCategorie'];
 $listeReferences = SelectionListeReferencesMenu($idCategorie);
 ?>
-	<form id="formulaire" method="post" action="inde_versPanier.php">
+	<form id="formulaire" method="post" action="versPanier.php">
 		<div id= "table_reference_list">
 			<table>
 				<tr>

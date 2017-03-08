@@ -46,7 +46,7 @@ session_start();
 		}
 	}
 	
-	//include 'inde_1listeRefCategorie.php';
+	//include 'achats.php';
 	//rediret to list of reference + panier
-	header('location:inde_1listeRefCategorie.php');
+	header('location:achats.php');
 ?>
