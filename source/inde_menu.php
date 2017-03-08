@@ -37,7 +37,7 @@
 		<li><a href="#">FOURNISSEURS</a>
 			<ul>
 				<li><a href="modifFournisseur1.php">VOIR</a></li>
-				<li><a href="inde_1nouveauFournisseur.php">NOUVEAU</a></li>
+				<li><a href="nouveauFournisseur.php">NOUVEAU</a></li>
 			</ul>
 		</li>
 		<li><a href="inde_1infoOutil.php">JOURNAL DE BORD</a></li>
