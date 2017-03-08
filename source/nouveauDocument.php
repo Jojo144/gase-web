@@ -21,7 +21,7 @@
 			<br />
 			<br />
 			<br />
-			<form id="formulaire" method="post" action="inde_enregistrerNouveauDocument.php" enctype="multipart/form-data">
+			<form id="formulaire" method="post" action="nouveauDocumentE.php" enctype="multipart/form-data">
 				<div id= "table">
 					<input type="hidden" name="idType" value="<?php echo $idType; ?>" />
 					<p class = "ligne">

@@ -22,7 +22,7 @@
 			$listeTypesDoc = SelectionListeTypesDoc();
 			?>
 			
-			<form id="formulaire" method="post" action="inde_2nouveauDocument.php">
+			<form id="formulaire" method="post" action="nouveauDocument.php">
 				<div>
 					<select name="idType" id="idType" onchange="this.form.submit()">
 						<option value=""></option>

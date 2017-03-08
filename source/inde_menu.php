@@ -45,7 +45,7 @@
 		<li><a href="#">DOCUMENTS</a>
 			<ul>
 				<li><a href="modifDocument.php">VOIR</a></li>
-				<li><a href="inde_1nouveauDocument.php">ARCHIVER</a></li>
+				<li><a href="nouveauDocument1.php">ARCHIVER</a></li>
             		</ul>
         	</li>
         <li><a href=logouthttp.php>DECONNEXION</a></li> -->
