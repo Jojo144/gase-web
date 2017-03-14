@@ -1,22 +1,23 @@
 <?php
-// to remove
-// require("fonctionsOutil.php");
 require ("fonctionsBD.php");
 
-// Si le formulaire a été envoyé
-if (isset ( $_POST ['enregistrerInfoOutil'] )) {
-	$info = $_POST ['info'];
-	
-	EnregistrerInfoOutil ( $info );
-	
-	header ( 'location:journalDeBord.php' );
+// Enregistrer une nouvelle info
+if (isset ( $_POST['enregistrerInfoOutil'] )) {
+	$info = $_POST['info'];
+	EnregistrerInfoOutil( $info );
 }
 
-elseif (isset ( $_POST ['editerJournal'] )) {
+// Editer une info
+elseif (isset ( $_POST['editerJournal'] )) {
 	$info = $_POST['info'];
-	
-	EditerInfoOutil( $info, $_POST['edit_date'] );
-	
-	header ( 'location:journalDeBord.php' );
+	EditerInfoOutil( $info, $_POST['edit_date'] );	
 }
+
+// Supprimer une info
+elseif (isset ( $_POST['supprimerJournal'] )) {
+	RemoveMessage ( $_POST['edit_date'] );
+}
+
+// Redirection
+header( 'Location:journalDeBord.php' );
 ?>

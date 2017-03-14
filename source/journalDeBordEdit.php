@@ -22,6 +22,9 @@
 					<div id="bouton">
 						<input type="submit" value="Enregistrer" name="editerJournal">
 					</div>
+					<div id="bouton">
+						<input type="submit" value="Supprimer" name="supprimerJournal" onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce message ?');">
+					</div>					
 				</div>
 				<input type="hidden" name="edit_date"
 					value="<?php echo $_GET['edit_date'];?>" />
