@@ -14,10 +14,10 @@ function EnregistrerNouvelleReference($designation, $fournisseur, $categorie, $p
 		$alert_stock = - 1;
 	}
 	
-	$requete1 = "INSERT INTO " . DB_PREFIX . "REFERENCES (DESIGNATION, ID_FOURNISSEUR, VRAC, ID_CATEGORIE, PRIX_TTC, TVA, VISIBLE, CODE_FOURNISSEUR, COMMENTAIRE, ALERT_STOCK, DATE_REFERENCEMENT) values('$designation','$fournisseur','$vrac','$categorie','$prix','$tva','$visible','$codeFournisseur', '$commentaire', '$alert_stock', NOW())";
+	$requete1 = "INSERT INTO " . DB_PREFIX . "PRODUITS (DESIGNATION, ID_FOURNISSEUR, VRAC, ID_CATEGORIE, PRIX_TTC, TVA, VISIBLE, CODE_FOURNISSEUR, COMMENTAIRE, ALERT_STOCK, DATE_REFERENCEMENT) values('$designation','$fournisseur','$vrac','$categorie','$prix','$tva','$visible','$codeFournisseur', '$commentaire', '$alert_stock', NOW())";
 	requete ( $requete1 );
 	
-	$result = requete ( "SELECT MAX(ID_REFERENCE) FROM " . DB_PREFIX . "REFERENCES" );
+	$result = requete ( "SELECT MAX(ID_REFERENCE) FROM " . DB_PREFIX . "PRODUITS" );
 	$resultat = $result->fetch ();
 	
 	$idRefMax = $resultat [0];
@@ -26,7 +26,7 @@ function EnregistrerNouvelleReference($designation, $fournisseur, $categorie, $p
 	requete ( $requete2 );
 }
 function SelectionListeReferences() {
-	$result = requete ( "SELECT ID_REFERENCE, DESIGNATION FROM " . DB_PREFIX . "REFERENCES ORDER BY DESIGNATION" );
+	$result = requete ( "SELECT ID_REFERENCE, DESIGNATION FROM " . DB_PREFIX . "PRODUITS ORDER BY DESIGNATION" );
 	$listeAdherents = NULL;
 	while ( $row = $result->fetch () ) {
 		$listeAdherents [$row ["ID_REFERENCE"]] = $row ["DESIGNATION"];
@@ -36,7 +36,7 @@ function SelectionListeReferences() {
 }
 function SelectionDonneesReference($idReference) {
 	$result = requete ( "SELECT r.DESIGNATION, r.ID_FOURNISSEUR, r.VRAC, r.ID_CATEGORIE, r.PRIX_TTC, r.TVA, r.VISIBLE, r.CODE_FOURNISSEUR, r.COMMENTAIRE, r.DATE_REFERENCEMENT, r.ALERT_STOCK, f.NOM 
-		    FROM " . DB_PREFIX . "REFERENCES r, " . DB_PREFIX . "FOURNISSEURS f 
+		    FROM " . DB_PREFIX . "PRODUITS r, " . DB_PREFIX . "FOURNISSEURS f 
 		    WHERE ID_REFERENCE = '$idReference'
 		    AND r.ID_FOURNISSEUR = f.ID_FOURNISSEUR" );
 	while ( $row = $result->fetch () ) {
@@ -71,12 +71,12 @@ function MajReference($idReference, $designation, $fournisseur, $categorie, $pri
 		$alert_stock = - 1;
 	}
 	
-	$requete = "UPDATE " . DB_PREFIX . "REFERENCES SET DESIGNATION = '$designation', ID_FOURNISSEUR='$fournisseur', VRAC='$vrac', ID_CATEGORIE='$categorie', PRIX_TTC = '$prix', ALERT_STOCK = '$alert_stock', TVA = '$tva', VISIBLE = '$visible', CODE_FOURNISSEUR = '$codeFournisseur', COMMENTAIRE = '$commentaire' WHERE ID_REFERENCE = '$idReference'";
+	$requete = "UPDATE " . DB_PREFIX . "PRODUITS SET DESIGNATION = '$designation', ID_FOURNISSEUR='$fournisseur', VRAC='$vrac', ID_CATEGORIE='$categorie', PRIX_TTC = '$prix', ALERT_STOCK = '$alert_stock', TVA = '$tva', VISIBLE = '$visible', CODE_FOURNISSEUR = '$codeFournisseur', COMMENTAIRE = '$commentaire' WHERE ID_REFERENCE = '$idReference'";
 	requete ( $requete );
 }
 function SelectionListeReferencesMenu($idCategorie) {
 	$compteur = 0;
-	$result = requete ( "SELECT p.NOM, r.DESIGNATION, r.PRIX_TTC, r.ID_REFERENCE, r.VRAC FROM " . DB_PREFIX . "REFERENCES r, " . DB_PREFIX . "FOURNISSEURS p WHERE r.ID_CATEGORIE = '$idCategorie' AND p.ID_FOURNISSEUR = r.ID_FOURNISSEUR AND r.VISIBLE = 1 ORDER BY r.DESIGNATION" );
+	$result = requete ( "SELECT p.NOM, r.DESIGNATION, r.PRIX_TTC, r.ID_REFERENCE, r.VRAC FROM " . DB_PREFIX . "PRODUITS r, " . DB_PREFIX . "FOURNISSEURS p WHERE r.ID_CATEGORIE = '$idCategorie' AND p.ID_FOURNISSEUR = r.ID_FOURNISSEUR AND r.VISIBLE = 1 ORDER BY r.DESIGNATION" );
 	$listeRef = null;
 	if ($result) {
 		while ( $row = $result->fetch () ) {

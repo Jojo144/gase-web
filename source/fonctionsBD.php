@@ -82,7 +82,7 @@ if (! defined ( "FONCTION_BD_GASE_PHP" )) {
 	// this is imported from fonctionsACH.php
 	function SelectionDetailsAchats($idAchats) {
 		$compteur = 0;
-		$result = requete ( "SELECT r.DESIGNATION, r.PRIX_TTC, c.QUANTITE, r.PRIX_TTC*c.QUANTITE, c.ID_REFERENCE FROM " . DB_PREFIX . "STOCKS c, " . DB_PREFIX . "REFERENCES r WHERE c.ID_ACHAT = '$idAchats' AND r.ID_REFERENCE = c.ID_REFERENCE" );
+		$result = requete ( "SELECT r.DESIGNATION, r.PRIX_TTC, c.QUANTITE, r.PRIX_TTC*c.QUANTITE, c.ID_REFERENCE FROM " . DB_PREFIX . "STOCKS c, " . DB_PREFIX . "PRODUITS r WHERE c.ID_ACHAT = '$idAchats' AND r.ID_REFERENCE = c.ID_REFERENCE" );
 		while ( $row = $result->fetch () ) {
 			$ligne ['DESIGNATION'] = $row [0];
 			$ligne ['PRIX_TTC'] = $row [1];

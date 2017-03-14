@@ -1,16 +1,5 @@
 
 
---
--- Database: `gasedechips`
---
-
-DROP DATABASE IF EXISTS gasedechips;
-CREATE DATABASE gasedechips
-  DEFAULT CHARACTER SET utf8
-  DEFAULT COLLATE utf8_general_ci;
-
-USE gasedechips;
-
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 
 -- --------------------------------------------------------
@@ -103,10 +92,10 @@ CREATE TABLE IF NOT EXISTS `FOURNISSEURS` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `REFERENCES`
+-- Table structure for table `PRODUITS`
 --
 
-CREATE TABLE IF NOT EXISTS `REFERENCES` (
+CREATE TABLE IF NOT EXISTS `PRODUITS` (
   `ID_REFERENCE` smallint(6) NOT NULL AUTO_INCREMENT,
   `DESIGNATION` varchar(64) NOT NULL,
   `ID_FOURNISSEUR` smallint(6) NOT NULL,

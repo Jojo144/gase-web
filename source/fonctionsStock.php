@@ -15,7 +15,7 @@ function SelectionListeSTK($all = false) {
 	$compteur = 0;
 	
 	$sql = "SELECT s1.STOCK, r.DESIGNATION, f.NOM, c.NOM, r.ID_REFERENCE, r.VISIBLE 
-	    FROM " . DB_PREFIX . "STOCKS s1, " . DB_PREFIX . "REFERENCES r, " . DB_PREFIX . "FOURNISSEURS f, " . DB_PREFIX . "CATEGORIES c 
+	    FROM " . DB_PREFIX . "STOCKS s1, " . DB_PREFIX . "PRODUITS r, " . DB_PREFIX . "FOURNISSEURS f, " . DB_PREFIX . "CATEGORIES c 
 	    WHERE s1.DATE = (SELECT MAX(s2.DATE) FROM " . DB_PREFIX . "STOCKS s2 WHERE s2.ID_REFERENCE=s1.ID_REFERENCE) 
 	    AND r.ID_REFERENCE = s1.ID_REFERENCE 
 	    AND f.ID_FOURNISSEUR = r.ID_FOURNISSEUR 
@@ -43,7 +43,7 @@ function SelectionListeSTK($all = false) {
 	return $listeStocks;
 }
 function SelectionStocks($idFournisseur) {
-	$result = requete ( "SELECT r.CODE_FOURNISSEUR, r.ID_REFERENCE, r.DESIGNATION, c.NOM FROM " . DB_PREFIX . "REFERENCES r, " . DB_PREFIX . "FOURNISSEURS f, " . DB_PREFIX . "CATEGORIES c WHERE f.ID_FOURNISSEUR = '$idFournisseur' AND f.ID_FOURNISSEUR = r.ID_FOURNISSEUR AND c.ID_CATEGORIE = r.ID_CATEGORIE ORDER BY c.NOM, r.DESIGNATION" );
+	$result = requete ( "SELECT r.CODE_FOURNISSEUR, r.ID_REFERENCE, r.DESIGNATION, c.NOM FROM " . DB_PREFIX . "PRODUITS r, " . DB_PREFIX . "FOURNISSEURS f, " . DB_PREFIX . "CATEGORIES c WHERE f.ID_FOURNISSEUR = '$idFournisseur' AND f.ID_FOURNISSEUR = r.ID_FOURNISSEUR AND c.ID_CATEGORIE = r.ID_CATEGORIE ORDER BY c.NOM, r.DESIGNATION" );
 	
 	$compteur = 0;
 	$listeStocks = array ();
@@ -107,7 +107,7 @@ function getReferencesWithStockAlert($all = false) {
 	// ... rows with field NULL, can be selected with r.ALERT_STOCK IS NULL (or IS NOT NULL)
 	// ... != -1 important, in case stock error get stock to below -1
 	$sql = "SELECT s1.STOCK, r.DESIGNATION, f.NOM, c.NOM, r.ID_REFERENCE, r.ALERT_STOCK, r.VISIBLE 
-	    FROM " . DB_PREFIX . "STOCKS s1, " . DB_PREFIX . "REFERENCES r, " . DB_PREFIX . "FOURNISSEURS f, " . DB_PREFIX . "CATEGORIES c 
+	    FROM " . DB_PREFIX . "STOCKS s1, " . DB_PREFIX . "PRODUITS r, " . DB_PREFIX . "FOURNISSEURS f, " . DB_PREFIX . "CATEGORIES c 
 	    WHERE s1.DATE = 
 	        (SELECT MAX(s2.DATE) FROM " . DB_PREFIX . "STOCKS s2 WHERE s2.ID_REFERENCE=s1.ID_REFERENCE) 
 	    AND r.ID_REFERENCE = s1.ID_REFERENCE 
@@ -254,7 +254,7 @@ function get_inventaires_dates() {
 }
 function get_ecarts_list_for_date($date) {
 	$result = requete ( "SELECT s.QUANTITE, c.NOM, r.DESIGNATION, f.NOM, r.PRIX_TTC, s.DATE
-                            FROM " . DB_PREFIX . "STOCKS s, " . DB_PREFIX . "REFERENCES r, " . DB_PREFIX . "CATEGORIES c, " . DB_PREFIX . "FOURNISSEURS f
+                            FROM " . DB_PREFIX . "STOCKS s, " . DB_PREFIX . "PRODUITS r, " . DB_PREFIX . "CATEGORIES c, " . DB_PREFIX . "FOURNISSEURS f
                             WHERE s.OPERATION = 'INVENTAIRE'
                             AND DATE_FORMAT(s.DATE,'%Y-%m-%e') = '$date'
                             AND s.ID_REFERENCE = r.ID_REFERENCE
