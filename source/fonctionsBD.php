@@ -31,12 +31,14 @@ if (! defined ( "FONCTION_BD_GASE_PHP" )) {
 	$prefix = '';
 	if (array_key_exists('prefix', $config['DB']))
 		$prefix = $config['DB']['prefix'];
+	define ( "DB_PREFIX", $prefix );
+	define('USE_DOCUMENTS', $config["MoneyCoop"]["use_documents"]);
+	define('USE_MAIL', $config["EMAIL"]["use_mail"]);
+
 	// construction chaîne de connexion
 	$dsn = "mysql:host=$address;dbname=$name;charset=utf8";
 	// variable globale
 	$mysql = new PDO ( $dsn, $user, $pass );
-	// prefix de table global
-	define ( "DB_PREFIX", $prefix );
 	
 	// AC 02-05-2016 une seule fonction utilisant la connexion globale pour les requêtes avec gestion d'erreur
 	function requete($sql) {

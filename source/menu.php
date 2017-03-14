@@ -36,13 +36,14 @@
 				<li><a href="nouveauFournisseur.php">NOUVEAU</a></li>
 			</ul></li>
 		<li><a href="journalDeBord.php">JOURNAL DE BORD</a></li>
-		<!--PGA - gase de chips - menu Document et déconnexion inutile pour le moment.
-		<li><a href="#">DOCUMENTS</a>
-			<ul>
-				<li><a href="modifDocument.php">VOIR</a></li>
-				<li><a href="nouveauDocument1.php">ARCHIVER</a></li>
-            		</ul>
-        	</li>
+		<?php require 'fonctionsBD.php';
+				if (USE_DOCUMENTS)
+					echo '<li><a href="#">DOCUMENTS</a><ul>
+							<li><a href="modifDocument.php">VOIR</a></li>
+							<li><a href="nouveauDocument1.php">ARCHIVER</a></li>
+            				</ul></li>';
+		?>
+		<!--PGA - gase de chips - déconnexion inutile pour le moment. À quoi ça sert ?
         <li><a href=logouthttp.php>DECONNEXION</a></li> -->
 	</ul>
 </div>
