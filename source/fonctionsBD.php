@@ -27,10 +27,11 @@ if (! defined ( "FONCTION_BD_GASE_PHP" )) {
 	$user = $config ["DB"] ["user"];
 	$pass = $config ["DB"] ["password"];
 	$name = $config ["DB"] ["name"];
-	$prefix = $config ["DB"] ["prefix"];
-	if ($prefix == '')
-		$prefix = '_inde_';
-		// construction chaîne de connexion
+	// S'il n'est pas spécifié dans le config.ini, le préfixe est mis à vide
+	$prefix = '';
+	if (array_key_exists('prefix', $config['DB']))
+		$prefix = $config['DB']['prefix'];
+	// construction chaîne de connexion
 	$dsn = "mysql:host=$address;dbname=$name;charset=utf8";
 	// variable globale
 	$mysql = new PDO ( $dsn, $user, $pass );

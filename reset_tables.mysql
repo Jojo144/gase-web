@@ -16,10 +16,10 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `_inde_ACHATS`
+-- Table structure for table `ACHATS`
 --
 
-CREATE TABLE IF NOT EXISTS `_inde_ACHATS` (
+CREATE TABLE IF NOT EXISTS `ACHATS` (
   `ID_ACHAT` smallint(6) NOT NULL AUTO_INCREMENT,
   `DATE_ACHAT` datetime NOT NULL,
   `ID_ADHERENT` smallint(6) NOT NULL,
@@ -31,10 +31,10 @@ CREATE TABLE IF NOT EXISTS `_inde_ACHATS` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `_inde_CATEGORIES`
+-- Table structure for table `CATEGORIES`
 --
 
-CREATE TABLE IF NOT EXISTS `_inde_CATEGORIES` (
+CREATE TABLE IF NOT EXISTS `CATEGORIES` (
   `ID_CATEGORIE` smallint(6) NOT NULL AUTO_INCREMENT,
   `NOM` varchar(32) NOT NULL,
   `ID_CAT_SUP` smallint(6) DEFAULT NULL,
@@ -47,10 +47,10 @@ CREATE TABLE IF NOT EXISTS `_inde_CATEGORIES` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `_inde_COMPTES`
+-- Table structure for table `COMPTES`
 --
 
-CREATE TABLE IF NOT EXISTS `_inde_COMPTES` (
+CREATE TABLE IF NOT EXISTS `COMPTES` (
   `ID_ADHERENT` smallint(6) NOT NULL,
   `SOLDE` float NOT NULL,
   `DATE` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -63,10 +63,10 @@ CREATE TABLE IF NOT EXISTS `_inde_COMPTES` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `_inde_DOCUMENTS`
+-- Table structure for table `DOCUMENTS`
 --
 
-CREATE TABLE IF NOT EXISTS `_inde_DOCUMENTS` (
+CREATE TABLE IF NOT EXISTS `DOCUMENTS` (
   `ID_DOCUMENT` smallint(6) NOT NULL AUTO_INCREMENT,
   `NOM` varchar(128) DEFAULT NULL,
   `ID_TYPE` smallint(6) NOT NULL,
@@ -80,10 +80,10 @@ CREATE TABLE IF NOT EXISTS `_inde_DOCUMENTS` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `_inde_FOURNISSEURS`
+-- Table structure for table `FOURNISSEURS`
 --
 
-CREATE TABLE IF NOT EXISTS `_inde_FOURNISSEURS` (
+CREATE TABLE IF NOT EXISTS `FOURNISSEURS` (
   `ID_FOURNISSEUR` smallint(6) NOT NULL AUTO_INCREMENT,
   `NOM` varchar(255) NOT NULL,
   `MAIL` varchar(255) DEFAULT NULL,
@@ -103,10 +103,10 @@ CREATE TABLE IF NOT EXISTS `_inde_FOURNISSEURS` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `_inde_REFERENCES`
+-- Table structure for table `REFERENCES`
 --
 
-CREATE TABLE IF NOT EXISTS `_inde_REFERENCES` (
+CREATE TABLE IF NOT EXISTS `REFERENCES` (
   `ID_REFERENCE` smallint(6) NOT NULL AUTO_INCREMENT,
   `DESIGNATION` varchar(64) NOT NULL,
   `ID_FOURNISSEUR` smallint(6) NOT NULL,
@@ -126,10 +126,10 @@ CREATE TABLE IF NOT EXISTS `_inde_REFERENCES` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `_inde_STOCKS`
+-- Table structure for table `STOCKS`
 --
 
-CREATE TABLE IF NOT EXISTS `_inde_STOCKS` (
+CREATE TABLE IF NOT EXISTS `STOCKS` (
   `ID_REFERENCE` smallint(6) NOT NULL,
   `STOCK` float NOT NULL,
   `OPERATION` varchar(64) NOT NULL,
@@ -143,10 +143,10 @@ CREATE TABLE IF NOT EXISTS `_inde_STOCKS` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `_inde_TYPE_DOC`
+-- Table structure for table `TYPE_DOC`
 --
 
-CREATE TABLE IF NOT EXISTS `_inde_TYPE_DOC` (
+CREATE TABLE IF NOT EXISTS `TYPE_DOC` (
   `ID_TYPE` smallint(6) NOT NULL AUTO_INCREMENT,
   `NOM` varchar(64) NOT NULL,
   PRIMARY KEY (`ID_TYPE`)
@@ -155,10 +155,10 @@ CREATE TABLE IF NOT EXISTS `_inde_TYPE_DOC` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `_inde_VIE_OUTIL`
+-- Table structure for table `VIE_OUTIL`
 --
 
-CREATE TABLE IF NOT EXISTS `_inde_VIE_OUTIL` (
+CREATE TABLE IF NOT EXISTS `VIE_OUTIL` (
   `DATE` datetime NOT NULL,
   `MESSAGE` varchar(1024) NOT NULL,
   PRIMARY KEY (`DATE`)
@@ -167,10 +167,10 @@ CREATE TABLE IF NOT EXISTS `_inde_VIE_OUTIL` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `_inde_ADHERENTS`
+-- Table structure for table `ADHERENTS`
 --
 
-CREATE TABLE IF NOT EXISTS `_inde_ADHERENTS` (
+CREATE TABLE IF NOT EXISTS `ADHERENTS` (
   `ID_ADHERENT` smallint(6) NOT NULL AUTO_INCREMENT,
   `NOM` varchar(64) NOT NULL,
   `PRENOM` varchar(64) DEFAULT NULL,
