@@ -55,35 +55,24 @@
 							type="text" class="col2" name="adresse" id="adresse"
 							value="<?php echo $donnees['ADRESSE']; ?>" />
 					</p>
-						<?php 
-/*
-							       * <p class = "ligne">
-							       * <label class = "col1" for="ticket">Envoi ticket de caisse : </label>
-							       * <select class= "col2" name="ticket" id="ticket" >
-							       * <?php
-							       * if($donnees['TICKET_CAISSE'] == '0'){
-							       * ?>
-							       * <option value="1">OUI</option>
-							       * <option value="0" selected="selected">NON</option>
-							       * <?php
-							       * }else{
-							       * ?>
-							       * <option value="1" selected="selected">OUI</option>
-							       * <option value="0">NON</option>
-							       * <?php
-							       * }
-							       * ?>
-							       * </select>
-							       * </p>
-							       */
+						<?php if (USE_MAIL) {
+								$ticket = $donnees['TICKET_CAISSE'];
+								echo '<p class = "ligne">
+									  <label class = "col1" for="ticket">Envoi ticket de caisse : </label>
+									  <select class= "col2" name="ticket" id="ticket" >
+											<option value="1"' . (($ticket) ? 'selected' : '') .'>OUI</option>
+									       	<option value="0"' . (($ticket) ? '' : 'selected') . '>NON</option>
+									  </select></p>';
+						
+								}
 						?>
-						<p class="ligne">
+					<p class="ligne">
 						<label class="col1" for="commentaire">Commentaire :</label>
 						<textarea name="commentaire" id="commentaire" cols="35" rows="2"><?php echo $donnees['COMMENTAIRE']; ?></textarea>
 					</p>
 					<p>
 						<small>Utilisez le mot "cotisation" dans le commentaire, pour que
-							celui-ci affiche un rappel à l'adhérent. </br>Par exemple :
+							celui-ci affiche un rappel à l'adhérent. <br>Par exemple :
 							Cotisation non à jour.
 						</small>
 					</p>
@@ -105,32 +94,20 @@
 								?>
 							</select>
 					</p>
-						<?php 
-/*
-								       * <p class = "ligne">
-								       * <label class = "col1" for="receive_alert_stock">Recevoir les alertes stock : </label>
-								       * <select class= "col2" name="receive_alert_stock" id="receive_alert_stock" >
-								       * <?php
-								       * $receive_alert_stock = $donnees['RECEIVE_ALERT_STOCK'];
-								       * //if null, should be considered like a false
-								       * if ($receive_alert_stock === null){
-								       * $receive_alert_stock = "0";
-								       * }
-								       * if($receive_alert_stock == '0'){
-								       * ?>
-								       * <option value="1">OUI</option>
-								       * <option value="0" selected="selected">NON</option>
-								       * <?php
-								       * }else{
-								       * ?>
-								       * <option value="1" selected="selected">OUI</option>
-								       * <option value="0">NON</option>
-								       * <?php
-								       * }
-								       * ?>
-								       * </select>
-								       * </p>
-								       */
+						<?php if (USE_MAIL) {
+								$stock_alert = $donnees['RECEIVE_ALERT_STOCK'];
+								//if null, should be considered like a false
+								if ($stock_alert === null) {
+									$stock_alert = false;
+								}
+								echo '<p class = "ligne">
+									  <label class = "col1" for="receive_alert_stock">Recevoir les alertes stock : </label>
+									  <select class= "col2" name="receive_alert_stock" id="receive_alert_stock" >
+											<option value="1"' . (($stock_alert) ? 'selected' : '') .'>OUI</option>
+									       	<option value="0"' . (($stock_alert) ? '' : 'selected') . '>NON</option>
+									  </select></p>';
+						
+								}
 						?>
 					</div>
 				<br />

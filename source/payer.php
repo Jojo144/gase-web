@@ -38,12 +38,13 @@ if (isset ( $_POST ['payer'] )) {
 			}
 			
 			// only send if user subscribed for it
-			if (SelectionAdherent_TicketCaisse ( $idAdherent ) == 1) {
+			if (USE_MAIL && SelectionAdherent_TicketCaisse($idAdherent)) {
 				generate_email ( $idAdherent, $totalTTC );
 			}
 			
 			// check stok for new alert and send email to person that subscribed to it
-			check_for_new_stock_alert ();
+			if (USE_MAIL)
+				check_for_new_stock_alert();
 			
 			echo "Achat " . $numeroAchat . " enregistré.<br />";
 			echo "<div style=\"text-align:center\">Le solde de votre compte est maintenant de " . round ( $nouveauSolde, 2 ) . " euros.</div>";
