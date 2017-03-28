@@ -24,13 +24,13 @@
 	<br />
 	<form id="formulaire" method="post" action="approStockE.php">
 	    <div>
-		<label class="colonne1"><strong>CODE FR</strong></label> <label
-class="colonne4"><strong>APPRO</strong></label> <label
-class="colonne5"><strong>CATÉGORIE</strong></label> <label
-class="colonne2"><strong>DÉSIGNATION</strong></label> <label
-class="colonne3"><strong>EN STOCK</strong></label> <input
-type="hidden" name="idFournisseur"
-value="<?php echo $idFournisseur; ?>" />
+		<label class="colonne1"><strong>CODE FOURN.</strong></label>
+		<label class="colonne4"><strong>APPRO</strong></label>
+		<label class="colonne5"><strong>CATÉGORIE</strong></label>
+		<label class="colonne2"><strong>DÉSIGNATION</strong></label>
+		<label class="colonne3"><strong>EN STOCK</strong></label>
+		<input type="hidden" name="idFournisseur"
+		       value="<?php echo $idFournisseur; ?>" />
 		<?php
 		// $listeDesignREF = SelectionListeDesignFournisseurREF($fournisseur);
 		// if(count($listeDesignREF) > 0)
@@ -38,16 +38,16 @@ value="<?php echo $idFournisseur; ?>" />
 		    foreach ( $listeSTK as $reference ) {
 		?>
 		    <p class="col1"><?php echo $reference['CODE_FOURNISSEUR'] . ':'; ?></p>
-		    <input type="text" name="<?php echo $reference['ID_REFERENCE'];?>"
-id="<?php echo $reference['ID_REFERENCE'];?>" />
-		    <p class="col5"><?php echo $reference['CATEGORIE']; ?></p>
-		    <p class="col2"><?php echo $reference['DESIGNATION']; ?></p>
+		    <p class="col4"><input type="text" name="<?php echo $reference['ID_REFERENCE'];?>"
+					   id="<?php echo $reference['ID_REFERENCE'];?>" /></p>
+		    <p class="col5"><?php echo htmlspecialchars($reference['CATEGORIE']); ?></p>
+		    <p class="col2"><?php echo htmlspecialchars($reference['DESIGNATION']); ?></p>
 		    <p class="col3"><?php echo '[' . $reference['STOCK'] . ']'; ?></p>
 		    <br />
 		<?php
 		}
 		} else {
-		    echo 'Pas de reference pour ce fournisseur.';
+		    echo 'Pas de référence pour ce fournisseur.';
 		}
 		?>
 	    </div>
