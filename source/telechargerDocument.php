@@ -3,7 +3,7 @@ $fichier = $_POST ['nomDocument'];
 
 // First, see if the file exists
 if (! is_file ( $fichier )) {
-	die ( "<b>404 File not found!</b>" );
+    die ( "<b>404 File not found!</b>" );
 }
 
 // Gather relevent info about file
@@ -13,18 +13,18 @@ $file_extension = strtolower ( substr ( strrchr ( $filename, "." ), 1 ) );
 
 // This will set the Content-Type to the appropriate setting for the file
 switch ($file_extension) {
-	case "pdf" :
-		$ctype = "application/pdf";
-		break;
-	case "doc" :
-		$ctype = "application/msword";
-		break;
-	case "xls" :
-		$ctype = "application/vnd.ms-excel";
-		break;
+    case "pdf" :
+	$ctype = "application/pdf";
+	break;
+    case "doc" :
+	$ctype = "application/msword";
+	break;
+    case "xls" :
+	$ctype = "application/vnd.ms-excel";
+	break;
 	
-	default :
-		$ctype = "application/force-download";
+    default :
+	$ctype = "application/force-download";
 }
 
 // Begin writing headers

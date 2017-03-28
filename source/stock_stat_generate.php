@@ -21,8 +21,8 @@ $name = $config ["DB"] ["name"];
 $prefix = $config ["DB"] ["prefix"];
 $connection = new mysqli ( $address, $user, $pass, $name );
 if ($connection->connect_errno) {
-	error_log ( "Failed to connect to MySQL: " . $connection->connect_error );
-	exit ( "Failed to connect to MySQL: " . $connection->connect_error );
+    error_log ( "Failed to connect to MySQL: " . $connection->connect_error );
+    exit ( "Failed to connect to MySQL: " . $connection->connect_error );
 }
 define ( "DB_PREFIX", $prefix );
 
@@ -40,45 +40,45 @@ $MyData = new pData ();
 
 // get sum of quantity bought for each week
 foreach ( $weeks as $w ) {
-	// //Sum purchase
-	$result = $connection->query ( "SELECT SUM(QUANTITE), MIN(DATE_FORMAT(DATE, '%M %D'))
+    // //Sum purchase
+    $result = $connection->query ( "SELECT SUM(QUANTITE), MIN(DATE_FORMAT(DATE, '%M %D'))
         FROM " . DB_PREFIX . "STOCKS
         WHERE ID_REFERENCE = $id_reference
             AND OPERATION = 'ACHAT'
             AND YEAR(DATE) = $year_stats
             AND WEEK(DATE,1) = $w
         ORDER BY DATE" );
-	$row = $result->fetch_array ();
-	if ($row != NULL) {
-		// compute day corresponding to the start of the week
-		$week_start = new DateTime ();
-		$week_start->setISODate ( $year_stats, $w );
-		$now = new DateTime ();
-		$d = $now->diff ( $week_start );
-		if (1 == $d->invert) {
-			// $now > $week_start - $week_start is NOT in future, value is relevant
-			$MyData->addPoints ( $row [0], "Achats" );
-		} else {
-			$MyData->addPoints ( VOID, "Achats" );
-		}
-		$MyData->addPoints ( $week_start->format ( 'j-M' ), "Date" );
+    $row = $result->fetch_array ();
+    if ($row != NULL) {
+	// compute day corresponding to the start of the week
+	$week_start = new DateTime ();
+	$week_start->setISODate ( $year_stats, $w );
+	$now = new DateTime ();
+	$d = $now->diff ( $week_start );
+	if (1 == $d->invert) {
+	    // $now > $week_start - $week_start is NOT in future, value is relevant
+	    $MyData->addPoints ( $row [0], "Achats" );
+	} else {
+	    $MyData->addPoints ( VOID, "Achats" );
 	}
-	
-	// //Stocks Minimum & Maximum
-	$result = $connection->query ( "SELECT MIN(STOCK), MAX(STOCK), MIN(DATE_FORMAT(DATE, '%M %D'))
+	$MyData->addPoints ( $week_start->format ( 'j-M' ), "Date" );
+    }
+    
+    // //Stocks Minimum & Maximum
+    $result = $connection->query ( "SELECT MIN(STOCK), MAX(STOCK), MIN(DATE_FORMAT(DATE, '%M %D'))
         FROM " . DB_PREFIX . "STOCKS
         WHERE ID_REFERENCE = $id_reference
             AND YEAR(DATE) = $year_stats
             AND WEEK(DATE,1) = $w
         ORDER BY DATE" );
-	$row = $result->fetch_array ();
-	if (1 == $d->invert) {
-		$MyData->addPoints ( $row [1], "Stock" );
-		$MyData->addPoints ( $row [0], "Floating 0" );
-	} else {
-		$MyData->addPoints ( VOID, "Stock" );
-		$MyData->addPoints ( VOID, "Floating 0" );
-	}
+    $row = $result->fetch_array ();
+    if (1 == $d->invert) {
+	$MyData->addPoints ( $row [1], "Stock" );
+	$MyData->addPoints ( $row [0], "Floating 0" );
+    } else {
+	$MyData->addPoints ( VOID, "Stock" );
+	$MyData->addPoints ( VOID, "Floating 0" );
+    }
 }
 
 $connection->close ();
@@ -93,16 +93,16 @@ $MyData->setSerieDescription ( "Stock", "Stock (min/max)" );
 
 // set series color
 $MyData->setPalette ( "Stock", array (
-		"R" => 204,
-		"G" => 102,
-		"B" => 0,
-		"Alpha" => 250 
+    "R" => 204,
+    "G" => 102,
+    "B" => 0,
+    "Alpha" => 250 
 ) );
 $MyData->setPalette ( "Achats", array (
-		"R" => 0,
-		"G" => 0,
-		"B" => 255,
-		"Alpha" => 250 
+    "R" => 0,
+    "G" => 0,
+    "B" => 255,
+    "Alpha" => 250 
 ) );
 
 $MyData->setAxisName ( 0, "Unités/Kg/Litres" );
@@ -111,7 +111,7 @@ $MyData->setAbscissa ( "Date" );
 // //// ??? correct ??$MyData->setXAxisName(0,"Unités/Kg/Litres");
 $MyData->setXAxisDisplay ( AXIS_FORMAT_CUSTOM, "XAxisFormat" );
 function XAxisFormat($Value) {
-	return ($Value);
+    return ($Value);
 } // date("d/m/Y",strtotime($Value)));}
 
 /* Create the pChart object */
@@ -122,39 +122,39 @@ $myPicture->Antialias = FALSE;
 
 /* Add a border to the picture */
 $myPicture->drawGradientArea ( 0, 0, $width, $height, DIRECTION_VERTICAL, array (
-		"StartR" => 240,
-		"StartG" => 240,
-		"StartB" => 240,
-		"EndR" => 180,
-		"EndG" => 180,
-		"EndB" => 180,
-		"Alpha" => 100 
+    "StartR" => 240,
+    "StartG" => 240,
+    "StartB" => 240,
+    "EndR" => 180,
+    "EndG" => 180,
+    "EndB" => 180,
+    "Alpha" => 100 
 ) );
 $myPicture->drawGradientArea ( 0, 0, $width, $height, DIRECTION_HORIZONTAL, array (
-		"StartR" => 240,
-		"StartG" => 240,
-		"StartB" => 240,
-		"EndR" => 180,
-		"EndG" => 180,
-		"EndB" => 180,
-		"Alpha" => 20 
+    "StartR" => 240,
+    "StartG" => 240,
+    "StartB" => 240,
+    "EndR" => 180,
+    "EndG" => 180,
+    "EndB" => 180,
+    "Alpha" => 20 
 ) );
 
 /* Add a border to the picture */
 $myPicture->drawRectangle ( 0, 0, $width - 1, $height - 1, array (
-		"R" => 0,
-		"G" => 0,
-		"B" => 0 
+    "R" => 0,
+    "G" => 0,
+    "B" => 0 
 ) );
 
 /* Write the chart title */
 $myPicture->setFontProperties ( array (
-		"FontName" => $pChart_path . "/fonts/calibri.ttf",
-		"FontSize" => 10 
+    "FontName" => $pChart_path . "/fonts/calibri.ttf",
+    "FontSize" => 10 
 ) );
 $myPicture->drawText ( 250, 35, "Achats et Stock (min/max) par semaine", array (
-		"FontSize" => 20,
-		"Align" => TEXT_ALIGN_BOTTOMMIDDLE 
+    "FontSize" => 20,
+    "Align" => TEXT_ALIGN_BOTTOMMIDDLE 
 ) );
 
 /* Define the chart area */
@@ -162,22 +162,22 @@ $myPicture->setGraphArea ( 50, 50, $width - 10, $height - 60 );
 
 /* Write the chart legend */
 $myPicture->drawLegend ( $width - 300, 20, array (
-		"Style" => LEGEND_NOBORDER,
-		"Mode" => LEGEND_HORIZONTAL,
-		"FontSize" => 15 
+    "Style" => LEGEND_NOBORDER,
+    "Mode" => LEGEND_HORIZONTAL,
+    "FontSize" => 15 
 ) );
 
 /* Set the default font */
 $myPicture->setFontProperties ( array (
-		"FontName" => $pChart_path . "/fonts/Bedizen.ttf",
-		"FontSize" => 12 
+    "FontName" => $pChart_path . "/fonts/Bedizen.ttf",
+    "FontSize" => 12 
 ) );
 
 /* Draw the scale */
 // $AxisBoundaries = array(0=>array("Min"=>-500,"Max"=>500));
 // $scaleSettings = array("LabelRotation"=>40, "Mode"=>SCALE_MODE_MANUAL,"ManualScale"=>$AxisBoundaries);
 $scaleSettings = array (
-		"LabelRotation" => 40 
+    "LabelRotation" => 40 
 );
 
 $myPicture->drawScale ( $scaleSettings );
@@ -187,12 +187,12 @@ $myPicture->Antialias = TRUE;
 
 /* Enable shadow computing */
 $myPicture->setShadow ( TRUE, array (
-		"X" => 1,
-		"Y" => 1,
-		"R" => 0,
-		"G" => 0,
-		"B" => 0,
-		"Alpha" => 10 
+    "X" => 1,
+    "Y" => 1,
+    "R" => 0,
+    "G" => 0,
+    "B" => 0,
+    "Alpha" => 10 
 ) );
 
 // //////////// Bar chart
@@ -200,8 +200,8 @@ $MyData->setSerieDrawable ( "Achats", false );
 $MyData->setSerieDrawable ( "Stock", true );
 // $myPicture->drawBarChart();
 $settings = array (
-		"Floating0Serie" => "Floating 0",
-		"Surrounding" => 10 
+    "Floating0Serie" => "Floating 0",
+    "Surrounding" => 10 
 );
 $myPicture->drawBarChart ( $settings );
 
@@ -217,31 +217,31 @@ $Threshold = "";
  * $Threshold[] = array("Min"=>10,"Max"=>20,"R"=>240,"G"=>91,"B"=>20,"Alpha"=>100);
  */
 $myPicture->setShadow ( TRUE, array (
-		"X" => 1,
-		"Y" => 1,
-		"R" => 0,
-		"G" => 0,
-		"B" => 0,
-		"Alpha" => 10 
+    "X" => 1,
+    "Y" => 1,
+    "R" => 0,
+    "G" => 0,
+    "B" => 0,
+    "Alpha" => 10 
 ) );
 $myPicture->drawAreaChart ( array (
-		"Threshold" => $Threshold 
+    "Threshold" => $Threshold 
 ) );
 
 /* Draw a line chart over */
 $myPicture->drawLineChart ( array (
-		"ForceColor" => TRUE,
-		"ForceR" => 0,
-		"ForceG" => 0,
-		"ForceB" => 0 
+    "ForceColor" => TRUE,
+    "ForceR" => 0,
+    "ForceG" => 0,
+    "ForceB" => 0 
 ) );
 
 /* Draw a plot chart over */
 $myPicture->drawPlotChart ( array (
-		"PlotBorder" => TRUE,
-		"BorderSize" => 1,
-		"Surrounding" => - 255,
-		"BorderAlpha" => 80 
+    "PlotBorder" => TRUE,
+    "BorderSize" => 1,
+    "Surrounding" => - 255,
+    "BorderAlpha" => 80 
 ) );
 
 // header('Content-Type: image/png');
