@@ -25,7 +25,8 @@ session_start ();
     if (isset ( $_POST ['payer'] )) {
 	// Vérifie si le montant de la commande est supérieur à 0.
 	$totalTTC = $_SESSION ['montantPanier'];
-	if ($totalTTC > 0) {
+	// On enlève ça pourautoriser les quantités négatives
+	//if ($totalTTC > 0) {
 	    // la maison fait crédit de 20Euro max !!
 	    if ($totalTTC <= $soldeAdherent + 20) {
 		$nbRef = $_SESSION ['nbRefPanier'];
@@ -61,10 +62,10 @@ session_start ();
 			    <li>Pour aller à la page d'accueil : <a href=\"index.php\">cliquez ici</a></li>
 			";
 	    }
-	} else {
-	    include '1listeRefCategorie.php';
-	    echo 'Le panier est vide. Pas de commande enregistrée';
-	}
+	/* } else {
+	   include '1listeRefCategorie.php';
+	   echo 'Le panier est vide. Pas de commande enregistrée';
+	   }*/
     }
     function generate_email($idAdherent, $totalTTC) {
 	/**

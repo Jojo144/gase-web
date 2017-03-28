@@ -21,9 +21,9 @@ session_start ();
     <body>
 	<?php include 'menuAchats.php'; ?>
 	<?php
-	require ("fonctionsCompte.php");
-	require ("fonctionsAdherents.php");
-	require ("fonctionsReferences.php");
+	require 'fonctionsCompte.php';
+	require 'fonctionsAdherents.php';
+	require 'fonctionsReferences.php';
 	$soldeAdherent = SelectionSoldeAdherentMC ( $_SESSION ['adherent'] );
 	$prenom_nom = SelectionPrenomNomAdherent ( $_SESSION ['adherent'] );
 	?>

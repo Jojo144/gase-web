@@ -4,6 +4,10 @@ $nbRefPanier = $_SESSION ['nbRefPanier'];
 if ($nbRefPanier == 0) {
     echo "<div>Votre panier est vide.</div>";
 } else {
+    if ($_SESSION['qteNegative']) {
+	echo '<script>alert("Vous avez rentré une quantité négative. Si c\'est une erreur, supprimez la référence de votre panier.");</script>';
+	$_SESSION['qteNegative'] = false;
+    }
     $prixTotal = $_SESSION ['montantPanier'];
 ?>
     <form id="formulaire" method="post" action="payer.php">
@@ -21,9 +25,9 @@ if ($nbRefPanier == 0) {
 			<td width="78%"><?php echo $_SESSION['panier']['nomReference'][$i];?></td>
 			<td width="9%"><?php echo $_SESSION['panier']['qteReference'][$i];?></td>
 			<td width="9%"><?php echo round($_SESSION['panier']['prixReference'][$i],2);?></td>
-			<td width="4%"><a
-href="retirer.php?idRef=<?php echo $_SESSION['panier']['idRef'][$i]; ?>"><img
-src="../static/img_trash.png" title="Retirer du panier" alt="X" /></a>
+			<td width="4%">
+			    <a href="retirer.php?idRef=<?php echo $_SESSION['panier']['idRef'][$i]; ?>">
+				<img src="../static/img_trash.png" title="Retirer du panier" alt="X" /></a>
 			</td>
 		    </tr>
 		<?php
