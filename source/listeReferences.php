@@ -34,8 +34,8 @@ $listeReferences = SelectionListeReferencesMenu ( $idCategorie );
 		    if ($tableau ['VRAC'] == 0) {
 		    ?>
 			<td><select width="3%" class="colonne1"
-name="qte_<?php echo $tableau['ID_REFERENCE'];?>"
-id="qte_<?php echo $tableau['ID_REFERENCE'];?>">
+				    name="qte_<?php echo $tableau['ID_REFERENCE'];?>"
+				    id="qte_<?php echo $tableau['ID_REFERENCE'];?>">
 			    <option value="0" selected="selected">0</option>
 			    <option value="1">1</option>
 			    <option value="2">2</option>
@@ -51,20 +51,20 @@ id="qte_<?php echo $tableau['ID_REFERENCE'];?>">
 		    } else {
 		    ?>
 			<td><input size="3" type="text" class="colonne1"
-alt="Quantite en kg ou litre" title="Quantite en kg ou litre"
-name="qte_<?php echo $tableau['ID_REFERENCE'];?>"
-id="qte_<?php echo $tableau['ID_REFERENCE'];?>" /></td>
+				   alt="Quantite en kg ou litre" title="Quantite en kg ou litre"
+				   name="qte_<?php echo $tableau['ID_REFERENCE'];?>"
+				   id="qte_<?php echo $tableau['ID_REFERENCE'];?>" /></td>
 		    <?php
 		    }
 		    ?>
-		    <td><label class="colonne2"><?php echo "&nbsp;".$tableau['REFERENCE']."&nbsp;"; ?></label></td>
+		    <td><label class="colonne2"><?php echo "&nbsp;" . htmlspecialchars($tableau['REFERENCE']) . "&nbsp;"; ?></label></td>
 		    <td><label class="colonne3"><center><?php echo "&nbsp;".$tableau['PRIX']."&nbsp;"; ?></center></label></td>
-		    <td><label class="colonne4"><?php echo "&nbsp;".$tableau['PRODUCTEUR']."&nbsp;"; ?></label>
+		    <td><label class="colonne4"><?php echo "&nbsp;" . htmlspecialchars($tableau['PRODUCTEUR']) . "&nbsp;"; ?></label>
 			<input type="hidden"
-name="nom_<?php echo $tableau['ID_REFERENCE'];?>"
-value="<?php echo $tableau['REFERENCE'];?>" /> <input type="hidden"
-name="prix_<?php echo $tableau['ID_REFERENCE'];?>"
-value="<?php echo $tableau['PRIX'];?>" /></td>
+			       name="nom_<?php echo $tableau['ID_REFERENCE'];?>"
+			       value="<?php echo $tableau['REFERENCE'];?>" /> <input type="hidden"
+										     name="prix_<?php echo $tableau['ID_REFERENCE'];?>"
+										     value="<?php echo $tableau['PRIX'];?>" /></td>
 		</tr>
 	    <?php
 	    }
@@ -76,7 +76,7 @@ value="<?php echo $tableau['PRIX'];?>" /></td>
     <div>
 	<font color="red">Validez vos choix avec le boutton "Dans panier"</font>
 	<input type="submit" value="Dans panier" name="acheterRef"
-id="acheterRef">
+	       id="acheterRef">
     </div>
 
 </form>

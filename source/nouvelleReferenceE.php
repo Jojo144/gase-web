@@ -5,10 +5,7 @@ include 'menu.php';
 
 // Si le formulaire a été envoyé
 if (isset ( $_POST ['enregistrer'] )) {
-    $designation = $_POST ['designation'];
-    $designation = trim ( $designation );
-    $designation = str_replace ( "'", " ", $designation );
-    // $designation = mb_strtoupper($designation);
+    $designation = trim($_POST['designation']);
     // La designation est obligatoire
     if (empty ( $designation )) {
 	print ("<center>La '<b>DESIGNATION/b>' de la référence n\'est pas renseigné ! Création à refaire.</center>") ;
@@ -38,16 +35,13 @@ if (isset ( $_POST ['enregistrer'] )) {
 			    $tva = $_POST ['tva'];
 			    $vrac = $_POST ['vrac'];
 			    $codeFournisseur = $_POST ['codeFournisseur'];
-			    $codeFournisseur = str_replace ( "'", "_", $codeFournisseur );
 			    
-			    $commentaire = $_POST ['commentaire'];
-			    $commentaire = trim ( $commentaire );
-			    $commentaire = str_replace ( "'", "_", $commentaire );
+			    $commentaire = trim($_POST ['commentaire']);
 			    
 			    $visible = $_POST ['visible'];
 			    
 			    EnregistrerNouvelleReference ( $designation, $fournisseur, $categorie, $prix, $tva, $vrac, $codeFournisseur, $commentaire, $visible, $alert_stock );
-			    echo 'Nouvelle référence ' . $designation . ' enregistrée.';
+			    echo 'Nouvelle référence ' . htmlspecialchars($designation) . ' enregistrée.';
 			}
 		    }
 		}

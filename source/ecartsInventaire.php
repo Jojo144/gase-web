@@ -81,9 +81,9 @@ style="margin-left: auto; margin-right: auto; max-width: 1000px;">
 		<tr>
 		    <td><?php echo $e['ecart'];?></td>
 		    <td><?php echo round($e['ref_prix']*$e['ecart'], 2);?></td>
-		    <td><?php echo $e['categorie_nom'];?></td>
-		    <td><?php echo $e['ref_designation'];?></td>
-		    <td align="center"><?php echo $e['fournisseur_nom'];?></td>
+		    <td><?php echo htmlspecialchars($e['categorie_nom']);?></td>
+		    <td><?php echo htmlspecialchars($e['ref_designation']);?></td>
+		    <td align="center"><?php echo htmlspecialchars($e['fournisseur_nom']);?></td>
 		    <td align="center">
 			<!--<a href="stock_stat.php?id=<?php /*echo $ref['ID_REFERENCE'];*/?>">stats</a>-->
 		    </td>
@@ -103,7 +103,7 @@ download="ecarts_<?php echo $inventaire_date_selected ?>.csv">
 	</div>
 	<div style="text-align: center;">
 	    <strong>*</strong>Les prix utilisés sont les prix actuellement
-	    enregistrés. Il est possible qu'il soient différents de ceux utilisé
+	    enregistrés. Il est possible qu'ils soient différents de ceux utilisé
 	    lors de l'inventaire
 	</div>
 	<div style="text-align: center;">

@@ -9,8 +9,6 @@ if (isset ( $_POST ['modifierReference'] )) {
     
     $designation = $_POST ['designation'];
     $designation = trim ( $designation );
-    $designation = str_replace ( "'", "_", $designation );
-    // $designation = mb_strtoupper($designation);
     // La designation est obligatoire
     if (empty ( $designation )) {
 	print ("<center>La '<b>DESIGNATION/b>' de la référence n\'est pas renseigné ! Création à refaire.</center>") ;
@@ -24,7 +22,6 @@ if (isset ( $_POST ['modifierReference'] )) {
 		print ("<center>La '<b>CATEGORIE/b>' de la référence n\'est pas renseignée ! Création à refaire.</center>") ;
 	    } else {
 		$prix = $_POST ['prix'];
-		$prix = str_replace ( ",", ".", $prix );
 		if (empty ( $prix )) {
 		    print ("<center>Le '<b>PRIX/b>' de la référence n\'est pas renseigné ! Création à refaire.</center>") ;
 		} else {
@@ -43,12 +40,11 @@ if (isset ( $_POST ['modifierReference'] )) {
 			    
 			    $commentaire = $_POST ['commentaire'];
 			    $commentaire = trim ( $commentaire );
-			    $commentaire = str_replace ( "'", "_", $commentaire );
 			    
 			    $visible = $_POST ['visible'];
 			    
 			    MajReference ( $idReference, $designation, $fournisseur, $categorie, $prix, $tva, $vrac, $codeFournisseur, $commentaire, $visible, $alert_stock );
-			    echo 'Les données de la référence "' . $designation . '" ont été mises à jour dans la base de données.';
+			    echo 'Les données de la référence "' . htmlspecialchars($designation) . '" ont été mises à jour dans la base de données.';
 			}
 		    }
 		}

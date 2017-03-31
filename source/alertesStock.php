@@ -43,9 +43,9 @@ style="margin-left: auto; margin-right: auto; max-width: 1000px;">
 		<tr <?= $ref['VISIBLE'] == 'NON' ? 'class="inactive"' : '' ?>>
 		    <td><?php echo $ref['STOCK'];?></td>
 		    <td><?php echo $ref['ALERT_STOCK'];?></td>
-		    <td><?php echo $ref['CATEGORIE'];?></td>
-		    <td><?php echo $ref['DESIGNATION'];?></td>
-		    <td align="center"><?php echo $ref['NOM'];?></td>
+		    <td><?php echo htmlspecialchars($ref['CATEGORIE']);?></td>
+		    <td><?php echo htmlspecialchars($ref['DESIGNATION']);?></td>
+		    <td align="center"><?php echo htmlspecialchars($ref['NOM']);?></td>
 		    <td align="center"><?php echo $ref['VISIBLE'];?></td>
 		</tr>
 	    <?php

@@ -60,27 +60,26 @@
 				$donneesFournisseur = SelectionDonneesFournisseur ( $cle );
 			?>
 			    <tr
-<?= $donneesFournisseur['VISIBLE'] == 0 ? 'class="inactive"' : '' ?>>
-				<td><a
-href="modifFournisseur.php?idFournisseur=<?php echo  $cle; ?>"
-title="<?php echo $element; ?>" class="bouton"><?php echo  "&nbsp;".$element."&nbsp;"; ?></a></td>
-				<td><label class="colonne2"></label><?php echo  "&nbsp;".$donneesFournisseur['MAIL']."&nbsp;"; ?></td>
-				<td><label class="colonne3"></label><?php echo  "&nbsp;".$donneesFournisseur['CONTACT']."&nbsp;"; ?></td>
-				<td><label class="colonne4"></label><?php echo  "&nbsp;".$donneesFournisseur['TELEPHONE_FIXE']."&nbsp;"; ?></td>
-				<td><label class="colonne5"></label><?php echo  "&nbsp;".$donneesFournisseur['TELEPHONE_PORTABLE']."&nbsp;"; ?></td>
-				<td><label class="colonne6"></label><?php echo  "&nbsp;".$donneesFournisseur['FAX']."&nbsp;"; ?></td>
+				<?= $donneesFournisseur['VISIBLE'] == 0 ? 'class="inactive"' : '' ?>>
+				<td>&nbsp;<a href="modifFournisseur.php?idFournisseur=<?php echo  $cle; ?>"
+					     title="<?php echo $element; ?>" class="bouton"><?php echo  htmlspecialchars($element); ?></a>&nbsp;</td>
+				<td>&nbsp;<label class="colonne2"></label><?php echo  $donneesFournisseur['MAIL']; ?>&nbsp;</td>
+				<td>&nbsp;<label class="colonne3"></label><?php echo  $donneesFournisseur['CONTACT']; ?>&nbsp;</td>
+				<td>&nbsp;<label class="colonne4"></label><?php echo  $donneesFournisseur['TELEPHONE_FIXE']; ?>&nbsp;</td>
+				<td>&nbsp;<label class="colonne5"></label><?php echo  $donneesFournisseur['TELEPHONE_PORTABLE']; ?>&nbsp;</td>
+				<td>&nbsp;<label class="colonne6"></label><?php echo  $donneesFournisseur['FAX']; ?>&nbsp;</td>
 				<?php
 				if ($donneesFournisseur ['VISIBLE'] == 0) {
 				?>
-				    <td><label class="colonne10"></label>NON</td>
+				    <td>&nbsp;<label class="colonne10"></label>NON&nbsp;</td>
 				<?php
 				} else {
 				?>
-				    <td><label class="colonne10"></label>OUI</td>
+				    <td>&nbsp;<label class="colonne10"></label>OUI&nbsp;</td>
 				<?php
 				}
 				?>
-				<td><label class="colonne8"></label><?php echo  "&nbsp;".$donneesFournisseur['DATE_REFERENCEMENT']."&nbsp;"; ?></td>
+				<td>&nbsp;<label class="colonne8"></label><?php echo  $donneesFournisseur['DATE_REFERENCEMENT']; ?>&nbsp;</td>
 			    </tr>
 			<?php
 			}

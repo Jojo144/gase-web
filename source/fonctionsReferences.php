@@ -1,11 +1,17 @@
 <?php
-require ("fonctionsBD.php");
+require 'fonctionsBD.php';
 
 /*
  * AC 15-04-2016 nouvelle connexion mysql
  * AC 02-05-2016 fonction globale requete() + DB_PREFIX
  */
 function EnregistrerNouvelleReference($designation, $fournisseur, $categorie, $prix, $tva, $vrac, $codeFournisseur, $commentaire, $visible, $alert_stock) {
+    global $mysql;
+    $designation = $mysql->quote($designation);
+    $fournisseur = $mysql->quote($fournisseur);
+    $categorie = $mysql->quote($categorie);
+    $codeFournisseur = $mysql->quote($codeFournisseur);
+    $commentaire = $mysql->quote($commentaire);
     
     // no alert stock (empty) => stored as -1 in db
     // ... reference wih null as alert will be set to -1 when modified
@@ -14,7 +20,7 @@ function EnregistrerNouvelleReference($designation, $fournisseur, $categorie, $p
 	$alert_stock = - 1;
     }
     
-    $requete1 = "INSERT INTO " . DB_PREFIX . "PRODUITS (DESIGNATION, ID_FOURNISSEUR, VRAC, ID_CATEGORIE, PRIX_TTC, TVA, VISIBLE, CODE_FOURNISSEUR, COMMENTAIRE, ALERT_STOCK, DATE_REFERENCEMENT) values('$designation','$fournisseur','$vrac','$categorie','$prix','$tva','$visible','$codeFournisseur', '$commentaire', '$alert_stock', NOW())";
+    $requete1 = "INSERT INTO " . DB_PREFIX . "PRODUITS (DESIGNATION, ID_FOURNISSEUR, VRAC, ID_CATEGORIE, PRIX_TTC, TVA, VISIBLE, CODE_FOURNISSEUR, COMMENTAIRE, ALERT_STOCK, DATE_REFERENCEMENT) values($designation, $fournisseur, '$vrac', $categorie, '$prix', '$tva', '$visible', $codeFournisseur, $commentaire, '$alert_stock', NOW())";
     requete ( $requete1 );
     
     $result = requete ( "SELECT MAX(ID_REFERENCE) FROM " . DB_PREFIX . "PRODUITS" );
@@ -64,6 +70,13 @@ function SelectionDonneesReference($idReference) {
     return $donnees;
 }
 function MajReference($idReference, $designation, $fournisseur, $categorie, $prix, $tva, $vrac, $codeFournisseur, $commentaire, $visible, $alert_stock) {
+    global $mysql;
+    $designation = $mysql->quote($designation);
+    $fournisseur = $mysql->quote($fournisseur);
+    $categorie = $mysql->quote($categorie);
+    $codeFournisseur = $mysql->quote($codeFournisseur);
+    $commentaire = $mysql->quote($commentaire);
+
     // no alert stock (empty) => stored as -1 in db
     // ... reference wih null as alert will be set to -1 when modified
     // ... there might be an alert level set to 0
@@ -71,7 +84,7 @@ function MajReference($idReference, $designation, $fournisseur, $categorie, $pri
 	$alert_stock = - 1;
     }
     
-    $requete = "UPDATE " . DB_PREFIX . "PRODUITS SET DESIGNATION = '$designation', ID_FOURNISSEUR='$fournisseur', VRAC='$vrac', ID_CATEGORIE='$categorie', PRIX_TTC = '$prix', ALERT_STOCK = '$alert_stock', TVA = '$tva', VISIBLE = '$visible', CODE_FOURNISSEUR = '$codeFournisseur', COMMENTAIRE = '$commentaire' WHERE ID_REFERENCE = '$idReference'";
+    $requete = "UPDATE " . DB_PREFIX . "PRODUITS SET DESIGNATION = $designation, ID_FOURNISSEUR=$fournisseur, VRAC='$vrac', ID_CATEGORIE=$categorie, PRIX_TTC = '$prix', ALERT_STOCK = '$alert_stock', TVA = '$tva', VISIBLE = '$visible', CODE_FOURNISSEUR = $codeFournisseur, COMMENTAIRE = $commentaire WHERE ID_REFERENCE = '$idReference'";
     requete ( $requete );
 }
 function SelectionListeReferencesMenu($idCategorie) {

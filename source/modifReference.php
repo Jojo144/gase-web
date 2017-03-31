@@ -25,23 +25,23 @@
 	    <div>
 		<form id="formulaire" method="post" action="modifReferenceE.php">
 		    <input type="hidden" name="idReference"
-value="<?php echo $idReference; ?>" />
+			   value="<?php echo $idReference; ?>" />
 		    <div id="table">
 			<p class="ligne">
-			    <label class="col1" for="designation">Designation* :</label> <input
-type="text" class="col2" name="designation" id="designation"
-value="<?php echo $donnees['DESIGNATION']; ?>" autofocus required />
+			    <label class="col1" for="designation">Designation* :</label>
+			    <input type="text" class="col2" name="designation" id="designation"
+				   value="<?php echo htmlspecialchars($donnees['DESIGNATION']); ?>" autofocus required />
 			</p>
 			<p class="ligne">
-			    <label class="col1" for="fournisseur">Fournisseur* :</label> <select
-class="col2" name="fournisseur" id="fournisseur" required>
+			    <label class="col1" for="fournisseur">Fournisseur* :</label>
+			    <select class="col2" name="fournisseur" id="fournisseur" required>
 				<?php
 				$listeFR = SelectionListeVisiblesFR ();
 				foreach ( $listeFR as $cle => $element ) {
 				    if ($element == $nomFournisseur) {
 				?>
 				    <option value="<?php echo $donnees['ID_FOURNISSEUR'] ?>"
-selected="selected"><?php echo $nomFournisseur; ?></option>
+					    selected="selected"><?php echo $nomFournisseur; ?></option>
 				<?php
 				} else {
 				?>
@@ -53,15 +53,15 @@ selected="selected"><?php echo $nomFournisseur; ?></option>
 			    </select>
 			</p>
 			<p class="ligne">
-			    <label class="col1" for="categorie">Categorie* :</label> <select
-class="col2" name="categorie" id="categorie" required>
+			    <label class="col1" for="categorie">Categorie* :</label>
+			    <select class="col2" name="categorie" id="categorie" required>
 				<?php
 				$listeCategories = SelectionListeCategoriesFilles ();
 				foreach ( $listeCategories as $cle => $element ) {
 				    if ($element == $nomCategorie) {
 				?>
 				    <option value="<?php echo $donnees['ID_CATEGORIE'] ?>"
-selected="selected"><?php echo $nomCategorie; ?></option>
+					    selected="selected"><?php echo $nomCategorie; ?></option>
 				<?php
 				} else {
 				?>
@@ -74,12 +74,12 @@ selected="selected"><?php echo $nomCategorie; ?></option>
 			</p>
 			<p class="ligne">
 			    <label class="col1" for="prix">Prix TTC* :</label> <input
-type="text" class="col2" name="prix" id="prix"
-value="<?php echo $donnees['PRIX_TTC']; ?>" required />
+										   type="text" class="col2" name="prix" id="prix"
+										   value="<?php echo $donnees['PRIX_TTC']; ?>" required />
 			</p>
 			<p class="ligne">
 			    <label class="col1" for="tva">T.V.A. :</label> <select
-class="col2" name="tva" id="tva">
+									       class="col2" name="tva" id="tva">
 				<?php
 				if ($donnees ['TVA'] == '0') {
 				?>
@@ -105,7 +105,7 @@ class="col2" name="tva" id="tva">
 			</p>
 			<p class="ligne">
 			    <label class="col1" for="vrac">Vrac :</label> <select type="text"
-class="col2" name="vrac" id="vrac">
+										  class="col2" name="vrac" id="vrac">
 				<?php
 				if ($donnees ['VRAC'] == '0') {
 				?>
@@ -124,16 +124,16 @@ class="col2" name="vrac" id="vrac">
 			<p class="ligne">
 			    <label class="col1" for="codeFournisseur">Code fournisseur :</label>
 			    <input type="text" class="col2" name="codeFournisseur"
-id="codeFournisseur"
-value="<?php echo $donnees['CODE_FOURNISSEUR']; ?>" />
+				   id="codeFournisseur"
+				   value="<?php echo $donnees['CODE_FOURNISSEUR']; ?>" />
 			</p>
 			<p class="ligne">
 			    <label class="col1" for="commentaire">Commentaire :</label>
-			    <textarea name="commentaire" id="commentaire" cols="35" rows="2"><?php echo $donnees['COMMENTAIRE']; ?></textarea>
+			    <textarea name="commentaire" id="commentaire" cols="35" rows="2"><?php echo htmlspecialchars($donnees['COMMENTAIRE']); ?></textarea>
 			</p>
 			<p class="ligne">
 			    <label class="col1" for="visible">Visible : </label> <select
-class="col2" name="visible" id="visible">
+										     class="col2" name="visible" id="visible">
 				<?php
 				if ($donnees ['VISIBLE'] == '0') {
 				?>
@@ -152,9 +152,9 @@ class="col2" name="visible" id="visible">
 			<p class="ligne">
 			    <label class="col1" for="alert_stock">Alerte stock (quantité, kg,
 				litre) : </label> <input type="text" class="col2"
-name="alert_stock" id="alert_stock"
-value="<?php echo $donnees['ALERT_STOCK']; ?>" /> <label
-class="col1" for="alert_stock"><small>laisser vide si pas
+							 name="alert_stock" id="alert_stock"
+							 value="<?php echo $donnees['ALERT_STOCK']; ?>" /> <label
+													       class="col1" for="alert_stock"><small>laisser vide si pas
 				d'alerte</small></label>
 			</p>
 		    </div>

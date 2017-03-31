@@ -6,11 +6,15 @@ require ("fonctionsBD.php");
  * AC 02-05-2016 fonction globale requete() + DB_PREFIX
  */
 function EnregistrerNouvelleCategorie($nom) {
-    $requete = "INSERT INTO " . DB_PREFIX . "CATEGORIES (NOM) values('$nom')";
+    global $mysql;
+    $nom = $mysql->quote($nom);
+    $requete = "INSERT INTO " . DB_PREFIX . "CATEGORIES (NOM) values($nom)";
     requete ( $requete );
 }
 function EnregistrerNouvelleSousCategorie($nom, $idCatSup) {
-    $requete = "INSERT INTO " . DB_PREFIX . "CATEGORIES (NOM, ID_CAT_SUP) values('$nom','$idCatSup')";
+    global $mysql;
+    $nom = $mysql->quote($nom);
+    $requete = "INSERT INTO " . DB_PREFIX . "CATEGORIES (NOM, ID_CAT_SUP) values($nom,'$idCatSup')";
     requete ( $requete );
     $requete = "UPDATE " . DB_PREFIX . "CATEGORIES SET SOUS_CATEGORIES = 1 WHERE ID_CATEGORIE = '$idCatSup'";
     requete ( $requete );
@@ -56,7 +60,9 @@ function SelectionNomCategorieMere($idCategorie) {
     return $nom;
 }
 function MajCategorie($idCategorie, $nom, $visible) {
-    $requete = "UPDATE " . DB_PREFIX . "CATEGORIES SET NOM = '$nom', VISIBLE = '$visible' WHERE ID_CATEGORIE = '$idCategorie'";
+    global $mysql;
+    $nom = $mysql->quote($nom);
+    $requete = "UPDATE " . DB_PREFIX . "CATEGORIES SET NOM = $nom, VISIBLE = '$visible' WHERE ID_CATEGORIE = '$idCategorie'";
     requete ( $requete );
 }
 function SelectionIdCategorieMere($idCategorie) {
@@ -69,19 +75,23 @@ function SelectionIdCategorieMere($idCategorie) {
     return $id;
 }
 function MajSousCategorie($idCategorie, $nom, $visible, $NouvelleCatMere, $ancienneCatMere) {
-    $requete = "UPDATE " . DB_PREFIX . "CATEGORIES SET NOM = '$nom', VISIBLE = '$visible', ID_CAT_SUP = '$NouvelleCatMere' WHERE ID_CATEGORIE = '$idCategorie'";
+    global $mysql;
+    $nom = $mysql->quote($nom);
+    $NouvelleCatMere = $mysql->quote($NouvelleCatMere);
+    $ancienneCatMere = $mysql->quote($ancienneCatMere);
+    $requete = "UPDATE " . DB_PREFIX . "CATEGORIES SET NOM = $nom, VISIBLE = '$visible', ID_CAT_SUP = $NouvelleCatMere WHERE ID_CATEGORIE = '$idCategorie'";
     requete ( $requete );
     
-    $requete = "UPDATE " . DB_PREFIX . "CATEGORIES SET SOUS_CATEGORIES = '1' WHERE ID_CATEGORIE = '$NouvelleCatMere'";
+    $requete = "UPDATE " . DB_PREFIX . "CATEGORIES SET SOUS_CATEGORIES = '1' WHERE ID_CATEGORIE = $NouvelleCatMere";
     requete ( $requete );
     
-    $result = requete ( "SELECT COUNT(*) FROM " . DB_PREFIX . "CATEGORIES c WHERE c.ID_CAT_SUP = '$ancienneCatMere'" );
+    $result = requete ( "SELECT COUNT(*) FROM " . DB_PREFIX . "CATEGORIES c WHERE c.ID_CAT_SUP = $ancienneCatMere" );
     while ( $row = $result->fetch () ) {
 	$nbre = $row [0];
     }
     
     if ($nbre == 0) {
-	$requete = "UPDATE " . DB_PREFIX . "CATEGORIES SET SOUS_CATEGORIES = '0' WHERE ID_CATEGORIE = '$ancienneCatMere'";
+	$requete = "UPDATE " . DB_PREFIX . "CATEGORIES SET SOUS_CATEGORIES = '0' WHERE ID_CATEGORIE = $ancienneCatMere";
 	requete ( $requete );
     }
 }

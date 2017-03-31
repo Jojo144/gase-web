@@ -2,7 +2,7 @@
 <html>
     <head>
 	<meta charset="utf-8" />
-	<link rel="stylesheet" href="approStock.css" />
+	<link rel="stylesheet" href="style_default.css" />
 	<title>APPROVISIONNEMENT</title>
     </head>
 
@@ -17,6 +17,7 @@
     <body>
 	<?php include 'menu.php'; ?>
 
+	<br />
 	<b><center>
 	    <font color="red">L'approvisionnement des références en vrac doit
 		être indiqué en kilogramme ou en litre.</font>
@@ -24,35 +25,7 @@
 	<br />
 	<form id="formulaire" method="post" action="approStockE.php">
 	    <div>
-		<label class="colonne1"><strong>CODE FOURN.</strong></label>
-		<label class="colonne4"><strong>APPRO</strong></label>
-		<label class="colonne5"><strong>CATÉGORIE</strong></label>
-		<label class="colonne2"><strong>DÉSIGNATION</strong></label>
-		<label class="colonne3"><strong>EN STOCK</strong></label>
-		<input type="hidden" name="idFournisseur"
-		       value="<?php echo $idFournisseur; ?>" />
-		<?php
-		// $listeDesignREF = SelectionListeDesignFournisseurREF($fournisseur);
-		// if(count($listeDesignREF) > 0)
-		if (count ( $listeSTK ) > 0) {
-		    foreach ( $listeSTK as $reference ) {
-		?>
-		    <p class="col1"><?php echo $reference['CODE_FOURNISSEUR'] . ':'; ?></p>
-		    <p class="col4"><input type="text" name="<?php echo $reference['ID_REFERENCE'];?>"
-					   id="<?php echo $reference['ID_REFERENCE'];?>" /></p>
-		    <p class="col5"><?php echo htmlspecialchars($reference['CATEGORIE']); ?></p>
-		    <p class="col2"><?php echo htmlspecialchars($reference['DESIGNATION']); ?></p>
-		    <p class="col3"><?php echo '[' . $reference['STOCK'] . ']'; ?></p>
-		    <br />
-		<?php
-		}
-		} else {
-		    echo 'Pas de référence pour ce fournisseur.';
-		}
-		?>
-	    </div>
-	    <div>
-		<p>
+		<center>
 		    <?php
 		    if (count ( $listeSTK ) > 0) {
 		    ?>
@@ -60,7 +33,40 @@
 		    <?php
 		    }
 		    ?>
-		</p>
+		</center>
+	    </div>
+	    <br>
+	    <div>
+		<table style="margin-left: auto; margin-right: auto;">
+		    <tr>
+			<td>&nbsp;<label class="colonne1"><strong>CODE FOURN.</strong>&nbsp;</label></td>
+			<td>&nbsp;<label class="colonne4"><strong>APPRO</strong>&nbsp;</label></td>
+			<td>&nbsp;<label class="colonne5"><strong>CATÉGORIE</strong>&nbsp;</label></td>
+			<td>&nbsp;<label class="colonne2"><strong>DÉSIGNATION</strong>&nbsp;</label></td>
+			<td>&nbsp;<label class="colonne3"><strong>EN STOCK</strong>&nbsp;</label></td>
+			<input type="hidden" name="idFournisseur"
+			       value="<?php echo $idFournisseur; ?>" />
+		    </tr>
+		    <?php
+		    // $listeDesignREF = SelectionListeDesignFournisseurREF($fournisseur);
+		    // if(count($listeDesignREF) > 0)
+		    if (count ( $listeSTK ) > 0) {
+			foreach ( $listeSTK as $reference ) {
+		    ?>
+			<tr>
+			    <td>&nbsp;<label class="colonne1"><?php echo $reference['CODE_FOURNISSEUR']; ?></label>&nbsp;</td>
+			    <td>&nbsp;<label class="colonne4"><input type="text" name="<?php echo $reference['ID_REFERENCE'];?>"
+								     id="<?php echo $reference['ID_REFERENCE'];?>" /></label>&nbsp;</td>
+			    <td>&nbsp;<label class="colonne5"><?php echo htmlspecialchars($reference['CATEGORIE']); ?></label>&nbsp;</td>
+			    <td>&nbsp;<label class="colonne2"><?php echo htmlspecialchars($reference['DESIGNATION']); ?></label>&nbsp;</td>
+			    <td>&nbsp;<label class="colonne3"><?php echo '[' . $reference['STOCK'] . ']'; ?></label>&nbsp;</td>
+			</tr>
+		    <?php
+		    }
+		    } else {
+			echo 'Pas de référence pour ce fournisseur.';
+		    }
+		    ?>
 	    </div>
 	</form>
     </body>

@@ -24,7 +24,16 @@ function SelectionListeFournisseurs($all = false) {
     return $listeAdherents;
 }
 function EnregistrerNouveauFournisseur($nom, $mail, $adresse, $contact, $telephoneFixe, $telephonePortable, $fax, $commentaire, $visible) {
-    $requete = "INSERT INTO " . DB_PREFIX . "FOURNISSEURS (NOM, MAIL, ADRESSE, CONTACT, TELEPHONE_FIXE, TELEPHONE_PORTABLE, FAX, COMMENTAIRE, DATE_REFERENCEMENT, VISIBLE) values('$nom','$mail','$adresse','$contact','$telephoneFixe','$telephonePortable', '$fax', '$commentaire', NOW(),'$visible')";
+    global $mysql;
+    $nom = $mysql->quote($nom);
+    $mail = $mysql->quote($mail);
+    $adresse = $mysql->quote($adresse);
+    $contact = $mysql->quote($contact);
+    $telephoneFixe = $mysql->quote($telephoneFixe);
+    $telephonePortable = $mysql->quote($telephonePortable);
+    $fax = $mysql->quote($fax);
+    $commentaire = $mysql->quote($commentaire);
+    $requete = "INSERT INTO " . DB_PREFIX . "FOURNISSEURS (NOM, MAIL, ADRESSE, CONTACT, TELEPHONE_FIXE, TELEPHONE_PORTABLE, FAX, COMMENTAIRE, DATE_REFERENCEMENT, VISIBLE) values($nom,$mail,$adresse,$contact,$telephoneFixe,$telephonePortable, $fax, $commentaire, NOW(),'$visible')";
     requete ( $requete );
 }
 function SelectionDonneesFournisseur($idFournisseur) {
@@ -45,7 +54,16 @@ function SelectionDonneesFournisseur($idFournisseur) {
     return $donnees;
 }
 function MajFournisseur($idFournisseur, $nom, $mail, $adresse, $contact, $telephoneFixe, $telephonePortable, $fax, $commentaire, $visible) {
-    $requete = "UPDATE " . DB_PREFIX . "FOURNISSEURS SET NOM = '$nom', MAIL='$mail', CONTACT='$contact', ADRESSE = '$adresse', TELEPHONE_FIXE = '$telephoneFixe', TELEPHONE_PORTABLE = '$telephonePortable', FAX = '$fax', COMMENTAIRE = '$commentaire', VISIBLE = '$visible' WHERE ID_FOURNISSEUR = '$idFournisseur'";
+    global $mysql;
+    $nom = $mysql->quote($nom);
+    $mail = $mysql->quote($mail);
+    $adresse = $mysql->quote($adresse);
+    $contact = $mysql->quote($contact);
+    $telephoneFixe = $mysql->quote($telephoneFixe);
+    $telephonePortable = $mysql->quote($telephonePortable);
+    $fax = $mysql->quote($fax);
+    $commentaire = $mysql->quote($commentaire);
+    $requete = "UPDATE " . DB_PREFIX . "FOURNISSEURS SET NOM = $nom, MAIL=$mail, CONTACT=$contact, ADRESSE = $adresse, TELEPHONE_FIXE = $telephoneFixe, TELEPHONE_PORTABLE = $telephonePortable, FAX = $fax, COMMENTAIRE = $commentaire, VISIBLE = '$visible' WHERE ID_FOURNISSEUR = '$idFournisseur'";
     requete ( $requete );
 }
 function SelectionListeVisiblesFR() {

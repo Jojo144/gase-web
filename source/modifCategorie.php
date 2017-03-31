@@ -19,18 +19,16 @@
 	    Les champs avec une étoile doivent obligatoirement être renseignés.
 	    <div>
 		<form id="formulaire" method="post" action="modifCategorieE.php">
-		    <input type="hidden" name="idCategorie"
-value="<?php echo $idCategorie; ?>" />
+		    <input type="hidden" name="idCategorie" value="<?php echo $idCategorie; ?>" />
 		    <div id="table">
 			<p class="ligne">
-			    <label class="col1" for="nom">Nom* : </label> <input type="text"
-class="col2" name="nom" id="nom"
-value="<?php echo $donneesCategorie['NOM']; ?>" autofocus
-required />
+			    <label class="col1" for="nom">Nom* : </label>
+			    <input type="text" class="col2" name="nom" id="nom"
+				   value="<?php echo htmlspecialchars($donneesCategorie['NOM']); ?>" autofocus required />
 			</p>
 			<p class="ligne">
-			    <label class="col1" for="visible">Visible :</label> <select
-class="col2" name="visible" id="visible">
+			    <label class="col1" for="visible">Visible :</label>
+			    <select class="col2" name="visible" id="visible">
 				<?php
 				if ($donneesCategorie ['VISIBLE'] == '0') {
 				?>
@@ -50,8 +48,8 @@ class="col2" name="visible" id="visible">
 			if ($donneesCategorie ['ID_CAT_SUP'] != NULL) {
 			?>
 			    <p class="ligne">
-				<label class="col1" for="catMere">Catégorie mère :</label> <select
-class="col2" name="catMere" id="catMere">
+				<label class="col1" for="catMere">Catégorie mère :</label>
+				<select class="col2" name="catMere" id="catMere">
 				    <?php
 				    $listeCatMeres = SelectionListeCategoriesMeres ();
 				    foreach ( $listeCatMeres as $cle => $element ) {

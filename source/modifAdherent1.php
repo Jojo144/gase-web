@@ -42,19 +42,18 @@
 				$donneesAd = SelectionDonneesAdherent ( $cle );
 			?>
 			    <tr>
-				<td><a href="modifAdherent.php?idAdherent=<?php echo  $cle; ?>"
-title="<?php echo $element; ?>" class="bouton"><?php echo  "&nbsp;".$element."&nbsp;"; ?></a></td>
-				<td><label class="colonne2"></label><?php echo  "&nbsp;".$donneesAd['PRENOM']."&nbsp;"; ?></td>
-				<td><label class="colonne3"></label><?php echo  "&nbsp;".$donneesAd['MAIL']."&nbsp;"; ?></td>
-				<td><label class="colonne4"></label><?php echo  "&nbsp;".$donneesAd['TELEPHONE_PORTABLE']."&nbsp;"; ?></td>
-				<td><label class="colonne5"></label><?php echo  "&nbsp;".$donneesAd['TELEPHONE_FIXE']."&nbsp;"; ?></td>
-				<td><label class="colonne5"></label><?php echo  "&nbsp;".$donneesAd['DATE_INSCRIPTION']."&nbsp;"; ?></td>
+				<td>&nbsp;<a href="modifAdherent.php?idAdherent=<?php echo  $cle; ?>"
+					     title="<?php echo $element; ?>" class="bouton"><?php echo  htmlspecialchars($element); ?></a>&nbsp;</td>
+				<td>&nbsp;<label class="colonne2"></label><?php echo  htmlspecialchars($donneesAd['PRENOM']); ?>&nbsp;</td>
+				<td>&nbsp;<label class="colonne3"></label><?php echo  htmlspecialchars($donneesAd['MAIL']); ?>&nbsp;</td>
+				<td>&nbsp;<label class="colonne4"></label><?php echo  htmlspecialchars($donneesAd['TELEPHONE_PORTABLE']); ?>&nbsp;</td>
+				<td>&nbsp;<label class="colonne5"></label><?php echo  htmlspecialchars($donneesAd['TELEPHONE_FIXE']); ?>&nbsp;</td>
+				<td>&nbsp;<label class="colonne5"></label><?php echo  $donneesAd['DATE_INSCRIPTION']; ?>&nbsp;</td>
 			    </tr>
 			<?php
 			}
 			?>
 		    </table>
 		</div>
-
     </body>
 </html>

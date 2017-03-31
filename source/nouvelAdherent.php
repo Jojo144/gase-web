@@ -15,16 +15,16 @@
 		<form id="formulaire" method="post" action="nouvelAdherentE.php">
 		    <div id="table">
 			<p class="ligne">
-			    <label class="col1" for="nom">Nom* : </label> <input type="text"
-class="col2" name="nom" id="nom" autofocus required />
+			    <label class="col1" for="nom">Nom* : </label>
+			    <input type="text" class="col2" name="nom" id="nom" autofocus required />
 			</p>
 			<p class="ligne">
-			    <label class="col1" for="prenom">Prénom : </label> <input
-type="text" class="col2" name="prenom" id="prenom" />
+			    <label class="col1" for="prenom">Prénom : </label>
+			    <input type="text" class="col2" name="prenom" id="prenom" />
 			</p>
 			<p class="ligne">
-			    <label class="col1" for="email">Email : </label> <input
-type="email" class="col2" name="email" id="email" />
+			    <label class="col1" for="email">Email : </label>
+			    <input type="email" class="col2" name="email" id="email" />
 			</p>
 			<?php if (USE_MAIL)
 			    echo '<p><small>(Nécessaire pour le ticket de caisse.)</small></p>';
@@ -40,18 +40,18 @@ id="telephone_fixe" />
 id="telephone_portable" />
 			</p>
 			<p class="ligne">
-			    <label class="col1" for="adresse">Adresse :</label> <input
-type="text" class="col2" name="adresse" id="adresse" />
+			    <label class="col1" for="adresse">Adresse :</label>
+			    <input type="text" class="col2" name="adresse" id="adresse" />
 			</p>
 
 			<?php if (USE_MAIL) {
 			    echo '<p class = "ligne">
-								  <label class = "col1" for="ticket">Envoi ticket de caisse : </label>
-								  <select class= "col2" name="ticket" id="ticket" >
-										<option value="1" selected>OUI</option>
-								       	<option value="0">NON</option>
-								  </select></p>';
-			    
+				  <label class = "col1" for="ticket">Envoi ticket de caisse : </label>
+				  <select class= "col2" name="ticket" id="ticket" >
+			        	<option value="1" selected>OUI</option>
+					<option value="0">NON</option>
+				  </select></p>';
+			
 			}
 			?>
 			<p class="ligne">

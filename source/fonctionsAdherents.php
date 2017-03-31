@@ -6,7 +6,16 @@ require ("fonctionsBD.php");
  * AC 02-05-2016 fonction globale requete() + DB_PREFIX
  */
 function EnregistrerNouvelAdherent($nom, $prenom, $mail, $telephone_fixe, $telephone_portable, $adresse, $commentaire, $ticket, $visible) {
-    $requete = "INSERT INTO " . DB_PREFIX . "ADHERENTS (NOM, PRENOM, MAIL, TELEPHONE_FIXE, TELEPHONE_PORTABLE, ADRESSE, COMMENTAIRE, TICKET_CAISSE, DATE_INSCRIPTION, VISIBLE) values('$nom','$prenom','$mail','$telephone_fixe','$telephone_portable', '$adresse', '$commentaire', '$ticket', NOW(),'$visible')";
+    global $mysql;
+    $nom = $mysql->quote($nom);
+    $prenom = $mysql->quote($prenom);
+    $mail = $mysql->quote($mail);
+    $telephone_fixe = $mysql->quote($telephone_fixe);
+    $telephone_portable = $mysql->quote($telephone_portable);
+    $adresse = $mysql->quote($adresse);
+    $commentaire = $mysql->quote($commentaire);
+
+    $requete = "INSERT INTO " . DB_PREFIX . "ADHERENTS (NOM, PRENOM, MAIL, TELEPHONE_FIXE, TELEPHONE_PORTABLE, ADRESSE, COMMENTAIRE, TICKET_CAISSE, DATE_INSCRIPTION, VISIBLE) values($nom , $prenom , $mail , $telephone_fixe , $telephone_portable , $adresse , $commentaire , '$ticket', NOW(),'$visible')";
     requete ( $requete );
     
     $result = requete ( "SELECT MAX(ID_ADHERENT) FROM " . DB_PREFIX . "ADHERENTS" );
@@ -44,8 +53,17 @@ function SelectionDonneesAdherent($idAdherent) {
     }
     return $donnees;
 }
-function MajAdherent($idAdherent, $nom, $prenom, $email, $telephone_fixe, $telephone_portable, $adresse, $commentaire, $ticket, $visible, $receive_alert_stock) {
-    $requete = "UPDATE " . DB_PREFIX . "ADHERENTS SET NOM = '$nom', PRENOM = '$prenom', MAIL='$email', TELEPHONE_FIXE = '$telephone_fixe', TELEPHONE_PORTABLE = '$telephone_portable', ADRESSE = '$adresse', COMMENTAIRE = '$commentaire', TICKET_CAISSE = '$ticket', VISIBLE = '$visible', RECEIVE_ALERT_STOCK = '$receive_alert_stock' WHERE ID_ADHERENT = '$idAdherent'";
+function MajAdherent($idAdherent, $nom, $prenom, $mail, $telephone_fixe, $telephone_portable, $adresse, $commentaire, $ticket, $visible, $receive_alert_stock) {
+    global $mysql;
+    $nom = $mysql->quote($nom);
+    $prenom = $mysql->quote($prenom);
+    $mail = $mysql->quote($mail);
+    $telephone_fixe = $mysql->quote($telephone_fixe);
+    $telephone_portable = $mysql->quote($telephone_portable);
+    $adresse = $mysql->quote($adresse);
+    $commentaire = $mysql->quote($commentaire);
+
+    $requete = "UPDATE " . DB_PREFIX . "ADHERENTS SET NOM = $nom, PRENOM = $prenom, MAIL=$mail, TELEPHONE_FIXE = $telephone_fixe, TELEPHONE_PORTABLE = $telephone_portable, ADRESSE = $adresse, COMMENTAIRE = $commentaire, TICKET_CAISSE = '$ticket', VISIBLE = '$visible', RECEIVE_ALERT_STOCK = '$receive_alert_stock' WHERE ID_ADHERENT = '$idAdherent'";
     requete ( $requete );
 }
 function SelectionListeAD() {

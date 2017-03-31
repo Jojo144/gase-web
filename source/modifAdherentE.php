@@ -7,7 +7,7 @@
     </head>
     <body>
 	<title>MODIF. ADHERENT</title>
-	<?php require("fonctionsAdherents.php"); ?>
+	<?php require 'fonctionsAdherents.php'; ?>
 	<?php include 'menu.php'; ?>
 
         <?php
@@ -17,20 +17,17 @@
 	    
 	    $nom = $_POST ['nom'];
 	    $nom = trim ( $nom );
-	    $nom = str_replace ( "'", "_", $nom );
-	    // $nom = mb_strtoupper($nom);
 	    
 	    if (empty ( $nom )) {
 		print ("<center>Le '<b>NOM</b>' de l\'adherent n\'est pas renseigné ! Création à refaire.</center>") ;
 	    } else {
-		$ticket = (USE_MAIL) ?  $_POST['ticket'] : false;
+		$ticket = (USE_MAIL) ?  $_POST['ticket'] : '0';
 		$email = $_POST ['email'];
 		if (empty($email) && $ticket) {
 		    print ("<center>Pour envoyer un ticket de caisse, il faut renseigner l '<b>EMAIL</b>' ! Modifications non effectuée</center>") ;
 		} else {
 		    $prenom = $_POST ['prenom'];
 		    $prenom = trim ( $prenom );
-		    $prenom = str_replace ( "'", "_", $prenom );
 		    
 		    $email = $_POST ['email'];
 		    $telephone_fixe = $_POST ['telephoneFixe'];
@@ -38,20 +35,18 @@
 		    
 		    $adresse = $_POST ['adresse'];
 		    $adresse = trim ( $adresse );
-		    $adresse = str_replace ( "'", "_", $adresse );
 		    
 		    $commentaire = $_POST ['commentaire'];
 		    $commentaire = trim ( $commentaire );
-		    $commentaire = str_replace ( "'", "_", $commentaire );
 		    
 		    $visible = $_POST ['visible'];
-		    $stock_alert = (USE_MAIL) ? $_POST['receive_alert_stock'] : false;
+		    $stock_alert = (USE_MAIL) ? $_POST['receive_alert_stock'] : '0';
 		    
 		    MajAdherent ( $idAdherent, $nom, $prenom, $email, $telephone_fixe, $telephone_portable, $adresse, $commentaire, $ticket, $visible, $stock_alert );
-		    echo '<p style="text-align:center">Mise a jour des donnees de ' . $prenom . ' ' . $nom . ' enregistrée.</p>';
-		}
-	    }
-	}
+		    echo '<p style="text-align:center">Mise à jour des données de ' . htmlspecialchars($prenom) . ' ' . htmlspecialchars($nom) . ' enregistrée.</p>';
+		    }
+		    }
+		    }
 	?>
 
     </body>

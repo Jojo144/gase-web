@@ -50,11 +50,12 @@
 				$nomCategorie = SelectionNomCategorie ( $donneesReference ['ID_CATEGORIE'] );
 			?>
 			    <tr>
-				<td><label class="colonne3"></label><?php echo  "&nbsp;".$nomCategorie."&nbsp;"; ?></td>
-				<td><a href="modifReference.php?idReference=<?php echo  $cle; ?>"
-title="<?php echo $element; ?>" class="bouton"><?php echo  "&nbsp;".$element."&nbsp;"; ?></a></td>
-				<td><label class="colonne2"></label><?php echo  "&nbsp;".$nomFournisseur."&nbsp;"; ?></td>
-				<td><label class="colonne4"></label><?php echo  "&nbsp;".$donneesReference['PRIX_TTC']."&nbsp;"; ?></td>
+				<td>&nbsp;<label class="colonne3"></label><?php echo  htmlspecialchars($nomCategorie); ?>&nbsp;</td>
+				<td>&nbsp;<a href="modifReference.php?idReference=<?php echo  $cle; ?>"
+					     title="<?php echo $element; ?>" class="bouton"><?php echo  htmlspecialchars($element); ?>
+				</a>&nbsp;</td>
+				<td>&nbsp;<label class="colonne2"></label><?php echo  $nomFournisseur; ?>&nbsp;</td>
+				<td>&nbsp;<label class="colonne4"></label><?php echo  $donneesReference['PRIX_TTC']; ?>&nbsp;</td>
 				
 				<?php
 				if ($donneesReference ['VRAC'] == 0) {

@@ -8,7 +8,7 @@
     </head>
 
     <?php
-    require ("fonctionsCategories.php");
+    require 'fonctionsCategories.php';
     ?>
     
     <?php include 'menu.php'; ?>
@@ -28,30 +28,28 @@
 			?>
 			    <p class="ligne">
 				<label class="col1" for="sousCategorie">C'est une sous-catégorie :
-				</label> <input type="text" value="NON" disabled="disabled" /> <input
-type="hidden" name="sousCategorie"
-value="<?php echo $sousCat; ?>" />
+				</label> <input type="text" value="NON" disabled="disabled" />
+				<input type="hidden" name="sousCategorie" value="<?php echo $sousCat; ?>" />
 			    </p>
 			    <p class="ligne">
-				<label class="col1" for="nom">Nom* : </label> <input type="text"
-class="col2" name="nom" id="nom" autofocus required />
+				<label class="col1" for="nom">Nom* : </label>
+				<input type="text" class="col2" name="nom" id="nom" autofocus required />
 			    </p>
 			<?php
 			} else {
 			?>
 			    <p class="ligne">
 				<label class="col1" for="sousCategorie">C'est une sous-catégorie :
-				</label> <input type="text" value="OUI" disabled="disabled" /> <input
-type="hidden" name="sousCategorie"
-value="<?php echo $sousCat; ?>" />
+				</label> <input type="text" value="OUI" disabled="disabled" />
+				<input type="hidden" name="sousCategorie" value="<?php echo $sousCat; ?>" />
 			    </p>
 			    <p class="ligne">
-				<label class="col1" for="nom">Nom* : </label> <input type="text"
-class="col2" name="nom" id="nom" autofocus required />
+				<label class="col1" for="nom">Nom* : </label>
+				<input type="text" class="col2" name="nom" id="nom" autofocus required />
 			    </p>
 			    <p class="ligne">
-				<label class="col1" for="catMere">Catégorie mère* : </label> <select
-name="idCatSup" id="idCatSup">
+				<label class="col1" for="catMere">Catégorie mère* : </label>
+				<select name="idCatSup" id="idCatSup">
 				    <option value="" selected="selected"></option>
 				    <?php
 				    $listeCategoriesMeres = SelectionListeCategoriesMeres ();

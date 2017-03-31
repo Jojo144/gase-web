@@ -25,8 +25,7 @@
 	<div class="center">
 	    <a href="<?= $link ?>"><?= $all ? 'Masquer les non visibles' : 'Montrer les non visibles' ?></a>
 	</div>
-	<table
-style="margin-left: auto; margin-right: auto; max-width: 1000px;">
+	<table style="margin-left: auto; margin-right: auto; max-width: 1000px;">
 	    <tr>
 		<td width="5%" align="center"><strong>QUANTITÉ</strong></td>
 		<td width="10%" align="center"><strong>CATÉGORIE</strong></td>
@@ -41,12 +40,11 @@ style="margin-left: auto; margin-right: auto; max-width: 1000px;">
 	    ?>
 		<tr <?= $ref['VISIBLE'] == 'NON' ? 'class="inactive"' : '' ?>>
 		    <td><?php echo $ref['STOCK'];?></td>
-		    <td><?php echo $ref['CATEGORIE'];?></td>
-		    <td><?php echo $ref['DESIGNATION'];?></td>
-		    <td align="center"><?php echo $ref['NOM'];?></td>
+		    <td><?php echo htmlspecialchars($ref['CATEGORIE']);?></td>
+		    <td><?php echo htmlspecialchars($ref['DESIGNATION']);?></td>
+		    <td align="center"><?php echo htmlspecialchars($ref['NOM']);?></td>
 		    <td align="center"><?php echo $ref['VISIBLE'];?></td>
-		    <td align="center"><a
-href="stock_stat.php?id=<?php echo $ref['ID_REFERENCE'];?>">stats</a></td>
+		    <td align="center"><a href="stock_stat.php?id=<?php echo $ref['ID_REFERENCE'];?>">stats</a></td>
 		</tr>
 	    <?php
 	    }

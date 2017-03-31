@@ -12,13 +12,12 @@
 	<div style="text-align: center">
 	    <form id="formulaire" method="post" action="nouvelleCategorie.php">
 		<p class="ligne">
-		    <label class="col1" for="sousCategorie">Voulez-vous creer une
-			nouvelle sous-catégorie ? : </label> <select name="sousCategorie"
-id="sousCategorie" onchange="this.form.submit()">
+		    <label class="col1" for="sousCategorie">Voulez-vous creer une nouvelle sous-catégorie ? : </label>
+		    <select name="sousCategorie" id="sousCategorie" onchange="this.form.submit()">
 			<option value="" selected="selected"></option>
 			<option value="0">NON</option>
 			<option value="1">OUI</option>
-			</select>
+		    </select>
 		</p>
 	    </form>
 	</div>

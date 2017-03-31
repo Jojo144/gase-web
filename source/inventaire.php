@@ -31,9 +31,9 @@
 			    <td><input class="colonne2" type="text"
 name="<?php echo $element['ID_REFERENCE'];?>"
 id="<?php echo $element['ID_REFERENCE'];?>" /></td>
-			    <td><label class="colonne4"><?php echo stripslashes($element['CATEGORIE']); ?></label></td>
-			    <td><label class="colonne3"><?php echo stripslashes($element['DESIGNATION']); ?></label></td>
-			    <td><label class="colonne3"><?php echo stripslashes($element['NOM']); ?></label></td>
+			    <td><label class="colonne4"><?php echo htmlspecialchars($element['CATEGORIE']); ?></label></td>
+			    <td><label class="colonne3"><?php echo htmlspecialchars($element['DESIGNATION']); ?></label></td>
+			    <td><label class="colonne3"><?php echo htmlspecialchars($element['NOM']); ?></label></td>
 			</tr>
 		    <?php
 		    }
