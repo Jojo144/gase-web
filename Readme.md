@@ -1,8 +1,13 @@
-To reset the tables :
-mysql -u root -proot < reset_tables.mysql
+# Le compteur du GASE
+
+Logiciel de gestion de GASE ou d'épicerie associative.
+
+Attention : stade expérimental. Testé principalement avec l'option "use_mail = false".
 
 
-Installation :
+
+
+## Installation
 
 1 - Installer les paquets ubuntu : apache mysql php php-mysql libapache2-mod-php
 	(noter le mot de passe root que vous donnez, par exemple root)
@@ -24,3 +29,9 @@ Installation :
 5 - Aller sur http://localhost/gase/source/ et vérifier que ça roule.
 
 6 - Mettre en place des backups.
+
+
+## Divers
+
+To reset the tables :
+mysql -u root -proot < reset_tables.mysql
