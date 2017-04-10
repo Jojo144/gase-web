@@ -10,21 +10,23 @@ Attention : stade expérimental. Testé principalement avec l'option "use_mail =
 ## Installation
 
 1 - Installer les paquets ubuntu : apache mysql php php-mysql libapache2-mod-php
-	(noter le mot de passe root que vous donnez, par exemple root)
+	(notez le mot de passe root que vous donnez lors de l'installation de mysql, par exemple root)
 
-2 - Placer le dossier "gase-web" contenant les sources dans /var/www/html
+2 - Renommer les dossier contenant les sources en "gase" et le placer dans /var/www/html:
+	sudo cp -r gase-web /var/www/html/gase 
+    Et redoner les bonnes permissions (remplacer USER par le nom d'utilisateur Ubuntu):
+	sudo chown -R USER:USER /var/www/html/gase
 
-3 - Créer les tables dans la base de données. Dans un terminal :
-	cd /var/www/html/gase-web
-	mysql -u root -proot < reset_tables.mysql  (Rq : il n'y a pas d'espace entre le -p et le mot de passe root)
-
-4 - Configurer correctement le fichier config.ini. Ça doit ressembler à :
+3 - Configurer correctement le fichier config.ini. Ça doit ressembler à :
 	[DB]
 	address = localhost
 	user = root
-	password = root
-	name = gasedechips
-	prefix = _inde_
+	password = MOTDEPASSEMYSQL
+	name = gase
+
+4 - Créer les tables dans la base de données. Dans un terminal :
+	cd /var/www/html/gase
+	./restore_backup.sh
 
 5 - Aller sur http://localhost/gase/source/ et vérifier que ça roule.
 
@@ -33,5 +35,8 @@ Attention : stade expérimental. Testé principalement avec l'option "use_mail =
 
 ## Divers
 
-To reset the tables :
-mysql -u root -proot < reset_tables.mysql
+Pour remettre les tables à zéro :
+./restore_backup.sh
+
+Pour restaurer un backup:
+./restore_backup.sh MONBACKUP.sql
