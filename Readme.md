@@ -7,13 +7,13 @@ Attention : stade expérimental. Testé principalement avec les options `use_mai
 
 ## Installation
 
-Voir le fichier [Installation.md].
+Voir le fichier [Installation.md](Installation.md).
 
 
 ## Divers
 
 Pour remettre les tables à zéro :
-	./restore_backup.sh
+	`./restore_backup.sh`
 
 Pour restaurer un backup:
-	./restore_backup.sh MONBACKUP.sql
+	`./restore_backup.sh MONBACKUP.sql`
