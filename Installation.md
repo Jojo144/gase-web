@@ -33,7 +33,9 @@ password = MOTDEPASSEMYSQL	; mot de passe utilisateur Mysql
 name = gase			; nom de la base de donnée (gase convient très bien)
 ```
 	
-### 5 - Créer les tables dans la base de données. Dans un terminal :
+### 5 - Créer les tables dans la base de données.
+Dans un terminal :
+
 `cd /var/www/html/gase`
 
 `./restore_backup.sh`
