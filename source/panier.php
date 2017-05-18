@@ -40,7 +40,7 @@ if ($nbRefPanier == 0) {
     <?php }else{ ?>
 	>Total TTC panier: <?php echo round($prixTotal,2) ?> euros
     <?php } ?>
-    <input type="submit" value="Payer" name="payer" id="payer">
+    <input type="submit" value="Payer" name="payer" id="payer" onclick="return confirm('Voulez-vous terminer vos achats et payer maintenant ?');" >
     </div>
 
 </form>
