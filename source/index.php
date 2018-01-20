@@ -21,44 +21,9 @@
 	</div>
 	<div style="text-align: center">
 	    <h3>BIENVENUE SUR LE COMPTEUR DU GASE</h3>
+	    <br />
+	    <br />
+	    <iframe src="https://gasedechips.girole.fr" height="1600" width="1200"></iframe>
 	</div>
-	<br />
-	<br />
-	<br />
-	<br />
-	<div style="margin-left: 30px">Pour laisser un message, cliquer sur
-	    "JOURNAL DE BORD" dans le menu.</div>
-	<br />
-	<br />
-	<br />
-	<?php
-	$listeMessages = SelectionListeMessages ();
-	if (count ( $listeMessages ) > 0) {
-	?>
-	    <table style="margin-left: 30px;">
-		<tr>
-		    <td><label class="colonne1"><center>
-			<strong>DATE</strong>
-		    </center></label></td>
-		    <td><label class="colonne2"><center>
-			<strong>MESSAGE</strong>
-		    </center></label></td>
-		</tr>
-		<?php
-		foreach ( $listeMessages as $message ) {
-		?>
-		    <tr>
-			<td><label class="colonne1"><center>
-			    <strong><?php echo $message['DATE']; ?></strong>
-			</center></label></td>
-			<td><label class="colonne2"><?php echo nl2br(htmlspecialchars($message['MESSAGE'])); ?></label></td>
-		    </tr>
-		<?php
-		}
-		?>
-	    </table>
-	<?php
-	}
-	?>
     </body>
 </html>
