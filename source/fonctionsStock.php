@@ -373,4 +373,18 @@ function send_email_using_php_mail($dst_array, $origin, $subject, $message_txt) 
     mail ( $dst, $subject, $message, $header );
 }
 
+function SommeComptes() {
+    $result = requete ("select SUM(c.SOLDE) as RESULT from _inde_COMPTES c, _inde_ADHERENTS a where c.DATE in (select MAX(DATE) FROM _inde_COMPTES c2 WHERE c2.ID_ADHERENT = c.ID_ADHERENT) AND a.VISIBLE = 1 AND c.ID_ADHERENT = a.ID_ADHERENT");
+    $row = $result->fetch ();
+    $sum = $row ["RESULT"];    
+    return $sum;
+}
+
+function ValeurTotaleStock () {
+    $result = requete ("select sum(A.PRIX_TTC* B.STOCK) AS RESULT from _inde_PRODUITS A, _inde_STOCKS B where B.DATE in (select MAX(DATE) from _inde_STOCKS B1 where B1.ID_REFERENCE=B.ID_REFERENCE) AND A.ID_REFERENCE = B.ID_REFERENCE");
+    $row = $result->fetch ();
+    $sum = $row ["RESULT"];    
+    return $sum;
+}
+
 ?>

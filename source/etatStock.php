@@ -21,8 +21,13 @@
 	    $link .= '?all';
 	
 	$listeSTK = SelectionListeSTK ( $all );
+    $sommesoldes = round(SommeComptes(),2);
+    $valeurstock = round(ValeurTotaleStock(),2);
 	?>
 	<div class="center">
+        Somme des soldes des comptes (adhérents visibles seulement) : <?php echo $sommesoldes;?> € <br>
+        Valeur du stock (références invisibles inclues) : <?php echo $valeurstock;?> €
+        <br> <br>
 	    <a href="<?= $link ?>"><?= $all ? 'Masquer les non visibles' : 'Montrer les non visibles' ?></a>
 	</div>
 	<table style="margin-left: auto; margin-right: auto; max-width: 1000px;">
