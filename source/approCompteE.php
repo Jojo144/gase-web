@@ -10,12 +10,11 @@ if (isset ( $_POST ['enregistrerAppro'] )) {
     $versement = str_replace ( ",", ".", $versement );
     
     if (is_numeric ( $versement )) {
-	if ($versement > 0) {
-	    ApprovisionnementMC ( $idAdherent, $versement );
-	    include ('approCompteE2.php');
-	} else {
-	    echo 'La somme indiquee n\'est pas une valeur positive.';
-	}
+	if ($versement <= 0) {
+	echo '<script>alert("Vous avez rentré un versement négatif. Cette fonctionnalité est réservée à la com\' treso. Si c\'est une erreur, merci d\'appeler la com info au secours.");</script>';
+    }
+    ApprovisionnementMC ( $idAdherent, $versement );
+    include ('approCompteE2.php');
     } else {
 	echo 'La somme indiquee n\'est pas une valeur numérique.';
     }
