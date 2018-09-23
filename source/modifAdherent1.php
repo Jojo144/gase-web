@@ -7,10 +7,16 @@
     </head>
     <body>
 	<?php include 'menu.php'; ?>
-	<?php require("fonctionsAdherents.php"); ?>
+	<?php require("fonctionsAdherents.php");
+	$all = isset ( $_GET ['all'] ) ? true : false;
+	$link = $_SERVER ["SCRIPT_NAME"];
+	if (! $all)
+	    $link .= '?all';
+    ?>
 	
 	<div style="text-align: center">
-	    Cliquez sur le nom d'un adhérent pour modifier ses données.
+	    Cliquez sur le nom d'un adhérent pour modifier ses données. <br> <br>
+	    <a href="<?= $link ?>"><?= $all ? 'Masquer les non visibles' : 'Montrer les non visibles' ?></a>
 	    <div>
 		<br />
 		<div class="liste" style="text-align: left">
@@ -36,12 +42,12 @@
 			    </center></label></td>
 			</tr>
 			<?php
-			$listeADherents = SelectionListeAdherents ();
+			$listeADherents = SelectionListeAdherents ($all);
 			if ($listeADherents)
 			    foreach ( $listeADherents as $cle => $element ) {
 				$donneesAd = SelectionDonneesAdherent ( $cle );
 			?>
-			    <tr>
+			    <tr <?= $donneesAd['VISIBLE'] == 0 ? 'class="inactive"' : '' ?>>
 				<td>&nbsp;<a href="modifAdherent.php?idAdherent=<?php echo  $cle; ?>"
 					     title="<?php echo $element; ?>" class="bouton"><?php echo  htmlspecialchars($element); ?></a>&nbsp;</td>
 				<td>&nbsp;<label class="colonne2"></label><?php echo  htmlspecialchars($donneesAd['PRENOM']); ?>&nbsp;</td>

@@ -26,8 +26,14 @@ function EnregistrerNouvelAdherent($nom, $prenom, $mail, $telephone_fixe, $telep
     $requete = "INSERT INTO " . DB_PREFIX . "COMPTES (ID_ADHERENT, SOLDE, DATE, OPERATION, MONTANT) values('$idAdherentMax',0,NOW(),'CREATION',0)";
     requete ( $requete );
 }
-function SelectionListeAdherents() {
-    $result = requete ( "SELECT ID_ADHERENT, NOM FROM " . DB_PREFIX . "ADHERENTS ORDER BY NOM" );
+
+function SelectionListeAdherents($all = false) {
+    $sql = "SELECT ID_ADHERENT, NOM FROM " . DB_PREFIX . "ADHERENTS";
+    if (! $all)
+        $sql .= " WHERE VISIBLE=1";
+    $sql .= " ORDER BY NOM";
+    $result = requete ( $sql );
+
     $listeAdherents = NULL;
     while ( $row = $result->fetch () ) {
 	$listeAdherents [$row ["ID_ADHERENT"]] = $row ["NOM"];
@@ -35,6 +41,7 @@ function SelectionListeAdherents() {
     
     return $listeAdherents;
 }
+
 function SelectionDonneesAdherent($idAdherent) {
     $result = requete ( "SELECT NOM, PRENOM, MAIL, TELEPHONE_FIXE, TELEPHONE_PORTABLE, ADRESSE, COMMENTAIRE, TICKET_CAISSE, DATE_INSCRIPTION, VISIBLE, RECEIVE_ALERT_STOCK FROM " . DB_PREFIX . "ADHERENTS WHERE ID_ADHERENT = '$idAdherent'" );
     $donnees = NULL;
