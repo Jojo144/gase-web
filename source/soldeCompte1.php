@@ -15,7 +15,7 @@
 		<select name="adherent" id="adherent" onchange="this.form.submit()">
 		    <option value="" selected="selected"></option>
 		    <?php
-		    $listeAD = SelectionListeAD ();
+		    $listeAD = SelectionListeActifsAD ();
 		    if ($listeAD)
 			foreach ( $listeAD as $donnees ) {
 		    ?>
