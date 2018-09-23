@@ -33,6 +33,7 @@ if (! defined ( "FONCTION_BD_GASE_PHP" )) {
 	$prefix = $config['DB']['prefix'];
     define ( "DB_PREFIX", $prefix );
     define('USE_DOCUMENTS', $config["MoneyCoop"]["use_documents"]);
+    define('USE_MESSAGES', $config["MoneyCoop"]["use_messages"]);
     define('USE_MAIL', $config["EMAIL"]["use_mail"]);
 
     // construction chaîne de connexion

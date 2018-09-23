@@ -35,7 +35,10 @@
 		<li><a href="modifFournisseur1.php">VOIR</a></li>
 		<li><a href="nouveauFournisseur.php">NOUVEAU</a></li>
 	    </ul></li>
-	<li><a href="journalDeBord.php">JOURNAL DE BORD</a></li>
+	<?php require 'fonctionsBD.php';
+	if (USE_MESSAGES)
+	    echo '<li><a href="journalDeBord.php">JOURNAL DE BORD</a></li>';
+	?>
 	<?php require 'fonctionsBD.php';
 	if (USE_DOCUMENTS)
 	    echo '<li><a href="#">DOCUMENTS</a><ul>
