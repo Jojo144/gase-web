@@ -35,6 +35,7 @@ session_start ();
 	    <?php include 'listeReferences.php';?>
 	</div>
 	<div class="panier">
+        <br> <br>
 	    <?php include 'panier.php';?>
 	</div>
 	<div>
