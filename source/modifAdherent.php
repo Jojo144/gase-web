@@ -77,7 +77,7 @@
 			    </small>
 			</p>
 			<p class="ligne">
-			    <label class="col1" for="visible">Visible : </label>
+			    <label class="col1" for="visible">Inscrit.e : </label>
 			    <select class="col2" name="visible" id="visible">
 				<?php
 				if ($donnees ['VISIBLE'] == '0') {

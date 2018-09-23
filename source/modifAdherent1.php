@@ -16,7 +16,7 @@
 	
 	<div style="text-align: center">
 	    Cliquez sur le nom d'un adhérent pour modifier ses données. <br> <br>
-	    <a href="<?= $link ?>"><?= $all ? 'Masquer les non visibles' : 'Montrer les non visibles' ?></a>
+	    <a href="<?= $link ?>"><?= $all ? 'Masquer les non inscrits' : 'Montrer les non inscrits' ?></a>
 	    <div>
 		<br />
 		<div class="liste" style="text-align: left">
