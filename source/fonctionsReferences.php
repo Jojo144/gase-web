@@ -31,8 +31,12 @@ function EnregistrerNouvelleReference($designation, $fournisseur, $categorie, $p
     $requete2 = "INSERT INTO " . DB_PREFIX . "STOCKS (ID_REFERENCE, STOCK, OPERATION, DATE, ID_ACHAT, QUANTITE) values('$idRefMax',0,'CREATION',NOW(),NULL, 0)";
     requete ( $requete2 );
 }
-function SelectionListeReferences() {
-    $result = requete ( "SELECT ID_REFERENCE, DESIGNATION FROM " . DB_PREFIX . "PRODUITS ORDER BY DESIGNATION" );
+function SelectionListeReferences($all = false) {
+    $sql = "SELECT ID_REFERENCE, DESIGNATION FROM " . DB_PREFIX . "PRODUITS";
+    if (! $all)
+        $sql .= " WHERE VISIBLE=1";
+    $sql .= " ORDER BY DESIGNATION";
+    $result = requete ( $sql );
     $listeAdherents = NULL;
     while ( $row = $result->fetch () ) {
 	$listeAdherents [$row ["ID_REFERENCE"]] = $row ["DESIGNATION"];

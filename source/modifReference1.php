@@ -11,9 +11,14 @@
 	require ("fonctionsReferences.php");
 	require ("fonctionsFournisseurs.php");
 	require ("fonctionsCategories.php");
+	$all = isset ( $_GET ['all'] ) ? true : false;
+	$link = $_SERVER ["SCRIPT_NAME"];
+	if (! $all)
+	    $link .= '?all';
 	?>
 	<div style="text-align: center">
-	    Cliquez sur le nom de la référence à modifier.
+	    Cliquez sur le nom de la référence à modifier. <br> <br>
+	    <a href="<?= $link ?>"><?= $all ? 'Masquer les non visibles' : 'Montrer les non visibles' ?></a>
 	    <div>
 		<br />
 		<div class="liste" style="text-align: left">
@@ -42,14 +47,14 @@
 			    </center></label></td>
 			</tr>
 			<?php
-			$listeReferences = SelectionListeReferences ();
+			$listeReferences = SelectionListeReferences ($all);
 			if ($listeReferences)
 			    foreach ( $listeReferences as $cle => $element ) {
 				$donneesReference = SelectionDonneesReference ( $cle );
 				$nomFournisseur = SelectionNomFournisseur ( $donneesReference ['ID_FOURNISSEUR'] );
 				$nomCategorie = SelectionNomCategorie ( $donneesReference ['ID_CATEGORIE'] );
 			?>
-			    <tr>
+			    <tr <?= $donneesReference['VISIBLE'] == 0 ? 'class="inactive"' : '' ?>>
 				<td>&nbsp;<label class="colonne3"></label><?php echo  htmlspecialchars($nomCategorie); ?>&nbsp;</td>
 				<td>&nbsp;<a href="modifReference.php?idReference=<?php echo  $cle; ?>"
 					     title="<?php echo $element; ?>" class="bouton"><?php echo  htmlspecialchars($element); ?>
