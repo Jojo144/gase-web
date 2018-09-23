@@ -9,9 +9,9 @@ session_start ();
 	<link rel="stylesheet" href="style_form.css" />
 	<title>ACHATS</title>
     </head>
+    <body>
+	<?php include 'menu.php';
 
-
-    <?php
     require ("fonctionsStock.php");
     require ("fonctionsCompte.php");
     require ("fonctionsAdherents.php");
@@ -47,20 +47,13 @@ session_start ();
 		if (USE_MAIL)
 		    check_for_new_stock_alert();
 		
-		echo "Achat " . $numeroAchat . " enregistré.<br />";
-		echo "<div style=\"text-align:center\">Le solde de votre compte est maintenant de " . round ( $nouveauSolde, 2 ) . " euros.</div>";
-		echo "Merci.<br />";
-		echo "
-			    <br />
-			    <li>Pour aller à la page d'accueil : <a href=\"index.php\">cliquez ici</a></li>
-			";
+		echo "<br>Achat " . $numeroAchat . " enregistré.<br>";
+		echo "Le solde de votre compte est maintenant de " . round ( $nouveauSolde, 2 ) . " euros.<br>";
 	    } else {
-		echo "<div style=\"text-align:center; color: #FF0000\">Attention, le total de vos achats et supérieur au solde de votre compte.<br />Veuillez l'approvisionner avant de ré-enregistrer vos achats.</div>";
-		echo "
-			    <br>
-			    <li>Pour modifier votre panier  <a href=\"javascript:window.history.back()\">cliquez ici</a></li>
-			    <li>Pour aller à la page d'accueil : <a href=\"index.php\">cliquez ici</a></li>
-			";
+		echo "<div style=text-align:center>
+                <div style=color:red>Attention, vos achats n'ont pas été enregistrés car le total de vos achats et supérieur au solde de votre compte.</div>
+			    <br><br>Veuillez modifier votre panier en <a href=\"javascript:window.history.back()\">cliquant ici</a>.
+              </div>";
 	    }
 	/* } else {
 	   include '1listeRefCategorie.php';
@@ -129,4 +122,4 @@ session_start ();
     }
 
     ?>
-
+</body>
