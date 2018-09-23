@@ -4,7 +4,7 @@ require ("fonctionsStock.php");
 // Si le formulaire a été envoyé
 if (isset ( $_POST ['enregistrerInventaire'] )) {
     
-    $listeSTK = SelectionListeSTK ();
+    $listeSTK = SelectionListeSTK (true);
     
     $test_numeric = 1;
     $test_presence = 0;
@@ -40,10 +40,10 @@ if (isset ( $_POST ['enregistrerInventaire'] )) {
 	    }
 	    include ('inventaireE2.php');
 	} else {
-	    echo 'La qauntité indiquée pour ' . $testElement . ' n\'est pas une valeur numérique.';
+	    echo 'La quantité indiquée pour ' . $testElement . ' n\'est pas une valeur numérique.';
 	}
     } else {
-	echo 'Aucune qauntité n\'est renseignée.';
+	echo 'Aucune quantité n\'est renseignée.';
     }
 }
 function securite_bdd($string) {
