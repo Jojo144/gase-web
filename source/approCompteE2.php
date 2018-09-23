@@ -14,7 +14,7 @@
 	    ! </br>
 	    <?php
 	    $solde = SelectionSoldeAdherentMC ( $idAdherent );
-	    echo 'Le solde est maintenant de ' . $solde . ' euros.';
+	    echo 'Le solde est maintenant de ' . round($solde,2) . ' euros.';
 	    ?>
 	</div>
     </body>

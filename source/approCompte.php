@@ -33,7 +33,7 @@ readonly="true" />
 			<p class="ligne">
 			    <label class="col1">Solde actuel :</label> <input type="text"
 class="col2" name="solde" id="solde"
-value="<?php echo $solde; ?>" readonly="true" />
+value="<?php echo round($solde,2); ?>" readonly="true" />
 			</p>
 			<p class="ligne">
 			    <label class="col1" for="versement">Versement* :</label> <input
