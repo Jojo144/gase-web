@@ -95,8 +95,12 @@ function MajSousCategorie($idCategorie, $nom, $visible, $NouvelleCatMere, $ancie
 	requete ( $requete );
     }
 }
-function SelectionListeCategoriesFilles() {
-    $result = requete ( "SELECT ID_CATEGORIE, NOM FROM " . DB_PREFIX . "CATEGORIES WHERE SOUS_CATEGORIES = 0 ORDER BY NOM" );
+function SelectionListeCategoriesFilles($all = false) {
+    $sql = "SELECT ID_CATEGORIE, NOM FROM " . DB_PREFIX . "CATEGORIES WHERE SOUS_CATEGORIES = 0";
+    if (! $all)
+        $sql .= " AND VISIBLE=1";
+    $sql .= " ORDER BY NOM";
+    $result = requete ( $sql );
     $listeCategories = NULL;
     while ( $row = $result->fetch () ) {
 	$listeCategories [$row ["ID_CATEGORIE"]] = $row ["NOM"];

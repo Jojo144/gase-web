@@ -55,15 +55,14 @@
 			<p class="ligne">
 			    <label class="col1" for="categorie">Categorie* :</label>
 			    <select class="col2" name="categorie" id="categorie" required>
-				<?php
-				$listeCategories = SelectionListeCategoriesFilles ();
-				foreach ( $listeCategories as $cle => $element ) {
-				    if ($element == $nomCategorie) {
-				?>
+                    // la catégorie de la référence (éventuellement invisible)
 				    <option value="<?php echo $donnees['ID_CATEGORIE'] ?>"
 					    selected="selected"><?php echo $nomCategorie; ?></option>
 				<?php
-				} else {
+                // les autres catégories visibles
+				$listeCategories = SelectionListeCategoriesFilles ();
+				foreach ( $listeCategories as $cle => $element ) {
+				    if ($element != $nomCategorie) {
 				?>
 				    <option value="<?php echo $cle; ?>"><?php echo $element; ?></option>
 				<?php
