@@ -36,7 +36,7 @@ if (isset ( $_POST ['enregistrerStocks'] )) {
 	    }
 	    include ('approStockE2.php');
 	} else {
-	    echo 'La qauntité indiquée pour ' . $testElement . ' n\'est pas une valeur numérique.';
+	    echo 'La quantité indiquée pour ' . $testElement . ' n\'est pas une valeur numérique.';
 	}
     } else {
 	echo 'Aucune quantité n\'est renseignée.';
