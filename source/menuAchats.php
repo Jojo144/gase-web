@@ -7,7 +7,7 @@ $listeCategories = SelectionListeCategoriesMenu ();
 ?>
 <div id="menu_achats">
     <ul>
-	<li><a href="index.php">Accueil</a></li>
+    <li><a href="index.php" onclick="return confirm('Voulez-vous abandonner vos achats et retourner à l\'accueil ? (Vous n\'avez pas payé.)')">Accueil</a></li>
 	<?php
 	foreach ( $listeCategories as $tableau ) {
 	    if (($tableau ['SOUS_CATEGORIES'] == '0') && (empty ( $tableau ['ID_CAT_SUP'] ))) {
