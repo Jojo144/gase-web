@@ -26,7 +26,8 @@
 	?>
 	<div class="center">
         Somme des soldes des comptes (adhérents visibles seulement) : <?php echo $sommesoldes;?> € <br>
-        Valeur du stock (références invisibles inclues) : <?php echo $valeurstock;?> €
+        Valeur du stock (références invisibles inclues) : <?php echo $valeurstock;?> € <br>
+        <small>Normalement : somme des soldes + budget "cotisations" = valeur du stock + solde du compte bancaire</small>
         <br> <br>
 	    <a href="<?= $link ?>"><?= $all ? 'Masquer les non visibles' : 'Montrer les non visibles' ?></a>
 	</div>
