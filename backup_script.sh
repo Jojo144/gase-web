@@ -45,6 +45,8 @@ rm -f $db_backup_directory/$oldest_file_name
 num_of_backup=$(ls $db_backup_directory | grep -c gase_db_backup)
 done
 
+exit 0
+
 #trigger grive sync
 # cd $db_backup_directory_root
 # grive
